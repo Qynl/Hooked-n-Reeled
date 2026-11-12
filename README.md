@@ -5,5 +5,10 @@ An open-world Roblox fishing adventure focused on exploration, skill-based fishi
 - [Game design](DESIGN.md)
 - [Development milestones](docs/MILESTONES.md)
 - [Two-agent workflow](docs/TWO_AGENT_WORKFLOW.md)
+- [Boat system](docs/BOAT_SYSTEM.md)
+- [World events and discovery](docs/WORLD_EVENTS_AND_DISCOVERY.md)
+- [Fishbook and collection](docs/FISHBOOK_AND_COLLECTION.md)
+- [Roblox build skill](skills/roblox-build/SKILL.md)
+- [Roblox game-dev skill](skills/roblox-game-dev/SKILL.md)
 
-**Project status:** design phase. The design and implementation roadmap are being refined before the first vertical slice.
+**Project status:** design phase. The design and implementation roadmap are being refined before the first vertical slice. Current design work is on the `QynlIdeas` branch.
