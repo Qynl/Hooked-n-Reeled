@@ -21,6 +21,8 @@ Do not start both packages until file ownership and shared interfaces are agreed
 - Define fishing spot metadata: biome, water type, depth band, weather/time tags.
 - Propose rod/bait data shape and progression dimensions.
 - Define multiplayer expedition and shared-boat requirements at a design level.
+- Agree on boat customization, free-placement constraints, cooler storage, and permissions.
+- Define fishbook records, discovery clues, and boss reward eligibility.
 
 **Shared contract before implementation:** fish IDs, rarity representation, fishing-spot identifiers, rod/bait identifiers, and the shape of a fishing encounter.
 
@@ -124,11 +126,15 @@ Do not start both packages until file ownership and shared interfaces are agreed
 - Prototype boat spawning/ownership and safe shared occupancy.
 - Implement basic travel controls and server-side movement validation.
 - Define how players join/leave a boat safely.
+- Define boat purchase and upgrade data, including speed/handling/storage/specialization.
+- Prototype low-friction onboard free placement with server-validated build bounds and obstruction rules.
+- Add cooler placement, capacity upgrades, and clear fish-storage overflow behaviour.
 
 ### Package B — Group fishing and expedition flow
 - Implement party/expedition grouping and shared location markers or activity flow.
 - Prototype a cooperative fishing encounter or group objective.
-- Define contribution and reward rules that prevent duplicate rewards.
+- Define boss eligibility and reward rules: each eligible participant receives an individual copy/reward exactly once.
+- Add explicit boat guest permissions for equipment, cooler access, and optional layout editing.
 
 **Shared contract:** boat state, party membership, participant eligibility, encounter ownership, and reward distribution.
 
@@ -139,14 +145,16 @@ Do not start both packages until file ownership and shared interfaces are agreed
 **Goal:** exploration meaningfully changes what players can discover.
 
 ### Package A — Biomes and fishing conditions
-- Expand the world with additional connected biomes and fishing locations.
-- Implement weather/time/depth tags and their effect on eligible fish pools.
-- Add clear player-facing hints for discoverable conditions.
+- Expand the seamless, ocean-first world with additional connected biomes and fishing locations; land remains supporting geography.
+- Implement weather/time/water-condition tags and their effect on eligible fish pools.
+- Add clear player-facing hints for discoverable conditions, including clue-based odds boosts and selected guaranteed encounters.
+- Prototype surface-focused open-world activities such as island visits, wreck discoveries, ports, drifting finds, and special routes.
 
 ### Package B — Secrets and special encounters
 - Prototype hidden fishing spots and one secret area discovery.
-- Prototype a boss encounter that can transition into a hidden location, if the concept proves fun.
-- Add discovery rewards and collection integration.
+- Prototype a boss encounter that can be random, condition-based, event-based, or secret-discovered.
+- Add discovery rewards and fishbook clue/record integration.
+- Ensure a shared boss win grants each eligible participant their own reward exactly once.
 
 **Shared contract:** zone/spot metadata, condition evaluation API, transition rules, and discovery reward payload.
 
@@ -165,6 +173,8 @@ Do not start both packages until file ownership and shared interfaces are agreed
 - Polish fishing feedback, collection, inventory, shop, and onboarding.
 - Verify PC and mobile usability.
 - Add initial sound/visual polish and fix high-impact usability issues.
+- Add a data-driven world-event framework for migrations, weather windows, rare schools, and boss appearances.
+- Document admin-run events as a later feature; if prototyped, use server-side allowlists, permission checks, audit logs, and bounded event templates.
 
 **Shared contract:** release data schema, performance budgets, and final acceptance checklist.
 
@@ -178,3 +188,16 @@ Do not start both packages until file ownership and shared interfaces are agreed
 - Shared interfaces are agreed before parallel implementation.
 - A milestone is not complete until both packages are integrated and tested.
 - Milestones are a roadmap, not permission to skip design decisions or build systems prematurely.
+
+
+## Cross-system design contracts added in Rounds 5–7
+
+Before implementation crosses the prototype stage, document and agree on:
+- **Ocean-first world:** surface exploration is the primary loop; land points of interest support it. Underwater exploration is not a required core feature.
+- **Boat build state:** boat owner, unlocked hull, upgrades, placed-object IDs/transforms, build-area bounds, object footprints, and guest permissions.
+- **Cooler storage:** cooler identity/tier/capacity, stored fish instance IDs, transfer rules, full-capacity behaviour, and anti-duplication guarantees.
+- **Fishbook:** species discovery, individual catch instances, variants/mutations, record scopes, clue progression, and collection rewards.
+- **Clue system:** distinguish odds modifiers from guaranteed availability/encounters. A guarantee must state its exact scope and conditions.
+- **Boss rewards:** participant eligibility, late-join rules, individual reward grant IDs, and exactly-once server-side delivery.
+- **World events:** event definition, start/end state, eligible zones, fish-pool modifiers, boss triggers, UI announcement policy, and cleanup.
+- **Admin events (later):** permission model, server-only execution, audit log, cooldowns, safe templates, and explicit separation from normal progression.
