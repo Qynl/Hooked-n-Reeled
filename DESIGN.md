@@ -99,7 +99,15 @@ Balance principle: equipment should create meaningful choices rather than making
 
 The world should be large, connected, and rewarding to explore. It should contain varied environments such as rainforests with rivers, waterfalls, lakes, caves, coastlines, deep ocean areas, and hidden biomes.
 
-**Confirmed direction:** aim for a seamless world with multiple biomes, secrets, and dynamic conditions. The exact map layout, traversal methods, boat design, and zone-access rules still need decisions.
+**Confirmed direction:** aim for a seamless, ocean-centric open world with multiple biomes, secrets, and dynamic conditions. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is not a core pillar for the initial design; surface exploration and fishing take priority.
+
+Open-world activity ideas to explore and prototype (not all are locked launch requirements):
+- Sailing between distant regions and discovering new routes.
+- Visiting islands, ports, beaches, lighthouses, ruins, and unusual landmarks.
+- Finding wrecks, drifting cargo, hidden coves, secret fishing spots, and environmental clues.
+- Taking on delivery, recovery, research, or expedition objectives that naturally use the boat.
+- Responding to temporary fish migrations, weather windows, distress signals, and unusual ocean phenomena.
+- Meeting travelling characters, merchants, researchers, and other players at world locations.
 
 Exploration can reward players through:
 - New fish pools and fishing conditions.
@@ -112,6 +120,41 @@ A possible signature encounter discussed: a boss fish could pull the player into
 
 World generation should be reproducible through an idempotent `WorldBuilder` or an equivalent source-controlled workflow. The final implementation approach is still open.
 
+## Boats, customization, and onboard storage
+
+**Confirmed direction:** boats are a major progression and identity system, not disposable transport. Players can buy new boats, upgrade owned boats, and customize their vessel. Boat progression should unlock meaningful travel and group-play options without making early boats feel useless.
+
+### Boat progression
+- Purchase additional boat models and unlock them through sensible progression.
+- Upgrade dimensions such as speed, handling, durability/stability, storage capacity, and specialized functions.
+- Different hulls can have different strengths; avoid a single best boat for every activity.
+- Cosmetic customization should remain distinct from gameplay power where possible.
+- Boats must support shared trips and safe passenger boarding/leaving.
+
+### Free placement and onboard building
+Players should be able to place suitable objects on their boat with very little UI and substantial freedom over where and how objects are positioned. This includes functional equipment and decorative pieces.
+
+Design requirements:
+- Placement should feel direct and intuitive: preview, move, rotate, confirm, cancel.
+- Support snapping as an optional helper, not a restriction that removes free placement.
+- Keep objects inside the boat's allowed build area and prevent blocking helm access, seats, fishing positions, doors, and safety-critical interaction points.
+- Define per-object footprint, weight/size class, placement rules, and whether it is functional or decorative.
+- Persist placements per boat, with stable item IDs and transforms. Validate all placement and ownership on the server.
+- Provide a simple edit mode and a quick way to pick up, move, rotate, or remove owned objects.
+- Keep the interface minimal and contextual; the boat itself should remain the focus.
+
+### Coolers and fish storage
+The boat's storage identity is primarily **coolers**, rather than a generic cargo-room inventory.
+- Players can buy multiple cooler types, place them on the boat, and upgrade them.
+- Cooler tiers can improve capacity and may offer clearly defined utility differences later.
+- The game must communicate capacity and contents clearly without requiring a large permanent UI.
+- A fish should not silently disappear when storage is full. Define an explicit choice: keep in personal inventory, replace/transfer, or decline the catch where appropriate.
+- Server-authoritative inventory transfers must prevent duplication, loss, and double-selling.
+- Storage capacity is a meaningful boat-build choice, but should not become a mandatory chore.
+
+### Multiplayer ownership
+The boat owner controls the vessel and its layout. Guests can interact with permitted equipment and use designated storage according to explicit permissions. The owner should be able to grant limited placement/edit permissions without handing over ownership. A guest must never be able to take, sell, or move another player's stored fish without permission.
+
 ## Multiplayer
 
 Playing with friends is a core pillar, not an afterthought.
@@ -123,7 +166,33 @@ The intended experience includes:
 - Team-based special encounters or boss fights.
 - Server-wide moments for exceptionally rare catches or world events, if they fit the final design.
 
-Rules for shared catches, contribution, rewards, boat ownership, and party scaling remain to be designed. Multiplayer systems must be fair to players who join late or participate with different equipment.
+**Confirmed boss reward direction:** a boss encounter is shared, cooperative content, and every eligible participant receives their own boss catch/reward. The reward is not split between players and one person must not be able to take the only copy. The server determines eligibility and grants each participant exactly once. Contribution can affect presentation or bonus details only if it remains fair and clearly communicated.
+
+Rules for ordinary shared catches, boat ownership, storage permissions, late joining, and party scaling still need detailed contracts. Multiplayer systems must be fair to players with different equipment.
+
+## Fishbook and collection
+
+**Confirmed direction:** the collection system should combine a species encyclopedia with deeper records and discovery tracking.
+
+The fishbook should be able to track:
+- Species discovered and caught, with clear undiscovered entries where appropriate.
+- Variants and mutations found for each species.
+- Weight and size records, including personal bests and relevant world/server records if useful.
+- First discoveries, notable catches, and boss encounters.
+- Helpful clues about habitat, conditions, behaviour, and possible discovery routes, revealed progressively.
+- Completion milestones and rewards that encourage exploration without requiring every player to complete everything.
+
+The fishbook should not expose every secret condition immediately. It can begin with partial hints and gradually record discoveries as the player learns more. The collection UI should be readable on mobile and should distinguish a species entry from an individual fish instance stored in inventory.
+
+## World events, live operations, and admin events
+
+**Confirmed direction:** the world should have a mixture of dynamic and scheduled activity:
+- Natural world events such as fish migrations, storms, unusual weather, rare schools, and temporary fishing conditions.
+- Exploration discoveries such as wrecks, hidden locations, unusual signals, and temporary points of interest.
+- Boss appearances that may be random, condition-based, part of a world event, or triggered by a secret discovery.
+- Announced and unannounced events, with enough information for players to understand what is happening without turning the game into a constant notification feed.
+
+Admin-run events are a **later live-operations feature**, not a requirement for the first playable release. They should be clearly separate from normal world simulation and use secure server-side permissions, auditable event actions, rate limits, and safe event templates. Admin events should create memorable community moments, never grant hidden unfair advantages or become required for ordinary progression.
 
 ## Progression and return motivation
 
@@ -155,6 +224,9 @@ This is a proposed organization. Adapt it to the actual Studio/repository integr
 ## Two-agent development
 
 See:
+- [Boat system](docs/BOAT_SYSTEM.md)
+- [World events and discovery](docs/WORLD_EVENTS_AND_DISCOVERY.md)
+- [Fishbook and collection](docs/FISHBOOK_AND_COLLECTION.md)
 - [Milestones](docs/MILESTONES.md)
 - [Two-agent workflow](docs/TWO_AGENT_WORKFLOW.md)
 
@@ -174,7 +246,11 @@ For fishing balance, simulate rarity rolls at a scale appropriate to the odds an
 
 ## Current open decisions
 
-- Final map layout, biome list, travel and boat mechanics.
+- Final map layout, biome list, boat handling, boat progression, and placement rules.
+- Cooler tiers, storage limits, guest permissions, and fish overflow behaviour.
+- Open-world activity catalogue and the balance between surface exploration and land points of interest.
+- Fishbook page structure, record scopes, and collection milestone rewards.
+- World-event cadence, boss eligibility/reward rules, and later admin-event permission model.
 - Zone access and progression gates.
 - Exact fish roster, rarity odds, luck formula, mutations, and value balance.
 - Reeling minigame catalogue and per-species assignment.
