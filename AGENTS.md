@@ -1,6 +1,6 @@
 # Project instructions
 
-This repo is a Roblox game (place **Wild Sea**, `placeId 78065626942509`). Game design lives
+This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives
 in [DESIGN.md](DESIGN.md).
 
 ## Roblox skills — always use these
