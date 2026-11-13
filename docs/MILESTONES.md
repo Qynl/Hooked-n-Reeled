@@ -283,7 +283,7 @@ M0 is complete only when all of these are true:
 - Build one satisfying reeling minigame.
 - Support keyboard/mouse and touch.
 - Add clear success, failure, cancel, and catch-result feedback.
-- Keep common catches quick and readable.
+- Keep frequent, routine catches quick and readable.
 
 **Shared contract:** encounter state machine, remote payloads, minigame input contract, cancellation rules, and catch-result shape.
 
@@ -368,7 +368,7 @@ M0 is complete only when all of these are true:
 ### Package B — Catch presentation
 - Add probability-aware sound, animation, camera, and effect hooks. Use the actual catch odds to determine presentation intensity, not named rarity tiers.
 - Build one notable/rare catch reveal and one boss-style presentation prototype.
-- Keep common catches quick and non-disruptive.
+- Keep frequent, routine catches quick and non-disruptive.
 - Ensure effects cancel and clean up safely.
 - Trigger special reveals only from server-confirmed results.
 
