@@ -11,6 +11,7 @@ An open-world Roblox fishing adventure with connected surface and underwater exp
 - [World events and discovery](docs/WORLD_EVENTS_AND_DISCOVERY.md)
 - [Underwater exploration](docs/UNDERWATER_EXPLORATION.md)
 - [Fishbook and collection](docs/FISHBOOK_AND_COLLECTION.md)
+- [Fish rarity, mutations, and catch outcomes](docs/FISH_RARITY_AND_MUTATIONS.md)
 - [Roblox build skill](skills/roblox-build/SKILL.md)
 - [Roblox game-dev skill](skills/roblox-game-dev/SKILL.md)
 
