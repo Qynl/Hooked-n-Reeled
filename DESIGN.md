@@ -21,7 +21,7 @@ The game should welcome players back after time away through discoveries and ong
 ## Core loop
 
 1. **Explore** — travel through a large, connected world with distinct fishing environments, hidden locations, and changing conditions.
-2. **Choose a fishing spot** — biome, water type, depth, weather, time, and location can influence which fish may appear.
+2. **Choose a fishing spot** — water type, depth, weather, time, and location can influence which fish may appear.
 3. **Cast and hook** — cast within the equipped rod's range, wait for a bite, then react to hook the fish.
 4. **Reel** — play a skill-based minigame. Different fish species can use different minigame mechanics; rare and boss encounters can introduce special phases and mechanics.
 5. **Catch presentation** — show the fish, size/weight, rarity, and relevant variants. Presentation can use dynamic camera work, sound, effects, animations, and special cutscenes for meaningful catches.
@@ -68,7 +68,7 @@ Fish can have:
 
 The existing rarity table is a starting proposal, not a final balance commitment. It currently has sixteen tiers, from Common (1 in 3) to Secret (1 in 1,500,000). Exact odds, luck interaction, tier availability by zone, and value multipliers need a dedicated balance pass.
 
-RNG should remain part of the excitement, but not the only factor. Biome, specific location, water depth, weather, time, and other discoverable conditions can influence eligible fish pools or odds. These conditions should be understandable enough that players can make informed choices without turning fishing into an overcomplicated simulation.
+RNG should remain part of the excitement, but not the only factor. Specific fishing area, water depth, weather, time, and other discoverable conditions can influence eligible fish pools or odds. These conditions should be understandable enough that players can make informed choices without turning fishing into an overcomplicated simulation.
 
 ## Fish use and collection
 
@@ -97,9 +97,9 @@ Balance principle: equipment should create meaningful choices rather than making
 
 ## Open world and exploration
 
-The world should be large, connected, and rewarding to explore. It should contain varied environments such as rainforests with rivers, waterfalls, lakes, caves, coastlines, deep ocean areas, and hidden biomes.
+The world should be large, connected, and rewarding to explore. It should contain varied environments such as rainforests with rivers, waterfalls, lakes, caves, coastlines, deep ocean areas, and hidden locations.
 
-**Confirmed direction:** aim for a seamless, ocean-centric open world with multiple biomes, secrets, and dynamic conditions. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is not a core pillar for the initial design; surface exploration and fishing take priority.
+**Confirmed direction:** aim for a seamless, ocean-centric open world with varied fishing areas, secrets, and dynamic conditions. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is not a core pillar for the initial design; surface exploration and fishing take priority.
 
 Open-world activity ideas to explore and prototype (not all are locked launch requirements):
 - Sailing between distant regions and discovering new routes.
@@ -116,7 +116,7 @@ Exploration can reward players through:
 - Special encounters that lead to unexpected places.
 - Rare resources, records, or unlock opportunities.
 
-A possible signature encounter discussed: a boss fish could pull the player into a hidden cave biome during the fight. Treat this as a concept to prototype, not a locked implementation requirement.
+A possible signature encounter discussed: a boss fish could pull the player into a hidden cave area during the fight. Treat this as a concept to prototype, not a locked implementation requirement.
 
 World generation should be reproducible through an idempotent `WorldBuilder` or an equivalent source-controlled workflow. The final implementation approach is still open.
 
@@ -246,7 +246,7 @@ For fishing balance, simulate rarity rolls at a scale appropriate to the odds an
 
 ## Current open decisions
 
-- Final map layout, biome list, boat handling, boat progression, and placement rules.
+- Final map layout and fishing-area layout, boat handling, boat progression, and placement rules.
 - Cooler tiers, storage limits, guest permissions, and fish overflow behaviour.
 - Open-world activity catalogue and the balance between surface exploration and land points of interest.
 - Fishbook page structure, record scopes, and collection milestone rewards.
