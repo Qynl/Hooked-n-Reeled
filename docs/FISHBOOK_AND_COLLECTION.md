@@ -15,9 +15,10 @@ The intended direction combines:
 - Size and weight records.
 - First-catch and notable-catch history.
 - Clues and habitat knowledge, including observations that can be made while fishing from a stationary spot.
+- Underwater species observations, discovered dive locations, and notable underwater finds.
 - Collection milestones and rewards.
 
-A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known variants. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment.
+A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known variants. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment. Keep fish species records distinct from non-fish underwater collectibles: a crystal or pearl discovery can be recorded in a separate discovery collection without pretending it is a fish or an individual fish inventory item.
 
 ## Fish rarity display
 
