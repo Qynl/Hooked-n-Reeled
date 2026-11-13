@@ -1,6 +1,6 @@
 # Project instructions
 
-This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives in [DESIGN.md](DESIGN.md).
+This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives in [DESIGN.md](DESIGN.md), with the detailed underwater feature plan in [docs/UNDERWATER_EXPLORATION.md](docs/UNDERWATER_EXPLORATION.md).
 
 ## Two-agent coordination is mandatory
 
@@ -17,7 +17,7 @@ Before doing project work, read [the agent coordination hub](docs/agent-coordina
 
 ## Visual reference images are inspiration, not finished designs
 
-**Read [docs/visual-references/README.md](docs/visual-references/README.md) and [docs/VISUAL_REFERENCE_PLAN.md](docs/VISUAL_REFERENCE_PLAN.md) before using any image in `docs/visual-references/`. This rule applies to every image in that directory, including `Fish_IDeas.png`, boat sheets, environment asset sheets, maps, biome concepts, and future additions.**
+**Read [docs/visual-references/README.md](docs/visual-references/README.md) and [docs/VISUAL_REFERENCE_PLAN.md](docs/VISUAL_REFERENCE_PLAN.md) before using any image in `docs/visual-references/`. This rule applies to every image in that directory, including `Fish_IDeas.png`, boat sheets, environment asset sheets, maps, underwater concepts, and future additions.**
 
 These images are visual idea boards and art-direction references only. They are **not** final fish designs, a confirmed fish/species roster, final boat models or prices, final world geography, approved level layouts, production-ready asset specifications, or assets to copy one-to-one. In particular, `Fish_IDeas.png` communicates the intended range of fish-art direction and rarity presentation; it does not define the actual fish that must appear in the game.
 
@@ -31,6 +31,8 @@ When implementing:
 - If an image conflicts with a confirmed written design decision, follow the written decision and flag the conflict rather than silently changing the game.
 
 Use the status meanings defined in the visual-reference README: **Inspiration → Direction approved → Design approved → Implemented**. Do not advance an image's status without evidence or user approval.
+
+The full game includes both surface and underwater ocean exploration. The current M0 priority is still the master surface-ocean map; account for future seabed depth changes and reserve possible dive-site anchors, but do not build the full diving feature until M17. Underwater exploration must not require sonar, scanners, tracking devices, or research gadgets.
 
 ## Roblox skills — always use these
 
