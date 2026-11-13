@@ -7,7 +7,7 @@
 
 ## Primary task
 
-Build the first connected, visually memorable Hooked-n-Reeled ocean world using:
+Build the first connected, visually memorable Hooked-n-Reeled surface-ocean map using:
 
 `docs/visual-references/01-world/WorldOverview.png`
 
@@ -31,6 +31,7 @@ Agents should claim a package by posting a check-in in their own message log. Th
 - [ ] Visual palette and material language
 - [ ] Asset scale, pivots, and collision conventions
 - [ ] Initial major silhouettes required in the blockout
+- [ ] Rough seabed depth plan and reserved future dive-site anchors agreed (planning only; no full underwater build in M0)
 - [ ] Asset handoff format between packages
 - [ ] Integration owner and Studio test plan
 
