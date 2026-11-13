@@ -10,7 +10,7 @@ This is a **reference-generation plan**, not a claim that any images or game ass
 
 All images in `docs/visual-references/` are **conceptual inspiration only by default**. They are not final game assets, final designs, confirmed content lists, or instructions to reproduce pictured objects exactly. This applies to every current and future image, not only the fish sheet.
 
-In particular, `Fish_IDeas.png` (also informally called `fishideas.png`) is a fish-art-direction moodboard: it suggests possible visual variety and rarity presentation only. It does not define the actual species roster, exact fish designs, names, rarity values, stats, or models. Boat, equipment, nature, biome, map, location, and atmosphere references follow the same rule.
+In particular, `Fish_IDeas.png` (also informally called `fishideas.png`) is a fish-art-direction moodboard: it suggests possible visual variety and rarity presentation only. It does not define the actual species roster, exact fish designs, names, rarity values, stats, or models. Boat, equipment, nature, map, location, underwater, and atmosphere references follow the same rule.
 
 Agents must use the images to understand style, shape language, palette, mood, and possible directions, then create original designs that fit confirmed written specifications and practical Roblox constraints. Never infer mechanics, stats, prices, progression, species, geography, or required asset lists from a concept image. Written confirmed decisions take precedence over images. An image only becomes an approved design when the user explicitly approves that specific design or a written specification confirms it. Even then, the production Roblox asset must be built separately and optimised.
 
@@ -55,6 +55,15 @@ Append this style phrase to environment and asset prompts:
 **Prompt:**
 
 > Create a clean top-down orthographic world-planning map for a large ocean fishing adventure. Show a connected archipelago with clearly separated island clusters and broad navigable ocean routes. Include a central starter region and main port, several distinct fishing grounds, remote outer islands, hidden coves, reefs, open-water fishing grounds, and a few distant endgame landmarks. Use simple readable terrain silhouettes and clear water-depth and location distinctions. No labels, no icons, no UI, no compass, no text. Geography must be clear enough to translate into a Roblox world layout. [MASTER STYLE PHRASE]
+
+## 03 — Underwater world cutaway
+
+**Filename:** `03_underwater_world_cutaway.png`  
+**Format:** 16:9 wide underwater environment concept with a readable surface-to-seabed relationship.
+
+**Prompt:**
+
+> Create a polished stylized 3D underwater world concept for Hooked-n-Reeled, showing the underwater layer of the same connected tropical ocean. Compose a wide underwater view with a bright surface visible above, sunbeams reaching through clear turquoise water, a reef garden in the foreground, a rocky shelf descending into a deeper ravine, a distant cave opening, and the silhouette of a sunken wreck. Include a few natural crystal formations integrated into the rock, shells and coral, and small distant sea-life silhouettes. The scene should feel explorable and full of discoveries, not frightening or photorealistic. Keep the environment visually connected to the surface world. No divers, no equipment gadgets, no sonar UI, no text, no labels. [MASTER STYLE PHRASE]
 
 ## 04 — Ocean zones and water transitions
 
@@ -218,16 +227,40 @@ Append this style phrase to environment and asset prompts:
 
 ---
 
+# Stage 6 — Underwater locations and discoveries
+
+## 20 — Underwater location collection
+
+**Filename:** `20_underwater_location_collection.png`  
+**Format:** one cohesive sheet with three separate wide environment vignettes.
+
+**Prompt:**
+
+> Create a cohesive stylized 3D game-environment concept sheet with three separate underwater location vignettes for Hooked-n-Reeled: (1) a colourful reef garden with coral arches, sea plants, fish schools, and a hidden crevice; (2) a rocky underwater cave with a visible entrance, layered shelves, a few natural crystal seams, and a secret chamber; (3) a sunken wooden shipwreck resting near a ravine, with broken hull sections, scattered cargo, shells, and shafts of sunlight. Make each location feel like a distinct explorable place connected to the same tropical ocean. Clear readable navigation, rich but controlled colours, no divers, no gadgets, no UI, no labels, no text. [MASTER STYLE PHRASE]
+
+## 21 — Underwater discoveries sheet
+
+**Filename:** `21_underwater_discoveries_sheet.png`  
+**Format:** one asset sheet on a plain neutral background.
+
+**Prompt:**
+
+> Create a polished stylized 3D asset sheet of separate underwater discoveries for a tropical ocean adventure game. Include several distinct natural crystal and mineral formations, small and large crystal clusters, unusual shells, pearls, giant clams, fossils, rare coral specimens, sea-glass-like natural fragments, weathered cargo objects, and a few small ancient-looking artefacts. Every object must be isolated, fully visible, non-overlapping, and evenly spaced on a plain neutral background. Use a consistent three-quarter view, cohesive stylized low-poly art direction, and a controlled palette of turquoise, deep blue, seafoam, violet, warm sand, and coral accents. No text, labels, UI, or watermarks. [MASTER STYLE PHRASE]
+
+---
+
 ## Suggested generation order
 
 1. `01_world_overview.png`
 2. `02_world_map_layout.png`
+3. `03_underwater_world_cutaway.png`
 4. `05_nature_asset_sheet.png`
 5. `06_rock_terrain_asset_sheet.png`
 6. `07_coastal_architecture_sheet.png`
 7. `10_starter_island.png`
 8. `11_main_fishing_port.png`
-9. Generate the remaining sheets and location concepts.
+9. Generate the remaining surface sheets and location concepts.
+10. Generate `20_underwater_location_collection.png` and `21_underwater_discoveries_sheet.png` when planning the underwater milestone.
 
 Do not generate every image at once. Approve the overall world layout first; then generate assets for the locations and fishing areas that are actually needed.
 
@@ -242,9 +275,12 @@ Do not generate every image at once. Approve the overall world layout first; the
 - [ ] Main port approved
 - [ ] Boat family approved
 - [ ] Water and lighting studies approved
+- [ ] Underwater visual direction approved
+- [ ] First underwater location concepts approved
+- [ ] Underwater discovery art direction approved
 
 ## Image index
 
 | ID | Filename | Status | Notes |
 |---|---|---|---|
-| 01–20 | See sections above | Planned | No generated references committed yet |
+| 01–21 | See sections above | Planned | No generated references committed yet |
