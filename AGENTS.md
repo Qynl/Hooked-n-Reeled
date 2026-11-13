@@ -1,7 +1,19 @@
 # Project instructions
 
-This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives
-in [DESIGN.md](DESIGN.md).
+This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives in [DESIGN.md](DESIGN.md).
+
+## Two-agent coordination is mandatory
+
+Before doing project work, read [the agent coordination hub](docs/agent-coordination/README.md) and [its current dashboard](docs/agent-coordination/CURRENT.md). The two agents coordinate asynchronously through GitHub on the active branch.
+
+- Read both agent message logs before starting/resuming work.
+- Post updates and questions only in your own log: `docs/agent-coordination/messages/AGENT_A.md` or `AGENT_B.md`.
+- Follow the active milestone's package ownership. One writer per file; never edit the other agent's message log.
+- Do not treat proposals as decisions. Accepted shared decisions go in `docs/agent-coordination/DECISIONS.md`.
+- The integration owner updates the dashboard and records handoffs.
+- All project changes for this task stay on `QynlIdeas`, unless the user explicitly changes that instruction.
+- GitHub notes are asynchronous coordination, not live chat. Commit messages so the other agent can read them.
+- Do not claim the other agent has seen or accepted a message until there is a response in its log.
 
 ## Visual reference images are inspiration, not finished designs
 
