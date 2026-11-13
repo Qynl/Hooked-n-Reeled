@@ -133,6 +133,8 @@ Natural signals can include:
 
 These clues should be readable and interesting, but not always give away an exact answer. Some can be noticed by a player who is already fishing nearby; others may reward travelling to investigate. Do not require a gadget to see, interpret, or follow a clue.
 
+**Local activity matters:** the ocean can create small moments around a stationary player, too. A school may pass the spot, birds may gather nearby, baitfish may scatter, a predator may breach in the distance, or a floating find may drift within view. These moments can change the feel or opportunity of a session without forcing the player to chase them.
+
 ### Open-world activities
 
 Candidate activities to explore and prototype (not all are locked launch requirements):
