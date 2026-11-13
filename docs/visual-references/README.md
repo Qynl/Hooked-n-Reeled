@@ -4,7 +4,7 @@ All visual reference images for Hooked-n-Reeled belong under this directory in `
 
 ## Critical: these images are ideas, not final game content
 
-**Every image in this directory is a concept/reference image unless its status is explicitly changed below and the relevant design is separately approved in writing.** This includes `Fish_IDeas.png` (sometimes referred to informally as `fishideas.png`), world/map images, biome images, nature and environment asset sheets, boat/equipment sheets, location concepts, water studies, and every image added later.
+**Every image in this directory is a concept/reference image unless its status is explicitly changed below and the relevant design is separately approved in writing.** This includes `Fish_IDeas.png` (sometimes referred to informally as `fishideas.png`), world/map images, nature and environment asset sheets, boat/equipment sheets, location concepts, water studies, and every image added later.
 
 The images communicate visual direction: possible shapes, silhouettes, colour palettes, mood, variety, materials, and general art style. They do **not** define the final game content.
 
@@ -12,7 +12,7 @@ Examples:
 - `Fish_IDeas.png` is only inspiration for fish art direction and how rarity could be communicated. It is **not** the final fish roster, final species list, or a set of fish models to reproduce.
 - Boat sheets show possible visual progression and design language. They do **not** lock the boat roster, exact boat designs, prices, stats, or unlock order.
 - Nature/prop sheets show possible asset styles and variety. They do **not** mean every pictured object must be built.
-- World, map, biome, and location images are concepts. They do **not** automatically establish final geography, biome count, island placement, or playable layouts.
+- World, map, and location images are concepts. They do **not** automatically establish final geography, area count, island placement, or playable layouts.
 - Equipment sheets are visual inspiration, not a final equipment list or confirmation that every pictured item belongs in the game.
 
 Agents must interpret the references creatively and make original, practical designs that fit the confirmed written game design, gameplay, technical constraints, and performance budget. Never copy an image one-to-one or invent gameplay rules, names, stats, prices, rarity odds, or progression from it. If an image conflicts with a confirmed written decision, the written decision wins; report the conflict.
@@ -35,7 +35,7 @@ Do not promote a reference to a later state without evidence. An approved concep
 - `03-locations/` — starter island, main port, remote outpost and landmarks
 - `04-boats-and-equipment/` — boat family, customization, fishing equipment and fishing spots
 - `05-atmosphere-and-water/` — weather, lighting, water and shoreline
-- `06-biome-details/` — individual biome concepts and detail studies
+- Underwater location and discovery references belong in the relevant environment/location folders; do not create a formal biome taxonomy.
 - Root of this directory — cross-category art-direction sheets such as fish ideas
 
 ## File and workflow rules
