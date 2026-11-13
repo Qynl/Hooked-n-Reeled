@@ -2,7 +2,7 @@
 
 An open-world Roblox fishing adventure built around skill-based fishing, collection, progression, rare discoveries, surface and underwater exploration, and shared multiplayer expeditions. Its signature identity is a living ocean with two connected layers: the surface and the world beneath it. Players can enjoy relaxed stationary fishing or set out on discoveries without either playstyle becoming mandatory.
 
-Status: design and world-planning phase. No Hooked-n-Reeled gameplay systems have been implemented yet. The generic Rojo example under `skills/roblox-game-dev/assets/project/` is a teaching template, not the game's live fishing implementation.
+Status: design and world-planning phase; the active repository roadmap is at M0. The generic Rojo example under `skills/roblox-game-dev/assets/project/` is a teaching template, not the game's live fishing implementation. Check the connected Roblox place before making claims about what already exists in Studio.
 
 ## Core vision
 
