@@ -1,6 +1,6 @@
 # Project instructions
 
-This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives in [DESIGN.md](DESIGN.md), with the detailed underwater feature plan in [docs/UNDERWATER_EXPLORATION.md](docs/UNDERWATER_EXPLORATION.md).
+This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives in [DESIGN.md](DESIGN.md), with the canonical fish rarity and mutation rules in [docs/FISH_RARITY_AND_MUTATIONS.md](docs/FISH_RARITY_AND_MUTATIONS.md) and the detailed underwater feature plan in [docs/UNDERWATER_EXPLORATION.md](docs/UNDERWATER_EXPLORATION.md).
 
 ## Two-agent coordination is mandatory
 
@@ -33,6 +33,10 @@ When implementing:
 Use the status meanings defined in the visual-reference README: **Inspiration → Direction approved → Design approved → Implemented**. Do not advance an image's status without evidence or user approval.
 
 The full game includes both surface and underwater ocean exploration. The current M0 priority is still the master surface-ocean map; account for future seabed depth changes and reserve possible dive-site anchors, but do not build the full diving feature until M17. Underwater exploration must not require sonar, scanners, tracking devices, or research gadgets.
+
+## Fish rarity and mutation rules
+
+Before changing fish catalogues, catch selection, fish instances, mutation visuals, sale values, or Fishbook records, read `docs/FISH_RARITY_AND_MUTATIONS.md`. Every species has exactly one numerical rarity/odds value. Mutations such as Golden are individual fish attributes: they do not create new species entries and do not change the species odds. Keep species odds, mutation roll configuration, and mutation value modifiers in separate data fields. Do not implement example odds or multipliers as final balance values.
 
 ## Roblox skills — always use these
 
