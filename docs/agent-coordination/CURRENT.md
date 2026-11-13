@@ -18,7 +18,7 @@ This image is the primary composition and art-direction reference. It is inspira
 | Workstream | Owner | Status | Main responsibility |
 |---|---|---|---|
 | Package A | Unassigned | Not started | World layout, geography, routes, large-scale Studio blockout |
-| Package B | Unassigned | Not started | Reusable environment asset kit and asset conventions |
+| Package B | Unassigned | Not started | Reusable environment kit plus water material, moving surface detail, and shoreline foam |
 | Integration | Unassigned | Not started | Agree shared contracts, combine work, Studio validation |
 
 Agents should claim a package by posting a check-in in their own message log. The integration owner records the agreed assignment here. Do not assume Agent A must always take Package A.
