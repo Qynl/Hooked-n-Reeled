@@ -299,7 +299,9 @@ M0 is complete only when all of these are true:
 
 ### Package A — Starter fish catalogue
 - Design a small reviewed roster of original fish.
-- Give each species a stable ID, habitat eligibility, size/weight range, silhouette notes, and an odds-based catch-probability configuration (not a named rarity tier).
+- Give each species a stable ID, habitat eligibility, size/weight profile, silhouette notes, and exactly one canonical numerical species-odds value (not a named rarity tier).
+- Define which mutations each species supports, separately from species odds. A mutation is an individual fish attribute, not a new species or rarity.
+- Use the canonical rules in [Fish Rarity, Mutations, and Catch Outcomes](FISH_RARITY_AND_MUTATIONS.md).
 - Make species recognisably different in shape and personality.
 - Treat `Fish_IDeas.png` only as inspiration, never as the final roster or a list to copy.
 - Validate missing and duplicate species IDs.
@@ -311,9 +313,9 @@ M0 is complete only when all of these are true:
 - Keep species discovery separate from ownership of an individual fish.
 - Provide a clean path for adding more fish later.
 
-**Shared contract:** species schema, IDs, exact probability/odds representation, weight units, and discovery record format. Do not add conventional named rarity tiers; the catch odds are the rarity.
+**Shared contract:** species schema and IDs; one canonical odds field and an explicit definition of its probability semantics; eligible-pool selection/normalisation; mutation IDs, compatibility and separate roll configuration; weight units; fish-instance shape; and discovery record format. Mutations must not change species ID or species odds. Do not add conventional named rarity tiers; the species odds are its only rarity. See [Fish Rarity, Mutations, and Catch Outcomes](FISH_RARITY_AND_MUTATIONS.md).
 
-**Acceptance gate:** the starter roster is reviewed; catching a species records it once; selling/losing an individual fish does not erase discovery; repeated client requests cannot duplicate records.
+**Acceptance gate:** the starter roster is reviewed; each species has exactly one numerical odds value; normal and mutated forms resolve to the same species entry and odds; mutation discoveries are recorded beneath that species; catching a species records it once; selling/losing an individual fish does not erase discovery; repeated client requests cannot duplicate records.
 
 ## M7 — Add fish inventory and selling
 
@@ -328,12 +330,13 @@ M0 is complete only when all of these are true:
 
 ### Package B — Selling and first economy UI
 - Implement a simple sell interaction and readable value display.
-- Calculate sale value on the server from approved species/size/probability data.
+- Calculate sale value on the server from approved species, size/weight, and configured mutation modifiers. Apply each mutation modifier exactly once; clients cannot submit a sale value.
+- Add test cases for a normal fish and the same species with a value-affecting mutation (for example, Golden) to prove that the species odds stay identical while the server-calculated value changes.
 - Add a basic currency display and sale confirmation.
 - Protect notable catches from accidental irreversible sale.
 - Keep economy values configurable rather than hard-coded across UI scripts.
 
-**Shared contract:** fish instance schema, ownership/transfer states, sale valuation, and currency update contract.
+**Shared contract:** fish instance schema (species ID plus optional mutation ID), ownership/transfer states, sale valuation formula, mutation value modifiers and caps, and currency update contract. The mutation must never replace the species ID or species odds.
 
 **Acceptance gate:** each fish exists in exactly one location/state; selling pays exactly once; fishbook discovery persists; clients cannot choose sale prices or grant currency.
 
@@ -351,6 +354,7 @@ M0 is complete only when all of these are true:
 - Define a small starter set of bait types and their eligible pool/condition effects.
 - Implement a simple server-owned shop flow.
 - Add readable UI for owned/equipped rods and bait.
+- Define and test the luck/condition interaction without introducing a second rarity value. Any effect must be applied in the server's documented encounter-selection model and must not overwrite the species' canonical odds.
 - Add a modest early progression reward or unlock.
 - Prevent duplicate purchases and insufficient-funds purchases.
 
@@ -370,7 +374,8 @@ M0 is complete only when all of these are true:
 - Add clear difficulty and accessibility rules.
 
 ### Package B — Catch presentation
-- Add probability-aware sound, animation, camera, and effect hooks. Use the actual catch odds to determine presentation intensity, not named rarity tiers.
+- Add probability-aware sound, animation, camera, and effect hooks. Use the species' numerical odds and optional mutation presentation settings, not named rarity tiers.
+- Show the same species odds for normal and mutated versions of a fish; display the mutation as a separate attribute.
 - Build one notable/rare catch reveal and one boss-style presentation prototype.
 - Keep frequent, routine catches quick and non-disruptive.
 - Ensure effects cancel and clean up safely.
