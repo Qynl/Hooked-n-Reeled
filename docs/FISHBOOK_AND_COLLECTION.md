@@ -11,14 +11,14 @@ The fishbook records what a player has discovered. Inventory stores individual f
 The intended direction combines:
 - Species encyclopedia.
 - Discovery tracking.
-- Variant and mutation records.
+- mutation records.
 - Size and weight records.
 - First-catch and notable-catch history.
 - Clues and habitat knowledge, including observations that can be made while fishing from a stationary spot.
 - Underwater species observations, discovered dive locations, and notable underwater finds.
 - Collection milestones and rewards.
 
-A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known variants. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment. Keep fish species records distinct from non-fish underwater collectibles: a crystal or pearl discovery can be recorded in a separate discovery collection without pretending it is a fish or an individual fish inventory item.
+A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known mutations. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment. Keep fish species records distinct from non-fish underwater collectibles: a crystal or pearl discovery can be recorded in a separate discovery collection without pretending it is a fish or an individual fish inventory item.
 
 ## Fish rarity and mutation display
 
@@ -40,7 +40,7 @@ Mutation chance is not the species rarity. Selling an individual Golden fish doe
 
 Potential record categories:
 - Personal heaviest and longest catch per species.
-- Personal first catch and first variant discovery.
+- Personal first catch and first mutation discovery.
 - Rare mutation discoveries.
 - Boss catches and special event records.
 - Optional server-wide or global records, if their moderation and persistence costs are justified.
