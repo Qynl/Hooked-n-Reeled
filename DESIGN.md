@@ -49,11 +49,13 @@ Design principles:
 
 **Confirmed direction:** use the full presentation toolkit where appropriate: camera direction, sound design, visual effects, animations, catch cards, and special cutscenes.
 
-Presentation intensity should be tiered:
-- Common catches: fast, clean feedback.
-- Notable catches: stronger reveal, sound, and visual treatment.
-- Extremely rare catches: distinctive reveal or cinematic sequence.
-- Boss catches: encounter-specific presentation and a memorable conclusion.
+Presentation intensity should respond to the actual catch probability, not named rarity categories:
+- Frequent outcomes receive fast, clean feedback.
+- Lower-probability catches can receive a stronger reveal, sound, and visual treatment.
+- Extremely low-probability outcomes can receive a distinctive reveal or cinematic sequence.
+- Boss catches receive encounter-specific presentation and a memorable conclusion.
+
+The exact probability points at which presentation changes are open for later tuning. Do not create named rarity bands to drive these effects.
 
 Avoid excessive interruption. The excitement should come from contrast and rarity, not from making every catch slow.
 
@@ -243,7 +245,7 @@ Players should feel curious about what they might discover when they return. Avo
 ## Initial technical file layout
 
 ```
-src/shared/   RarityConfig, FishConfig, RodConfig, ZoneConfig, shared types
+src/shared/   CatchOddsConfig, FishConfig, RodConfig, ZoneConfig, shared types
 src/server/   Main, PlayerData, FishingService, encounter/reeling services,
               EconomyService, WorldBuilder
 src/client/   FishingController, minigame UI, CatchPresentation,
@@ -274,7 +276,7 @@ Every implementation milestone should include relevant checks:
 - Playtests covering the complete affected player flow.
 - Regression checks for systems touched by both work packages.
 
-For fishing balance, simulate rarity rolls at a scale appropriate to the odds and verify the probability implementation mathematically. A 100,000-roll test cannot meaningfully validate a 1-in-1,500,000 event; use deterministic tests and much larger offline simulations where appropriate.
+For fishing balance, simulate rarity rolls at a scale appropriate to the odds and verify the probability implementation mathematically. A small test cannot meaningfully validate an extremely low-probability event; use deterministic tests and appropriately large offline simulations where appropriate.
 
 ## Current open decisions
 
