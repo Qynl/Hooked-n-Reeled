@@ -63,12 +63,14 @@ Fish include ordinary species, rare variants, fantastical creatures, and boss cr
 
 Fish can have:
 - Species identity.
-- Rarity tier and actual roll odds.
+- An exact catch probability expressed as odds (for example, 1/2, 1/200, or 1/5,000).
 - Weight and size.
 - Variants and mutations.
 - Distinctive visual traits or effects, especially for unusual catches.
 
-The existing rarity table is a starting proposal, not a final balance commitment. It currently has sixteen tiers, from Common (1 in 3) to Secret (1 in 1,500,000). Exact odds, luck interaction, tier availability by zone, and value multipliers need a dedicated balance pass.
+**Rarity is odds-based, not a named tier ladder.** Do not classify fish into labels such as Common, Uncommon, Rare, Epic, Legendary, Mythic, or Secret. The actual probability is the rarity definition: a fish with odds of 1/200 is rarer than one with odds of 1/2, and a fish with odds of 1/5,000 is rarer still. Show and communicate rarity through the probability itself (or a clearly equivalent “1 in X” display), not through conventional tier names.
+
+This establishes the system's format only. It does not decide the number of fish, assign odds to any species, or lock any balance values. Exact probabilities and the way luck or conditions affect them remain open design work.
 
 RNG should remain part of the excitement, but not the only factor. Specific fishing area, water depth, weather, time, and other discoverable conditions can influence eligible fish pools or odds. These conditions should be understandable enough that players can make informed choices without turning fishing into an overcomplicated simulation. Every normal fishing area must retain a worthwhile catch pool and a chance at exciting RNG catches; rare fish must not be locked exclusively behind roaming, clues, or events. Environmental clues can improve a player's choices, but players who prefer to camp at one spot must still have a complete and rewarding loop.
 
