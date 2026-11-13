@@ -32,7 +32,7 @@ See [the visual-reference README](visual-references/README.md) for the status wo
 
 Append this style phrase to environment and asset prompts:
 
-> polished stylized 3D tropical adventure game art, deliberate low-poly geometry with rich sculpted forms, vibrant fresh colours, turquoise and deep-blue ocean, lush layered vegetation, chunky natural rock formations, warm sunlight, soft readable shadows, atmospheric depth, high-quality game environment concept art, cohesive art direction, no text, no UI, no watermark
+> polished stylized 3D tropical adventure game art, deliberate low-poly geometry with rich sculpted forms, vibrant fresh colours, luminous reflective ocean with layered moving waves, broken sun glints and visible shallow depth, lush layered vegetation, chunky natural rock formations, warm sunlight, soft readable shadows, atmospheric depth, high-quality game environment concept art, cohesive art direction, no text, no UI, no watermark
 
 ---
 
@@ -214,7 +214,7 @@ Append this style phrase to environment and asset prompts:
 
 **Prompt:**
 
-> Create five equal panels showing the exact same stylized tropical island coastline under different conditions: clear bright midday, warm sunset, overcast calm weather, dramatic distant storm, and peaceful moonlit night. Keep geometry, camera angle, and composition identical so only lighting, sky, atmosphere, and water mood change. Preserve readability and the same polished stylized 3D art direction. No text or labels.
+> Create five equal panels showing the exact same stylized tropical island coastline under different conditions: clear bright midday, warm sunset, overcast calm weather, dramatic distant storm, and peaceful moonlit night. Keep geometry, camera angle, and composition identical so only lighting, sky, atmosphere, and water mood change. The water must visibly respond to each condition through wave roughness, reflection strength, highlight shape, and depth visibility, not merely by changing hue. Preserve readability and the same polished stylized 3D art direction. No text or labels.
 
 ## 19 — Water and shoreline close-up
 
