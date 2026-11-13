@@ -3,6 +3,23 @@
 This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives
 in [DESIGN.md](DESIGN.md).
 
+## Visual reference images are inspiration, not finished designs
+
+**Read [docs/visual-references/README.md](docs/visual-references/README.md) and [docs/VISUAL_REFERENCE_PLAN.md](docs/VISUAL_REFERENCE_PLAN.md) before using any image in `docs/visual-references/`. This rule applies to every image in that directory, including `Fish_IDeas.png`, boat sheets, environment asset sheets, maps, biome concepts, and future additions.**
+
+These images are visual idea boards and art-direction references only. They are **not** final fish designs, a confirmed fish/species roster, final boat models or prices, final world geography, approved level layouts, production-ready asset specifications, or assets to copy one-to-one. In particular, `Fish_IDeas.png` communicates the intended range of fish-art direction and rarity presentation; it does not define the actual fish that must appear in the game.
+
+When implementing:
+- Treat reference images as inspiration for style, shape language, colour, mood, variety, and possible directions.
+- Create original, game-appropriate designs that fit the confirmed game design, gameplay needs, performance budget, and world layout.
+- Do not assume every pictured object/species/boat/landmark must exist in the game.
+- Do not infer exact names, stats, rarity odds, prices, progression order, dimensions, or mechanics from a concept image.
+- A concept becomes an approved design only when the user explicitly approves that specific design or the relevant written specification confirms it.
+- Even an approved concept image is still not a production Roblox model. Build and optimise the actual asset separately.
+- If an image conflicts with a confirmed written design decision, follow the written decision and flag the conflict rather than silently changing the game.
+
+Use the status meanings defined in the visual-reference README: **Inspiration → Direction approved → Design approved → Implemented**. Do not advance an image's status without evidence or user approval.
+
 ## Roblox skills — always use these
 
 Two full skills are bundled in `skills/`. **Read the relevant `SKILL.md` before doing Roblox
@@ -17,7 +34,7 @@ Reusable material that ships with them:
 
 - `skills/roblox-build/assets/build-utils.luau` — tagged part/model helpers, grid snapping,
   provenance tagging, `Build.clearAll()`. Use before any build pass.
-- `skills/roblox-build/assets/lighting-presets.luau` — five complete lighting presets.
+- `skills/roblox-build/assets/lighting-presets.luau` — five complete Lighting presets.
 - `skills/roblox-build/assets/style-bible.md` — fill-in template for palette/materials/scale.
 - `skills/roblox-game-dev/assets/project/` — Rojo-ready vertical slice (typed remotes,
   session-locked DataService, round service, client HUD).
