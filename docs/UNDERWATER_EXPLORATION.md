@@ -43,6 +43,19 @@ Possible discoveries include:
 
 Not every find needs to be a currency item. Some should exist for collection, discovery records, display, secrets, or simply the satisfaction of finding something unusual.
 
+## Signature moments to prototype
+
+The first underwater slice should contain a few memorable moments rather than a huge number of collectable nodes:
+
+- **A crystal seam in a sunbeam:** a natural crystal formation catches the light from above and becomes visible as the player changes position. No scanner or interaction gadget is needed to reveal it.
+- **A living reef passage:** a school of fish moves through a coral arch, briefly revealing a tucked-away opening or small discovery pocket.
+- **A wreck with a story:** broken hull sections, tangled nets, scattered cargo, and a readable route into one interior space make the wreck feel like a place rather than a loot pile.
+- **A current through a ravine:** water movement gently guides or pushes swimmers through a dramatic passage and hints at a hidden chamber. It should remain controllable, not become an unavoidable hazard.
+- **A hidden pearl pocket:** an unusual clam or shell formation gives players a small, satisfying discovery moment without requiring repetitive mining.
+- **A deep-water sighting:** a large creature silhouette or unusual school passes through the distant blue. Players can observe it, follow if they want, or simply continue exploring.
+
+These are prototype candidates, not a required launch checklist. Choose a small number that can be made beautiful, readable, and fun.
+
 ## A simple diving session
 
 A possible loop to prototype:
