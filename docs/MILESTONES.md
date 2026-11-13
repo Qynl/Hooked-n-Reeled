@@ -538,7 +538,7 @@ M0 is complete only when all of these are true:
 
 **Status:** planned full-game feature. It is optional for each player, but it is part of the intended Hooked-n-Reeled experience. Start only after M16 confirms that surface fishing, boats, and the connected world are stable.
 
-**Goal:** deliver a small, memorable underwater exploration loop that feels connected to the same ocean and adds a new reason to explore.
+**Goal:** deliver a small, memorable underwater exploration loop that feels connected to the same ocean and adds a new reason to explore. Follow the [Underwater Exploration design](UNDERWATER_EXPLORATION.md) and treat its open questions as prototype decisions, not pre-approved systems.
 
 ### Package A — Underwater locations and environment
 - Build a small, polished first set of dive locations connected to the surface map: for example a reef garden, a rocky shelf/cave, and a sunken wreck.
