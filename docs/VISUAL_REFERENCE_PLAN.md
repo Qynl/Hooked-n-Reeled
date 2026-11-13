@@ -6,6 +6,16 @@ Build a coherent visual library before detailed world construction. The supplied
 
 This is a **reference-generation plan**, not a claim that any images or game assets have already been created.
 
+## Agent interpretation rule — applies to every image
+
+All images in `docs/visual-references/` are **conceptual inspiration only by default**. They are not final game assets, final designs, confirmed content lists, or instructions to reproduce pictured objects exactly. This applies to every current and future image, not only the fish sheet.
+
+In particular, `Fish_IDeas.png` (also informally called `fishideas.png`) is a fish-art-direction moodboard: it suggests possible visual variety and rarity presentation only. It does not define the actual species roster, exact fish designs, names, rarity values, stats, or models. Boat, equipment, nature, biome, map, location, and atmosphere references follow the same rule.
+
+Agents must use the images to understand style, shape language, palette, mood, and possible directions, then create original designs that fit confirmed written specifications and practical Roblox constraints. Never infer mechanics, stats, prices, progression, species, geography, or required asset lists from a concept image. Written confirmed decisions take precedence over images. An image only becomes an approved design when the user explicitly approves that specific design or a written specification confirms it. Even then, the production Roblox asset must be built separately and optimised.
+
+See [the visual-reference README](visual-references/README.md) for the status workflow and detailed rules.
+
 ## Image-generation rules
 
 - Generate one image per numbered reference unless a row explicitly requests a single asset sheet.
