@@ -27,6 +27,8 @@ Confirmed design constraints:
 
 ## 2. How to use this roadmap
 
+**Before starting any milestone, both agents must use the [GitHub Agent Coordination Hub](agent-coordination/README.md).** Read its [current dashboard](agent-coordination/CURRENT.md), both message logs, and accepted [shared decisions](agent-coordination/DECISIONS.md). Claim packages and agree on file ownership there before implementation. Post progress and questions in your own message log. GitHub is the asynchronous shared workspace, not live chat.
+
 Every milestone has **exactly two packages**. Package A and Package B are parallel workstreams, not fixed agent identities. The agents may swap packages between milestones.
 
 For every milestone:
@@ -37,7 +39,7 @@ For every milestone:
 4. Each package has one clear owner. Never let both agents edit the same file concurrently.
 5. Build the smallest working version first. Keep the place opening and playable throughout the milestone.
 6. Integrate both packages before adding polish. Test the integrated result in Roblox Studio.
-7. Record changed files, test evidence, known issues, and decisions requiring user approval.
+7. Record changed files, test evidence, known issues, and decisions requiring user approval in the coordination hub. Submit the [package handoff](agent-coordination/handoffs/TEMPLATE.md) when your workstream is ready.
 
 ### Package rules
 
