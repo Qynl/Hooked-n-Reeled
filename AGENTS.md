@@ -34,6 +34,10 @@ Use the status meanings defined in the visual-reference README: **Inspiration â†
 
 The full game includes both surface and underwater ocean exploration. The current M0 priority is still the master surface-ocean map; account for future seabed depth changes and reserve possible dive-site anchors, but do not build the full diving feature until M17. Underwater exploration must not require sonar, scanners, tracking devices, or research gadgets.
 
+## Hero water rendering rules
+
+Before building or approving any ocean surface, read `docs/WATER_RENDERING.md` and the water section in `skills/roblox-build/assets/style-bible.md`. The ocean is a hero material: it must use layered movement, moving light response, environment reflections, depth/transparency cues, and irregular shoreline foam. A flat Terrain water plane, one-colour mesh, or colour-only tweak is not an acceptable final result. Roblox does not provide arbitrary custom real-time shaders through ordinary Luau, so do not promise unsupported refraction or screen-space effects. Prototype the supported approach in Studio and capture boat-height, shallows, horizon, underwater, and alternate-lighting views. Do not claim visual success without screenshot verification and a mobile performance check.
+
 ## Fish rarity and mutation rules
 
 Before changing fish catalogues, catch selection, fish instances, mutation visuals, sale values, or Fishbook records, read `docs/FISH_RARITY_AND_MUTATIONS.md`. Every species has exactly one numerical rarity/odds value. Mutations such as Golden are individual fish attributes: they do not create new species entries and do not change the species odds. Keep species odds, mutation roll configuration, and mutation value modifiers in separate data fields. Do not implement example odds or multipliers as final balance values.
