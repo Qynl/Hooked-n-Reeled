@@ -1,6 +1,6 @@
 # Hooked-n-Reeled — Game Design
 
-An open-world Roblox fishing adventure built around exploration, skill-based fishing, collection, progression, rare discoveries, and shared multiplayer expeditions.
+An open-world Roblox fishing adventure built around skill-based fishing, collection, progression, rare discoveries, optional ocean exploration, and shared multiplayer expeditions. Its signature identity is a living ocean that rewards both relaxed stationary fishing and curious exploration.
 
 Status: design phase. No gameplay code has been written yet.
 
@@ -18,15 +18,17 @@ The long-term appeal combines:
 
 The game should welcome players back after time away through discoveries and ongoing world activity, not punish them with aggressive daily chores or fear-of-missing-out systems.
 
+**Two equally valid playstyles:** players can settle into a favourite fishing spot and enjoy a complete, rewarding fishing experience without travelling around. Players who prefer movement can explore, notice natural ocean clues, follow moving schools, and join special encounters. Exploration adds opportunities; it must never become a requirement for ordinary progression, rare catches, or a satisfying session.
+
 ## Core loop
 
-1. **Explore** — travel through a large, connected world with distinct fishing environments, hidden locations, and changing conditions.
-2. **Choose a fishing spot** — water type, depth, weather, time, and location can influence which fish may appear.
+1. **Choose how to play** — stay at a favourite spot for relaxed fishing, or travel through the connected ocean to explore. Neither choice is mandatory.
+2. **Choose a fishing spot** — water type, depth, weather, time, and location can influence which fish may appear. Valid fish pools and natural RNG must make stationary fishing worthwhile.
 3. **Cast and hook** — cast within the equipped rod's range, wait for a bite, then react to hook the fish.
 4. **Reel** — play a skill-based minigame. Different fish species can use different minigame mechanics; rare and boss encounters can introduce special phases and mechanics.
 5. **Catch presentation** — show the fish, size/weight, rarity, and relevant variants. Presentation can use dynamic camera work, sound, effects, animations, and special cutscenes for meaningful catches.
 6. **Use the catch** — sell it, add it to the collection, display it, or use it for special activities, unlocks, and other systems.
-7. **Improve and discover** — upgrade or change rods and bait, reach new fishing grounds, uncover secrets, and repeat with new possibilities.
+7. **Improve and discover** — upgrade or change rods and bait, reach new fishing grounds if desired, notice natural clues, uncover secrets, and repeat with new possibilities.
 
 Normal catches should stay responsive. Special catches deserve more elaborate presentation, but cinematic sequences should remain meaningful rather than interrupting every cast.
 
@@ -68,7 +70,7 @@ Fish can have:
 
 The existing rarity table is a starting proposal, not a final balance commitment. It currently has sixteen tiers, from Common (1 in 3) to Secret (1 in 1,500,000). Exact odds, luck interaction, tier availability by zone, and value multipliers need a dedicated balance pass.
 
-RNG should remain part of the excitement, but not the only factor. Specific fishing area, water depth, weather, time, and other discoverable conditions can influence eligible fish pools or odds. These conditions should be understandable enough that players can make informed choices without turning fishing into an overcomplicated simulation.
+RNG should remain part of the excitement, but not the only factor. Specific fishing area, water depth, weather, time, and other discoverable conditions can influence eligible fish pools or odds. These conditions should be understandable enough that players can make informed choices without turning fishing into an overcomplicated simulation. Every normal fishing area must retain a worthwhile catch pool and a chance at exciting RNG catches; rare fish must not be locked exclusively behind roaming, clues, or events. Environmental clues can improve a player's choices, but players who prefer to camp at one spot must still have a complete and rewarding loop.
 
 ## Fish use and collection
 
@@ -82,9 +84,9 @@ These roles should complement one another:
 
 The detailed economy, display spaces, collection UI, and special-use systems remain open design work. Avoid making every fish valuable only as a coin amount.
 
-## Rods, bait, and equipment
+## Rods, bait, and fishing equipment
 
-**Confirmed direction:** a combination of multiple rods, upgrades, specializations, and unique abilities/effects.
+**Confirmed direction:** a combination of multiple rods, upgrades, specializations, and unique abilities/effects. Fishing equipment should support fishing itself and boat customization. Do not add sonar, tracking devices, scanning gadgets, or research equipment as a required or defining part of ocean discovery.
 
 Possible dimensions:
 - Different rods with distinct identities and designs.
@@ -95,26 +97,54 @@ Possible dimensions:
 
 Balance principle: equipment should create meaningful choices rather than making every older rod obsolete. Luck is only one possible stat and should not be the entire progression system.
 
-## Open world and exploration
+## Open world and the Living Ocean
 
-The world should be large, connected, and rewarding to explore. It should contain varied environments such as rainforests with rivers, waterfalls, lakes, caves, coastlines, deep ocean areas, and hidden locations.
+The world should be large, connected, and ocean-centric. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is not a core pillar for the initial design.
 
-**Confirmed direction:** aim for a seamless, ocean-centric open world with varied fishing areas, secrets, and dynamic conditions. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is not a core pillar for the initial design; surface exploration and fishing take priority.
+### Two equally supported playstyles
 
-Open-world activity ideas to explore and prototype (not all are locked launch requirements):
-- Sailing between distant regions and discovering new routes.
+**Relaxed stationary fishing**
+- Players can choose a favourite spot, stay there, and fish for as long as they like.
+- Stationary fishing has a complete loop: ordinary catches, rare RNG opportunities, variants, mutations, records, collection progress, and useful progression rewards.
+- Fishing-area conditions, weather, time, depth, and bait can influence catches without requiring players to move.
+- No essential fish, progression gate, or core reward should require constant travel or participation in a temporary event.
+
+**Exploration and expeditions**
+- Players can travel between fishing areas, discover landmarks, notice unusual natural activity, follow moving schools, and encounter temporary opportunities.
+- Exploration can reveal additional fish pools, clues, secret locations, unusual encounters, and optional rewards.
+- These opportunities add variety and excitement without making stationary fishing inferior or incomplete.
+
+### The Living Ocean
+
+The ocean should feel alive through its environment and creature behaviour, not through a layer of scanning gadgets. Players discover things by looking, listening, fishing, experimenting, remembering, and exploring.
+
+Natural signals can include:
+- Birds gathering or circling above a patch of water.
+- Distant splashes, jumping fish, unusual wave patterns, bubbles, or ripples.
+- Large shadows or brief silhouettes beneath the surface.
+- Schools moving through an area, scattering, gathering, or changing direction.
+- Changes in weather, currents, visibility, and the general behaviour of the water.
+- Rare creatures appearing briefly or leaving visible signs of their presence.
+
+These clues should be readable and interesting, but not always give away an exact answer. Some can be noticed by a player who is already fishing nearby; others may reward travelling to investigate. Do not require a gadget to see, interpret, or follow a clue.
+
+### Open-world activities
+
+Candidate activities to explore and prototype (not all are locked launch requirements):
+- Sailing between distant fishing areas and discovering new routes.
 - Visiting islands, ports, beaches, lighthouses, ruins, and unusual landmarks.
 - Finding wrecks, drifting cargo, hidden coves, secret fishing spots, and environmental clues.
-- Taking on delivery, recovery, research, or expedition objectives that naturally use the boat.
-- Responding to temporary fish migrations, weather windows, distress signals, and unusual ocean phenomena.
-- Meeting travelling characters, merchants, researchers, and other players at world locations.
+- Responding to fish migrations, unusual schools, rare sightings, changing weather, and ocean phenomena.
+- Joining group expeditions and shared boss encounters.
+- Meeting travelling characters, merchants, and other players at world locations.
 
-Exploration can reward players through:
-- New fish pools and fishing conditions.
-- Hidden fishing spots and secret areas.
-- Environmental discoveries and mysteries.
-- Special encounters that lead to unexpected places.
-- Rare resources, records, or unlock opportunities.
+Avoid turning the ocean into a checklist of repetitive icons or a sequence of mandatory errands. Activities should emerge naturally from the world and remain optional alongside ordinary fishing.
+
+### Moving creatures and discoveries
+
+Some fish schools and rare creatures can move through the world rather than remain at one fixed point. Their movement and behaviour can create memorable sightings and optional pursuits. A player may notice them from a nearby fishing spot, choose to follow them, or simply continue fishing.
+
+A discovery can lead to another discovery: an unusual sighting may reveal a location, a location may reveal a special fishing opportunity, and that opportunity may lead to a rare creature or boss encounter. These chains should be exciting bonuses, not mandatory progression funnels.
 
 A possible signature encounter discussed: a boss fish could pull the player into a hidden cave area during the fight. Treat this as a concept to prototype, not a locked implementation requirement.
 
@@ -248,7 +278,7 @@ For fishing balance, simulate rarity rolls at a scale appropriate to the odds an
 
 - Final map layout and fishing-area layout, boat handling, boat progression, and placement rules.
 - Cooler tiers, storage limits, guest permissions, and fish overflow behaviour.
-- Open-world activity catalogue and the balance between surface exploration and land points of interest.
+- Open-world activity catalogue and the balance between surface exploration and land points of interest; preserve the equal viability of stationary fishing and optional exploration.
 - Fishbook page structure, record scopes, and collection milestone rewards.
 - World-event cadence, boss eligibility/reward rules, and later admin-event permission model.
 - Zone access and progression gates.
