@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Build a coherent visual library before detailed world construction. The supplied reference image is the primary style anchor: a polished stylized 3D tropical ocean environment with vivid turquoise water, chunky rock formations, lush palms, layered islands, atmospheric distance, and bright cinematic daylight.
+Build a coherent visual library before detailed world construction. The supplied reference image is the primary style anchor: a polished stylized 3D tropical ocean environment with luminous, layered, reflective moving water, chunky rock formations, lush palms, layered islands, atmospheric distance, and bright cinematic daylight.
 
 This is a **reference-generation plan**, not a claim that any images or game assets have already been created.
 
@@ -19,7 +19,7 @@ See [the visual-reference README](visual-references/README.md) for the status wo
 ## Image-generation rules
 
 - Generate one image per numbered reference unless a row explicitly requests a single asset sheet.
-- Keep all images in the same visual style: polished stylized 3D, deliberate low-poly geometry, rich but controlled colours, bright natural lighting, atmospheric depth.
+- Keep all images in the same visual style: polished stylized 3D, deliberate low-poly geometry, rich but controlled colours, bright natural lighting, atmospheric depth, and water rendered through moving surface detail, light response, reflections, visible shallow depth, and foam rather than a flat colour.
 - No text, labels, UI, watermarks, logos, borders, or typography unless a later UI reference explicitly requests them.
 - Asset sheets: one image containing many **separate, fully visible, non-overlapping** objects, evenly spaced on a plain neutral background. Use a consistent three-quarter view and consistent scale within each category.
 - World images: environment concept art, wide 16:9 landscape framing unless otherwise stated.
@@ -45,7 +45,7 @@ Append this style phrase to environment and asset prompts:
 
 **Prompt:**
 
-> Create a breathtaking wide establishing view of the entire Hooked-n-Reeled game world, a large connected tropical ocean archipelago. Show a broad turquoise-to-deep-blue ocean with multiple distinct island groups, small sandy coves, rocky coastlines, palm-covered islands, distant cliffs, a few unusual floating rock formations and memorable far-horizon landmarks. Compose the scene in clear foreground, midground, and background layers so the world feels huge and explorable. Make the ocean the dominant visual element and leave believable navigable channels between island groups. The image should feel like a real playable open-world game environment, not a map or collage. [MASTER STYLE PHRASE]
+> Create a breathtaking wide establishing view of the entire Hooked-n-Reeled game world, a large connected tropical ocean archipelago. Show a broad ocean with complex luminous surface response, visible moving swell and broken sun glints, shallow transparent-looking water over sand, darker deep-water falloff, and multiple distinct island groups, small sandy coves, rocky coastlines, palm-covered islands, distant cliffs, a few unusual floating rock formations and memorable far-horizon landmarks. Compose the scene in clear foreground, midground, and background layers so the world feels huge and explorable. Make the ocean the dominant visual element and leave believable navigable channels between island groups. The image should feel like a real playable open-world game environment, not a map or collage. [MASTER STYLE PHRASE]
 
 ## 02 — World map layout
 
@@ -72,7 +72,7 @@ Append this style phrase to environment and asset prompts:
 
 **Prompt:**
 
-> Show a wide stylized ocean environment study with clearly visible water zones transitioning from pale transparent aqua over white sand, to bright turquoise lagoon, to rich teal reef water, to deep tropical blue offshore. Include subtle underwater silhouettes, reef patches, wave patterns, shoreline foam, and several small rock outcrops. The water should be beautiful and readable, with controlled reflections rather than photorealistic mirror gloss. [MASTER STYLE PHRASE]
+> Show a wide stylized ocean environment study with clearly visible water zones transitioning from pale transparent aqua over white sand, to bright turquoise lagoon, to rich teal reef water, to deep tropical blue offshore. Include subtle underwater silhouettes, reef patches, wave patterns, shoreline foam, and several small rock outcrops. The water must be the hero: layered broad swells and fine ripples, broken moving sun glints, rich environment reflections, transparent-looking shallows with the seabed visible, natural depth falloff, and irregular shoreline foam. It must not read as a flat colour plane. Avoid mirror gloss and obvious repeating texture. [MASTER STYLE PHRASE]
 
 ---
 
@@ -223,7 +223,7 @@ Append this style phrase to environment and asset prompts:
 
 **Prompt:**
 
-> Create a close, beautiful stylized 3D study of a tropical shoreline showing transparent pale-aqua shallows over sand, turquoise water around rocks, gentle layered waves, soft white foam at the beach, underwater stones visible through clear water, and a transition into deeper blue. Focus on how water meets sand and rock. Bright natural sunlight, controlled reflections, no people, no text. [MASTER STYLE PHRASE]
+> Create a close, beautiful stylized 3D study of a tropical shoreline showing transparent pale-aqua shallows over sand, turquoise water around rocks, gentle layered waves, soft white foam at the beach, underwater stones visible through clear water, and a transition into deeper blue. Focus on water's material response, not simply its hue: layered wave geometry, fine ripples, moving broken highlights, soft environment reflections, transparent-looking shallows with sand and submerged rocks clearly visible, gradual depth falloff, and irregular foam where waves meet sand and rock. Bright natural sunlight, no people, no text. [MASTER STYLE PHRASE]
 
 ---
 
