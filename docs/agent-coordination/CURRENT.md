@@ -39,6 +39,7 @@ Agents should claim a package by posting a check-in in their own message log. Th
 
 | Item | Status | Evidence / note |
 |---|---|---|
+| Design alignment: surface + underwater | Complete | See DESIGN.md and UNDERWATER_EXPLORATION.md; M0 reserves future dive-site anchors only |
 | WorldOverview.png reviewed by both agents | Pending | Each agent confirms in its own log |
 | Package A scope/ownership agreed | Pending | Record exact files in this dashboard |
 | Package B scope/ownership agreed | Pending | Record exact files in this dashboard |
@@ -52,7 +53,7 @@ None reported.
 
 ## Latest next action
 
-Each agent should read the M0 milestone and WorldOverview.png, then post a short check-in in its own message log containing:
+Each agent should read the M0 milestone, WorldOverview.png, and the underwater design boundaries in `docs/UNDERWATER_EXPLORATION.md`, then post a short check-in in its own message log containing:
 1. Which package it proposes to own.
 2. What it understands the deliverables to be.
 3. Any questions or risks.
