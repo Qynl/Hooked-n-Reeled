@@ -4,7 +4,7 @@
 
 **Style:** polished stylized 3D tropical ocean adventure.
 
-The visual target is the supplied tropical-island reference: rich turquoise water, chunky natural rock formations, lush palms and foliage, layered distant islands, occasional fantastical landmarks, bright open skies, and atmospheric sunlight.
+The visual target is the supplied tropical-island reference: extraordinary layered ocean water, chunky natural rock formations, lush palms and foliage, layered distant islands, occasional fantastical landmarks, bright open skies, and atmospheric sunlight. Water must feel like a complex moving material shaped by light and depth, not a painted colour.
 
 This is **not** flat low-poly art, primitive block builds, or realistic PBR. Use simplified, deliberate geometry with rich composition, appealing colour, readable silhouettes, and controlled material detail.
 
