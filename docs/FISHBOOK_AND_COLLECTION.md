@@ -20,11 +20,21 @@ The intended direction combines:
 
 A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known variants. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment. Keep fish species records distinct from non-fish underwater collectibles: a crystal or pearl discovery can be recorded in a separate discovery collection without pretending it is a fish or an individual fish inventory item.
 
-## Fish rarity display
+## Fish rarity and mutation display
 
-Fish rarity is represented by its actual catch odds, not by named rarity tiers. Display probabilities in a readable form such as `1/200` or `1 in 200`. Do not introduce labels such as Common, Rare, Epic, Legendary, or Secret as rarity categories. The probability itself communicates how uncommon the fish is.
+The source of truth is [Fish Rarity, Mutations, and Catch Outcomes](FISH_RARITY_AND_MUTATIONS.md).
 
-This is a display/system rule only. This document does not define the number of species or assign odds to any fish.
+Every species has exactly one numerical rarity value, displayed as its catch odds (for example, `1/200` or `1 in 200`). Never add named rarity tiers or assign a second rarity to a mutation.
+
+A mutation belongs to an individual fish, not to a new species entry. For example, a Golden Crystalfin is recorded under Crystalfin, displays the same Crystalfin species odds as a normal Crystalfin, and carries a Golden mutation marker. Golden can have its own discovery record and can affect appearance and sale value through a server-configured modifier, but it does not alter the species odds.
+
+The species page should separate:
+- The species' single canonical odds value.
+- Mutations supported by that species.
+- Mutations the player has discovered for that species.
+- Individual fish instances and their size/weight records.
+
+Mutation chance is not the species rarity. Selling an individual Golden fish does not erase the player's Golden mutation discovery or the species discovery. Do not create separate species pages for mutation forms.
 
 ## Records
 
