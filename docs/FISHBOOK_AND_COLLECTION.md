@@ -14,10 +14,10 @@ The intended direction combines:
 - Variant and mutation records.
 - Size and weight records.
 - First-catch and notable-catch history.
-- Clues and habitat knowledge.
+- Clues and habitat knowledge, including observations that can be made while fishing from a stationary spot.
 - Collection milestones and rewards.
 
-A species page may include its known habitat, eligible water regions, time/weather clues, observed behaviour, and known variants. Unknown information can remain obscured until discovered.
+A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known variants. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment.
 
 ## Records
 
