@@ -1,207 +1,497 @@
-# Hooked-n-Reeled Development Milestones
+# Hooked-n-Reeled — Development Milestones
 
-## How to assign the two agents
+## Development philosophy
 
-Every milestone below contains exactly two packages. At the start of each milestone, freely choose which Freebuff handles Package A and which handles Package B. You can swap roles every milestone.
+**Build the world first.** Hooked-n-Reeled should make players want to sail out and discover what is beyond the horizon. The first production work is therefore the ocean map and its visual identity, not fishing menus or backend systems.
 
-Do not start both packages until file ownership and shared interfaces are agreed. Follow [TWO_AGENT_WORKFLOW.md](TWO_AGENT_WORKFLOW.md).
+Work in small, integrated slices. Each milestone has exactly two bounded packages. Package A and Package B are workstreams, **not permanent agent roles**: assign either agent to either package at the start of each milestone and feel free to swap assignments next time.
 
-## M0 — Design and technical contracts
+A milestone should normally produce one visible, testable improvement rather than attempting to finish an entire large system. Do not start the next milestone just because files were written; integrate both packages and verify the result in Roblox Studio first.
 
-**Goal:** turn the current concept into implementable, testable contracts.
+## How to run each milestone
 
-### Package A — Gameplay design contracts
-- Define the first playable fish roster and species data shape.
-- Propose the first set of distinct reeling minigame archetypes and map initial species to them.
-- Define catch presentation tiers: ordinary, notable, extremely rare, boss.
-- Document fish lifecycle: caught, inventory, collection, display, sale, special use.
+1. Read this file, [DESIGN.md](../DESIGN.md), the relevant system docs, and [TWO_AGENT_WORKFLOW.md](TWO_AGENT_WORKFLOW.md).
+2. Agree on the exact scope, file ownership, and any shared interfaces before either agent edits files.
+3. Assign one writer to each package. Never have both agents edit the same file at the same time.
+4. Build in small passes. Keep a working place after each pass.
+5. Integrate both packages, open the result in Studio, and test the acceptance checklist.
+6. Record what is complete, what is not, screenshots, changed files, and any decisions that need the user's approval.
 
-### Package B — World and progression contracts
-- Propose the first connected-world greybox layout and initial fishing-area layout.
-- Define fishing spot metadata: fishing area, water type, depth band, weather/time tags.
-- Specify a satisfying stationary-fishing baseline alongside optional exploration opportunities; neither playstyle may be a progression prerequisite for the other.
-- Propose rod/bait data shape and progression dimensions.
-- Define multiplayer expedition and shared-boat requirements at a design level.
-- Agree on boat customization, free-placement constraints, cooler storage, and permissions.
-- Define fishbook records, discovery clues, and boss reward eligibility.
+**Visual references:** Every image in `docs/visual-references/` is concept inspiration only by default. Do not copy images one-to-one or treat them as final designs, asset lists, fish rosters, boat specifications, prices, or map decisions. Follow [the visual-reference rules](visual-references/README.md). Written confirmed decisions take priority.
 
-**Shared contract before implementation:** fish IDs, rarity representation, fishing-spot identifiers, rod/bait identifiers, and the shape of a fishing encounter.
+---
 
-**Acceptance:** no unresolved naming or data-shape conflict between the two packages; design decisions are documented. Do not build production gameplay systems yet.
+# Phase 1 — Build an amazing world
 
-## M1 — Project foundation and playable greybox
+## M0 — The master ocean map
 
-**Goal:** a player can enter a simple world and move between at least two distinct fishing environments.
+**Goal:** Establish the exciting, recognisable world of Hooked-n-Reeled. This is the first production milestone. Prioritise a beautiful, memorable map composition with a strong sense of scale and discovery.
 
-### Package A — World foundation
-- Implement the initial greybox terrain/landmarks and water regions.
-- Create the reproducible world-building workflow.
-- Add clear location/zone identifiers and basic spawn placement.
+### Package A — World geography and large forms
+- Translate the world concept into a readable top-down layout.
+- Establish the central starting region, main harbour location, island groups, broad ocean channels, remote outer areas, and distant landmarks.
+- Create the first in-Studio world layout: ocean surface, island silhouettes, coastlines, major cliffs, beaches, reefs, and large rock formations.
+- Make navigation routes between important areas clear and leave room for future expansions.
+- Keep the world ocean-first: islands are destinations and landmarks, not disconnected level islands.
 
-### Package B — Shared gameplay foundation
-- Set up shared configuration/types and the server/client service skeleton.
-- Establish remote contracts and basic validation/rate limiting.
-- Add a minimal player-data wrapper with safe Studio fallback.
+**Deliverables:** approved world layout document/image placement, first navigable map layout in Studio, named region/landmark list.
 
-**File ownership:** A owns world-generation and world-layout files. B owns shared contracts, service bootstrap, remotes, and player-data foundation. Agree on any shared config file before coding; assign it to exactly one package.
+### Package B — Environment asset foundation
+- Create a small, cohesive first asset kit for the map: palm variations, tropical trees, bushes, grass, beach plants, rocks, boulders, cliff pieces, and a few signature formations.
+- Build reusable modular pieces rather than one-off models wherever practical.
+- Establish consistent scale, pivot/origin conventions, naming, collision approach, material palette, and asset organisation.
+- Use the visual references for style inspiration only; make original assets that suit the actual map.
+- Provide simple placeholder variants when a final asset would block Package A.
 
-**Acceptance:** a player can spawn, move between two fishing areas, and the server/client foundation starts without errors.
+**Deliverables:** reusable first environment kit in Studio/repository, asset naming and scale conventions, short usage notes.
 
-## M2 — First complete fishing loop
+**Shared agreement before work:** map scale and coordinate convention, region names/IDs, asset dimensions/pivots, terrain material palette, and which landmarks are required in the first map pass.
 
-**Goal:** complete cast → bite → hook → reel → catch → reward.
+**Acceptance:**
+- The world can be explored by moving through connected ocean routes.
+- The map has a clear visual identity and memorable large-scale silhouettes, not a flat greybox.
+- Island groups and major landmarks are recognisable from a distance.
+- The first environment assets fit together visually and can be reused.
+- No major route is accidentally blocked; performance is checked with a representative view.
+- A Studio screenshot/video of the integrated map is captured and reviewed.
 
-### Package A — Fishing encounter service
-- Implement server-owned cast validation, bite timing, hook window, encounter state, and catch resolution.
-- Validate player state, distance to water, equipped gear, and request timing.
-- Return a result from server-owned fish/rarity/weight data.
+## M1 — Make the first region beautiful and playable
 
-### Package B — Fishing client and first minigame
-- Implement cast input, bobber feedback, bite feedback, and the first reeling minigame UI.
-- Implement catch result presentation for ordinary catches.
-- Send input state only; never choose the fish or reward on the client.
+**Goal:** Turn the starting area into a polished first impression without trying to finish every island.
 
-**Shared contract:** encounter state machine, remote payloads, and result DTO must be agreed before work starts.
+### Package A — Starter region environment
+- Build the starter island and its immediate coastline using the M0 asset kit.
+- Add a small arrival dock, welcoming beach, first fishing location, clear paths, and a few memorable details.
+- Create the first visual pass of the main harbour area or a compact harbour slice.
+- Make the environment readable at player height as well as from an elevated overview.
 
-**Acceptance:** a full fishing cycle works in a server playtest; invalid client requests cannot award catches; normal catch feedback is clear on PC and mobile.
+**Deliverables:** one finished starter-area slice and one harbour slice, with screenshots from player and overview cameras.
 
-## M3 — Fish identity, collection, and economy
+### Package B — World navigation and region structure
+- Implement stable region/area identifiers and world bounds.
+- Set up player spawn and safe respawn locations.
+- Add basic navigation guidance through landmarks, coastline shapes, and routes; avoid cluttering the screen with permanent waypoint UI.
+- Establish a practical streaming/performance approach for the world size.
+- Add simple region entry/exit detection if needed, without implementing fishing rewards yet.
 
-**Goal:** catches have identity and meaningful destinations.
+**Deliverables:** region metadata, spawn setup, basic navigation/streaming configuration, test notes.
 
-### Package A — Fish catalogue and collection
-- Add initial species definitions, rarity metadata, weights, and discovery tracking.
-- Implement collection/encyclopedia progress and best-catch records.
-- Add variant/mutation fields in a data-driven way, even if only a small starter set is enabled.
+**Shared agreement:** region ID format, spawn ownership, map coordinate system, streaming boundaries, and how environment objects identify their region.
 
-### Package B — Inventory, sale, and display foundation
-- Implement fish inventory storage and safe item transfer.
-- Implement selling and server-authoritative currency rewards.
-- Build a basic display/exhibit interaction or a documented placeholder contract.
+**Acceptance:**
+- A new player spawns in the intended starting location.
+- The starter area is visually coherent and easy to understand.
+- Players can travel from the starter area to the first nearby fishing area.
+- Region detection and streaming do not break travel or hide nearby important geometry.
+- PC and mobile performance receive an initial check.
 
-**Shared contract:** fish instance schema, species ID rules, inventory persistence, and sale valuation.
+## M2 — Make the ocean feel alive
 
-**Acceptance:** caught fish persist, appear in the collection, can be sold exactly once, and can be displayed without duplicating or losing data.
+**Goal:** Give the map its colour, atmosphere, water identity, and environmental detail.
 
-## M4 — Rods, bait, and progression
+### Package A — Water, lighting, and atmosphere
+- Establish the core lighting setup and colour palette.
+- Create readable shallow-to-deep water transitions and coastline foam/wave treatment.
+- Add a restrained sunny-day atmosphere and one contrasting weather/time-of-day test.
+- Keep reflections, transparency, particles, and post effects performant.
 
-**Goal:** equipment choices change fishing opportunities and feel distinct.
+**Deliverables:** approved base lighting/water setup and one alternate atmosphere preset.
 
-### Package A — Rod system
-- Implement rod definitions, equipment slots, upgrade/specialization data, and server validation.
-- Add a small starter set of rods with genuinely different identities.
-- Add a basic upgrade path.
+### Package B — Environmental dressing and landmarks
+- Dress the first region with vegetation, rocks, beach details, dock props, and a few visual discoveries.
+- Add a small number of signature landmarks that help players orient themselves.
+- Establish density rules so important gameplay areas remain readable.
+- Check object collisions and avoid decorative clutter around paths, docks, and fishing locations.
 
-### Package B — Bait, shop, and progression UI
-- Implement bait definitions and their interaction with eligible fish pools or conditions.
-- Build the first shop and equipment UI.
-- Connect purchases and unlocks to server-owned currency and progression.
+**Deliverables:** dressed starter region, landmark pass, simple set-dressing rules.
 
-**Shared contract:** equipment data schema, stat/effect vocabulary, purchase payloads, and balance rules.
+**Shared agreement:** material palette, lighting ownership, water colour/depth language, environment density, and performance budget.
 
-**Acceptance:** players can acquire, equip, and switch rods/bait; server validates purchases and effects; no single stat dominates all choices.
+**Acceptance:**
+- The starter region looks like a deliberate, polished game environment.
+- Shallow and deep water are visually distinguishable.
+- Landmarks are readable at useful distances.
+- Decoration does not obstruct player movement or interactions.
+- The scene is checked in Studio under the agreed performance budget.
 
-## M5 — Distinct reeling mechanics and special catch presentation
+## M3 — First fishing locations
 
-**Goal:** species and important catches feel different moment to moment.
+**Goal:** Create a small set of genuinely different fishing places before implementing the full fishing system.
 
-### Package A — Reeling archetypes
-- Implement additional minigame mechanics as separate, reusable modules.
-- Assign mechanics to selected species through data/configuration.
-- Add boss encounter phases as a bounded prototype.
+### Package A — Fishing spot environments
+- Build and dress three initial fishing spots, for example a calm lagoon, rocky coast, and reef edge.
+- Give each spot a distinct silhouette, water appearance, and environmental identity.
+- Include at least one satisfying stationary fishing location.
+- Keep the spots accessible from the ocean routes.
+
+**Deliverables:** three in-world fishing spot environments.
+
+### Package B — Fishing area data and validation foundation
+- Define stable fishing spot IDs and metadata such as region, water type, depth band, and relevant condition tags.
+- Add server-side validation helpers for checking whether a player is in a valid fishing area.
+- Establish a small shared configuration contract for fishing areas.
+- Do not implement fish selection, rarity rolls, or rewards yet.
+
+**Deliverables:** fishing spot data definitions and server validation contract.
+
+**Shared agreement:** spot IDs, water/depth vocabulary, player-to-spot detection, and region metadata.
+
+**Acceptance:**
+- The three spots are visually distinct and reachable.
+- The server can identify a valid spot for a player without trusting client claims.
+- A player can remain at a valid stationary spot without being forced to explore.
+- Spot metadata can be extended without rewriting the world layout.
+
+---
+
+# Phase 2 — Make fishing fun
+
+## M4 — Project and gameplay foundation
+
+**Goal:** Add only the technical foundation needed for the first fishing slice.
+
+### Package A — Server foundation
+- Establish the server service/bootstrap structure.
+- Add shared types/configuration and a clean service lifecycle.
+- Create safe player join/leave handling and a minimal player data wrapper.
+- Keep persistence minimal until the data model is known.
+
+### Package B — Client and communication foundation
+- Establish client bootstrap and UI mounting structure.
+- Define remote-event/function conventions and typed payloads.
+- Add server validation, rate limiting, and clear error handling for the first fishing interactions.
+- Add a small debug/test interface for development, not a player-facing feature.
+
+**Shared agreement:** module ownership, service names, remote names/payloads, data ownership, and error conventions.
+
+**Acceptance:**
+- Client and server start without errors.
+- A test interaction can travel client → server → client.
+- Invalid payloads are rejected and rate-limited.
+- No client can authoritatively set currency, inventory, fish, or rewards.
+
+## M5 — First complete fishing cycle
+
+**Goal:** One rod, one spot, a small starter fish pool, and a complete cast-to-catch experience.
+
+### Package A — Server fishing encounter
+- Implement cast validation, bite timing, hook window, encounter state, and server-side catch resolution.
+- Validate player state, position, valid fishing spot, equipped rod, and request timing.
+- Use a tiny temporary fish pool for this first playable test.
+- Ensure cancellation, timeout, disconnect, and duplicate-request handling are safe.
+
+### Package B — Fishing controls and first minigame
+- Implement cast input and clear bobber/bite feedback.
+- Build one simple but satisfying reeling minigame.
+- Support keyboard/mouse and touch controls.
+- Show a compact catch result panel.
+
+**Shared agreement:** encounter state machine, remote payloads, minigame input contract, cancellation rules, and catch-result shape.
+
+**Acceptance:**
+- A player can cast, receive a bite, hook, reel, and receive a catch.
+- The server decides the catch and reward; the client only sends input.
+- Invalid or repeated requests cannot create extra catches.
+- The interaction works on PC and mobile.
+- The first fishing spot remains enjoyable for repeated stationary fishing.
+
+## M6 — Real fish identities and fishbook
+
+**Goal:** Replace temporary fish with a small set of distinct species and make discoveries meaningful.
+
+### Package A — Starter fish catalogue
+- Define a deliberately small first roster of original fish species.
+- Give each species a stable ID, habitat eligibility, size/weight range, visual description, and initial rarity configuration.
+- Ensure fish have distinct silhouettes and identities; do not derive the roster by copying `Fish_IDeas.png`.
+- Add data validation for missing or duplicate species IDs.
+
+### Package B — Fishbook discovery
+- Implement species discovery tracking and basic fishbook pages.
+- Record first catch and personal size/weight records.
+- Show unknown/known information clearly.
+- Keep species discovery separate from ownership of an individual fish.
+
+**Shared agreement:** species schema, fish IDs, rarity representation, weight units, discovery record format.
+
+**Acceptance:**
+- The starter fish pool contains a small, reviewed set of distinct species.
+- Catching a species registers it once in the fishbook.
+- Selling or losing an individual fish does not erase species discovery.
+- Fishbook records cannot be duplicated by repeated client requests.
+
+## M7 — Fish inventory and selling
+
+**Goal:** Give each catch a reliable identity and a meaningful destination.
+
+### Package A — Fish instance inventory
+- Create unique server-generated IDs for individual caught fish.
+- Store catches in player inventory with clear capacity/overflow behaviour.
+- Implement safe transfers between inventory and a designated storage location.
+- Prevent duplicate instances and invalid ownership transfers.
+
+### Package B — Selling and first economy UI
+- Implement a simple sell interaction and readable fish value display.
+- Calculate sale value on the server from approved species/size/rarity data.
+- Add a basic currency display and sale confirmation.
+- Protect notable catches from accidental irreversible sale with clear feedback.
+
+**Shared agreement:** fish instance schema, ownership/transfer states, sale valuation, currency update contract.
+
+**Acceptance:**
+- Each catch exists in exactly one location/state.
+- Selling grants currency exactly once.
+- Selling an individual fish does not erase fishbook discovery.
+- Client payloads cannot choose sale prices or grant currency.
+
+## M8 — Rods, bait, and first progression
+
+**Goal:** Give players a few meaningful fishing choices, not a huge equipment catalogue.
+
+### Package A — Rod definitions and equipment
+- Define a small starter set of rods with distinct intended roles.
+- Implement rod ownership, equipping, and server-side effect validation.
+- Keep stat differences understandable and avoid one universally dominant rod.
+
+### Package B — Bait, shop, and progression
+- Define a small starter set of bait types and their eligible pool/condition effects.
+- Implement a simple shop flow with server-owned purchases.
+- Add clear UI for owned/equipped rods and bait.
+- Use non-stat cosmetics or small unlocks as early rewards where appropriate.
+
+**Shared agreement:** rod/bait data shape, effect vocabulary, purchase request/result, and balance rules.
+
+**Acceptance:**
+- Players can buy, equip, and switch the initial rods and bait.
+- Server validates ownership, prices, and effects.
+- Bait changes eligible fishing opportunities in a readable way.
+- No purchase can be duplicated or made with insufficient currency.
+
+## M9 — More reeling variety and special catches
+
+**Goal:** Make different fish feel different to catch and give truly special catches a memorable reveal.
+
+### Package A — Reeling mechanics
+- Add a second and third reeling archetype as separate reusable modules.
+- Assign mechanics to selected species through configuration.
+- Tune difficulty for keyboard/mouse and touch.
+- Keep the first mechanic available for suitable species.
 
 ### Package B — Catch presentation
-- Add rarity-aware camera, sound, effects, and animation hooks.
-- Build notable/rare catch reveals and one boss presentation prototype.
-- Keep ordinary catches fast and non-disruptive.
+- Add rarity-aware sound, animation, camera, and effect hooks.
+- Build one notable/rare catch reveal and one boss-style presentation prototype.
+- Keep common catches quick and non-disruptive.
+- Ensure all effects cancel and clean up safely.
 
-**Shared contract:** minigame interface, encounter event payloads, presentation event schema, and cancellation/cleanup behavior.
+**Shared agreement:** minigame interface, species-to-minigame mapping, presentation event schema, and cancellation/cleanup behaviour.
 
-**Acceptance:** at least three distinct reeling mechanics work; selected fish use the intended mechanic; special presentation triggers correctly and cleans up safely.
+**Acceptance:**
+- At least three reeling mechanics are playable.
+- Selected species use the intended mechanics.
+- Special reveals trigger from server-confirmed results only.
+- Effects do not trap the player or block normal play after cancellation.
 
-## M6 — Multiplayer expeditions and shared boats
+---
 
-**Goal:** friends can travel and fish together as a coordinated activity.
+# Phase 3 — Boats, multiplayer, and world depth
 
-### Package A — Shared boat and travel
-- Prototype boat spawning/ownership and safe shared occupancy.
-- Implement basic travel controls and server-side movement validation.
-- Define how players join/leave a boat safely.
-- Define boat purchase and upgrade data, including speed/handling/storage/specialization.
-- Prototype low-friction onboard free placement with server-validated build bounds and obstruction rules.
-- Add cooler placement, capacity upgrades, and clear fish-storage overflow behaviour.
+## M10 — First boats and ocean travel
 
-### Package B — Group fishing and expedition flow
-- Implement party/expedition grouping and shared location markers or activity flow.
-- Prototype a cooperative fishing encounter or group objective.
-- Define boss eligibility and reward rules: each eligible participant receives an individual copy/reward exactly once.
-- Add explicit boat guest permissions for equipment, cooler access, and optional layout editing.
+**Goal:** Let players own a boat and travel the connected ocean reliably.
 
-**Shared contract:** boat state, party membership, participant eligibility, encounter ownership, and reward distribution.
+### Package A — Boat models and progression starter set
+- Create a small initial family of boat hulls with clearly different silhouettes and scale.
+- Make progression visually satisfying: higher-cost boats should generally feel larger, more impressive, and offer more capability, while hull roles can still have trade-offs.
+- Add seats, helm, boarding points, and clear interaction locations.
+- Treat boat concept sheets as inspiration, not a locked boat list or price table.
 
-**Acceptance:** two or more players can travel together and complete a cooperative test encounter without state desync or duplicated rewards.
+### Package B — Boat ownership and travel system
+- Implement boat purchase/ownership and spawn/despawn flow.
+- Add basic server-validated movement and safe boarding/disembarking.
+- Add a simple boat selection/spawn interface.
+- Test network ownership and multiplayer movement behaviour.
 
-## M7 — World depth, secrets, and dynamic conditions
+**Shared agreement:** boat IDs, hull dimensions, ownership state, movement authority, spawn points, and upgrade vocabulary.
 
-**Goal:** exploration meaningfully changes what players can discover.
+**Acceptance:**
+- A player can acquire, spawn, board, pilot, and despawn an owned boat.
+- Other players can safely board as guests.
+- Boat movement does not allow arbitrary client teleporting or invalid ownership.
+- Boats fit through the intended ocean routes.
 
-### Package A — fishing areas and fishing conditions
-- Expand the seamless, ocean-first world with additional connected fishing areas and fishing locations; land remains supporting geography.
-- Implement weather/time/water-condition tags and their effect on eligible fish pools.
-- Add clear player-facing hints for discoverable conditions, including natural environmental clues, clue-based odds boosts, and selected guaranteed encounters.
-- Ensure valid stationary fishing spots retain worthwhile fish pools, rare RNG opportunities, and collection/progression value.
-- Prototype optional surface-focused open-world activities such as island visits, wreck discoveries, ports, drifting finds, moving schools, natural sightings, and special routes.
-- Do not introduce sonar, tracking devices, scanning gadgets, or research equipment as discovery requirements.
+## M11 — Boat upgrades and customization
 
-### Package B — Secrets and special encounters
-- Prototype hidden fishing spots and one secret area discovery.
-- Prototype a boss encounter that can be random, condition-based, event-based, or secret-discovered.
-- Add discovery rewards and fishbook clue/record integration.
-- Ensure a shared boss win grants each eligible participant their own reward exactly once.
+**Goal:** Make boats personal and create a satisfying upgrade path.
 
-**Shared contract:** zone/spot metadata, condition evaluation API, transition rules, and discovery reward payload.
+### Package A — Upgrades and visual customization
+- Add a small first set of upgrades for speed, handling, stability, and storage support.
+- Add paint/colour and a few cosmetic customization options.
+- Keep functional stats and cosmetic appearance separate.
+- Make boat progression visible and understandable.
 
-**Acceptance:** players can discover at least one meaningful secret and observe understandable differences between fishing conditions. A stationary player can still complete a rewarding fishing session with rare RNG opportunities, while an exploring player can find additional optional discoveries. No discovery gadget is required.
+### Package B — Onboard placement
+- Prototype contextual free placement of a small set of owned objects.
+- Support move, rotate, confirm, cancel, and pickup.
+- Validate build bounds, collisions, object limits, and access clearance on the server.
+- Start with a few decorative and functional objects; do not build a giant furniture catalogue.
 
-## M8 — Persistence, polish, and release candidate
+**Shared agreement:** boat save identity, upgrade data, placeable item schema, transform limits, and permission rules.
 
-**Goal:** stabilize the complete first release slice.
+**Acceptance:**
+- Upgrades persist and apply on the server.
+- Players can place and reposition approved objects within valid boat bounds.
+- Required controls and boarding/helm access cannot be blocked.
+- Placement works with mouse and touch.
 
-### Package A — Data and reliability pass
-- Add schema versioning, migrations, save/load failure handling, and persistence tests.
-- Audit remote validation and exploit-sensitive reward paths.
-- Profile server and client performance in representative playtests.
+## M12 — Coolers and fish storage on boats
 
-### Package B — UX, accessibility, and content polish
-- Polish fishing feedback, collection, inventory, shop, and onboarding.
-- Verify PC and mobile usability.
-- Add initial sound/visual polish and fix high-impact usability issues.
-- Add a data-driven world-event framework for migrations, weather windows, rare schools, and boss appearances.
-- Document admin-run events as a later feature; if prototyped, use server-side allowlists, permission checks, audit logs, and bounded event templates.
+**Goal:** Make the boat useful for longer fishing trips without risking fish loss or duplication.
 
-**Shared contract:** release data schema, performance budgets, and final acceptance checklist.
+### Package A — Cooler objects and capacity
+- Add a small set of cooler sizes/tiers.
+- Allow coolers to be placed on eligible boats.
+- Display cooler capacity and contents through a compact contextual UI.
+- Define a clear full-capacity response.
 
-**Acceptance:** no known data-loss or reward-duplication bugs in test scenarios; core flow works on supported input devices; performance and release checks are documented.
+### Package B — Safe fish transfers and permissions
+- Implement atomic transfers between player inventory and boat coolers.
+- Add owner/guest permissions for viewing and depositing fish.
+- Prevent guests from taking, selling, or moving another player's fish without explicit permission.
+- Handle boat despawn, disconnect, and server transfer safely.
+
+**Shared agreement:** cooler IDs, capacity schema, fish ownership, transfer state, and guest permission levels.
+
+**Acceptance:**
+- A fish cannot exist in inventory and a cooler simultaneously.
+- Full storage never silently deletes a catch.
+- Permissions are checked by the server.
+- Stored fish remain safe through normal boat despawn/rejoin flows.
+
+## M13 — Group expeditions and cooperative encounters
+
+**Goal:** Make fishing trips with friends work as a coordinated activity.
+
+### Package A — Group expedition flow
+- Add simple party/expedition membership and leave/join handling.
+- Show useful shared activity/location context without clutter.
+- Support group travel on shared boats.
+- Define safe behaviour when the owner leaves or disconnects.
+
+### Package B — Cooperative fishing/boss prototype
+- Build one bounded cooperative encounter.
+- Define participant eligibility and late-join rules.
+- Grant each eligible participant their own reward exactly once.
+- Keep reward delivery server-authoritative and idempotent.
+
+**Shared agreement:** party membership, boat guest permissions, encounter participant state, eligibility, and unique reward grant IDs.
+
+**Acceptance:**
+- Two or more players can travel and complete the cooperative test.
+- Each eligible participant receives their own reward once.
+- Disconnects and duplicate completion requests do not duplicate or erase rewards.
+
+## M14 — More world discoveries and fishing conditions
+
+**Goal:** Add optional reasons to explore while keeping stationary fishing rewarding.
+
+### Package A — Fishing conditions and natural clues
+- Add a small number of weather/time/water-condition effects on eligible fish pools.
+- Add natural clues such as birds, splashes, unusual ripples, jumping fish, and visible schools.
+- Show clues that can be noticed from a stationary fishing spot as well as clues that reward travelling.
+- Do not introduce sonar, tracking devices, scanning gadgets, or research equipment.
+
+### Package B — Secrets and special locations
+- Add one hidden cove or secret fishing location.
+- Add one discoverable wreck/drifting find or similar surface discovery.
+- Record discoveries in the fishbook or a simple journal.
+- Keep all secrets optional and avoid making them mandatory for ordinary progression.
+
+**Shared agreement:** condition tags, clue vocabulary, discovery IDs, reward payloads, and stationary-fishing guarantees.
+
+**Acceptance:**
+- Players can understand at least one natural clue and discover its meaning.
+- Exploration provides extra opportunities without invalidating ordinary fishing spots.
+- A player who stays in a suitable spot still has worthwhile fish pools and rare RNG chances.
+- No discovery gadget is required.
+
+## M15 — World events and expanded content slice
+
+**Goal:** Add a small, controlled event system and prepare the world for more content.
+
+### Package A — One or two world event prototypes
+- Prototype a fish migration, unusual school, or temporary weather window.
+- Make event timing, eligible areas, start/end state, and fish-pool effects data-driven.
+- Ensure the event is optional and normal fishing remains active.
+
+### Package B — Content and reliability pass
+- Expand the initial fish/spot/boat content only where the existing systems support it.
+- Add missing fishbook clues and records for the new content.
+- Test event cleanup, player joining/leaving, and reward integrity.
+- Document admin-run events as a later live-operations feature, not a launch dependency.
+
+**Shared agreement:** event definition, eligible zones, event lifecycle, fish-pool modifier contract, and cleanup rules.
+
+**Acceptance:**
+- At least one event can start, run, and end cleanly.
+- Normal fishing continues outside event conditions.
+- Event rewards and catches cannot be duplicated.
+- Content can be added through data/configuration without rewriting core systems.
+
+---
+
+# Phase 4 — Stabilise and prepare the first release
+
+## M16 — Persistence, performance, and release candidate
+
+**Goal:** Make the first complete slice reliable enough for wider playtesting.
+
+### Package A — Data safety and security
+- Add schema versioning and migrations for player data.
+- Test save/load failures, retries, session ownership, and rejoin behaviour.
+- Audit every reward, purchase, sale, inventory transfer, boat edit, and remote.
+- Add logs for important server-side failures without exposing sensitive player data.
+
+### Package B — UX, accessibility, and performance
+- Polish onboarding, fishing feedback, fishbook, inventory, shop, and boat interfaces.
+- Verify keyboard/mouse and mobile controls.
+- Profile representative map areas, boats, effects, and multiplayer encounters.
+- Fix the highest-impact visual, usability, and performance issues.
+
+**Shared agreement:** release data schema, performance budgets, supported-device targets, and final test checklist.
+
+**Acceptance:**
+- No known data-loss, item-duplication, or reward-duplication issue remains in the tested flows.
+- Core play works on supported input devices.
+- Rejoin and save/load scenarios pass.
+- Performance is measured and documented in representative locations.
+- The first release candidate is reviewed in Roblox Studio with screenshots/video and a clear list of remaining issues.
+
+---
 
 ## Milestone rules
 
-- Exactly two work packages per milestone.
-- Agent ownership is reassigned freely at every milestone.
+- Exactly two packages per milestone.
+- Package A/B are task labels, not permanent agent specialties.
+- Every package has a bounded scope and a clear deliverable.
 - One writer per file at a time.
-- Shared interfaces are agreed before parallel implementation.
-- A milestone is not complete until both packages are integrated and tested.
-- Milestones are a roadmap, not permission to skip design decisions or build systems prematurely.
+- Agree on shared interfaces before parallel implementation.
+- Do not silently expand a package; pause and coordinate if its scope must change.
+- Integrate and test both packages before marking a milestone complete.
+- A successful commit or static check does not prove the Roblox experience works.
+- Capture and review the actual Studio result for visual milestones.
+- Never treat concept images as final specifications.
+- Do not skip ahead to large systems before their smaller dependencies are proven.
 
+## Milestone handoff checklist
 
-## Cross-system design contracts added in Rounds 5–7
+For every milestone, record:
 
-Before implementation crosses the prototype stage, document and agree on:
-- **Ocean-first world:** surface exploration is the primary loop; land points of interest support it. Underwater exploration is not a required core feature.
-- **Boat build state:** boat owner, unlocked hull, upgrades, placed-object IDs/transforms, build-area bounds, object footprints, and guest permissions.
-- **Cooler storage:** cooler identity/tier/capacity, stored fish instance IDs, transfer rules, full-capacity behaviour, and anti-duplication guarantees.
-- **Fishbook:** species discovery, individual catch instances, variants/mutations, record scopes, clue progression, and collection rewards.
-- **Clue system:** use natural environmental signals and fishbook knowledge; distinguish odds modifiers from guaranteed availability/encounters. A guarantee must state its exact scope and conditions. No sonar, tracking devices, scanning gadgets, or research equipment.
-- **Playstyle balance:** stationary fishing and optional exploration must both remain satisfying; exploration cannot be a mandatory gate for ordinary progression or all rare RNG catches.
-- **Boss rewards:** participant eligibility, late-join rules, individual reward grant IDs, and exactly-once server-side delivery.
-- **World events:** event definition, start/end state, eligible zones, fish-pool modifiers, boss triggers, UI announcement policy, and cleanup.
-- **Admin events (later):** permission model, server-only execution, audit log, cooldowns, safe templates, and explicit separation from normal progression.
+- [ ] Package A owner and exact scope confirmed
+- [ ] Package B owner and exact scope confirmed
+- [ ] File ownership and shared interfaces agreed
+- [ ] Package A deliverable reviewed
+- [ ] Package B deliverable reviewed
+- [ ] Both packages integrated
+- [ ] Roblox Studio test completed
+- [ ] Screenshots/video captured for visual work
+- [ ] Known issues and next milestone dependencies documented
+
