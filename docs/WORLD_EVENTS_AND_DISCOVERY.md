@@ -6,30 +6,66 @@ Status: confirmed design direction; cadence and exact content remain open.
 
 The world is seamless and ocean-first. Surface travel, fishing, and discovery are the core. Islands, ports, beaches, lighthouses, ruins, and other land features add landmarks and destinations, but land is not intended to become a second full-scale adventure game. Underwater exploration is not a core requirement for the initial design.
 
-## Open-world activity ideas
+The ocean should feel alive through natural environmental signals and creature behaviour. Discovery is based on observation, fishing, experimentation, memory, and exploration. Do not build the discovery identity around sonar, tracking devices, scanning gadgets, research equipment, or similar tools.
 
-These are a candidate activity pool, not all guaranteed launch features:
-- Discovering islands, remote docks, ports, lighthouses, and unusual landmarks.
-- Finding shipwrecks, drifting cargo, hidden coves, secret fishing spots, and strange signals.
-- Following clues to rare fish habitats or temporary fishing windows.
-- Taking delivery, recovery, research, and expedition tasks that make use of boats.
-- Visiting travelling merchants, researchers, or other characters.
-- Exploring unusual ocean formations, routes, and weather phenomena.
-- Joining group expeditions and responding to boss sightings.
+## Two equally valid playstyles
 
-Activities should emerge naturally from travelling through the world. Avoid turning the ocean into a checklist of repetitive icons.
+### Relaxed stationary fishing
 
-## Rare-fish clues
+Players must be able to choose a fishing spot and remain there for a long session without feeling that they are missing the real game.
 
-Use a mix of RNG and learnable conditions:
-- Some clues only reveal where or when to look.
-- Some clues improve odds or expand the eligible fish pool.
-- Some exact combinations can guarantee that a particular fish or encounter becomes available.
-- Some discoveries should be experimental and community-shareable.
+- Stationary fishing has a complete and rewarding loop, including ordinary fish, rare RNG catches, variants, mutations, records, collection progress, and useful progression.
+- The local fish pool and conditions can make different spots feel distinct.
+- Players can notice environmental activity while staying in one place.
+- No essential species, progression gate, or core reward should require constant movement, exploration chains, or temporary events.
 
-A guaranteed encounter should mean the fish becomes available under the stated conditions, not that every cast automatically catches it. If a truly guaranteed catch is intended, its scope must be explicit. Keep natural random discovery viable so players can still be surprised.
+### Exploration and expeditions
 
-Clues can be found in environmental details, fishbook entries, NPC dialogue, weather patterns, unusual schools, maps, or expedition discoveries. The fishbook should record what the player has learned without exposing every secret from the beginning.
+Players who enjoy travelling can find additional opportunities by exploring the ocean.
+
+- Discover new fishing areas, landmarks, hidden coves, wrecks, drifting cargo, and unusual formations.
+- Notice and investigate natural clues or unusual creature behaviour.
+- Encounter moving schools, rare sightings, temporary fishing opportunities, and shared boss events.
+- Follow optional discovery chains where one clue or location can lead to another.
+
+Exploration adds variety and bonus opportunities. It must not make stationary fishing obsolete or mandatory travel the only effective way to progress.
+
+## Natural ocean signals
+
+Use environmental storytelling rather than dedicated discovery gadgets. Possible signals include:
+- Birds gathering or circling above a patch of water.
+- Distant splashes, jumping fish, unusual waves, bubbles, and ripples.
+- Large shadows or brief silhouettes beneath the surface.
+- Fish schools gathering, scattering, or moving through an area.
+- Changes in weather, currents, visibility, and the behaviour of the water.
+- Rare creatures appearing briefly or leaving visible signs of their presence.
+
+Some clues should be noticeable from a player's current fishing spot. Others can reward travelling to investigate. Clues should invite curiosity rather than provide constant exact waypoint instructions. Players should never need a gadget to see, interpret, or follow them.
+
+## Rare-fish clues and RNG
+
+Use a mix of natural RNG and learnable conditions:
+- Ordinary fishing always retains valid fish pools and meaningful RNG opportunities.
+- Some clues reveal where or when a species is more likely to appear.
+- Some conditions improve odds or expand the eligible fish pool.
+- Some exact combinations can make a particular fish or encounter available.
+- Some discoveries can be experimental and community-shareable.
+
+A guaranteed encounter means the fish becomes available under the stated conditions, not that every cast automatically catches it. If a truly guaranteed catch is intended, its scope must be explicit. Keep natural random discovery viable so players can still be surprised.
+
+Do not lock all rare fish behind exploration, clues, or events. A player who stays at a suitable spot must still have a chance at exciting rare RNG catches. Conditions and clues should reward knowledge without invalidating relaxed fishing.
+
+The fishbook can record what the player has learned without exposing every secret from the beginning. Clues may come from environmental details, fishbook entries, NPC dialogue, weather patterns, unusual schools, maps, or expedition discoveries.
+
+## Moving schools and creatures
+
+Some schools and rare creatures can move through the world and behave in distinctive ways. Their movement creates optional opportunities:
+- Players may notice activity nearby while already fishing.
+- Curious players can follow a school or creature to see where it leads.
+- A creature may appear briefly, retreat, dive, or change direction.
+- Different species can have recognisable behaviour, without requiring a tracking device or scanner.
+
+Moving encounters should coexist with ordinary fish pools. They should not constantly pull players away from a spot or punish players who choose not to follow.
 
 ## World events
 
@@ -41,7 +77,7 @@ Candidate event families:
 - Wrecks, drifting objects, and temporary discoveries.
 - Boss appearances and server-wide expeditions.
 
-Events can be random, scheduled, condition-triggered, or discovery-triggered. Use a mix of announced and subtle events. Players should be able to understand the opportunity and its location without needing to watch a constant alert feed.
+Events can be random, scheduled, condition-triggered, or discovery-triggered. Use a mix of announced and subtle events. Players should be able to understand the opportunity without needing to watch a constant alert feed. Events are optional additions to the world, not mandatory daily chores or the only source of desirable catches.
 
 ## Boss encounters
 
@@ -51,7 +87,7 @@ Bosses can appear:
 - As part of a world event.
 - After a player or group discovers a secret.
 
-Bosses should have a memorable introduction, distinct multi-phase fishing/combat-like encounter mechanics (without becoming a generic damage sponge), and a strong conclusion. Multiplayer boss encounters are shared: every eligible participant receives their own reward/catch, exactly once. The server owns eligibility and reward delivery.
+Bosses should have a memorable introduction, distinct multi-phase fishing encounter mechanics, and a strong conclusion. Multiplayer boss encounters are shared: every eligible participant receives their own reward/catch, exactly once. The server owns eligibility and reward delivery.
 
 Late-join eligibility, distance rules, disconnect handling, and contribution rules need a clear contract before implementation. Participation should be understandable and not punish players for using a different rod or joining a little later.
 
@@ -81,3 +117,4 @@ Safety and integrity requirements:
 - Whether players can start some discovery events themselves.
 - Boss scaling for solo and group play.
 - Exact admin roles and audit-log retention.
+- How to balance rare RNG opportunities at stationary spots against optional exploration bonuses.
