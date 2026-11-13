@@ -59,8 +59,6 @@ Images under `docs/visual-references/` are concept references by default, not fi
 
 ## M0 — Create the master ocean map
 
-<badge-placeholder></badge-placeholder>
-
 **Priority:** FIRST. This is the first production milestone.
 
 **Goal:** Turn the world overview concept into a beautiful, coherent, navigable Roblox ocean map. The result should already feel like a real game world from an elevated view, even before every location is fully dressed.
