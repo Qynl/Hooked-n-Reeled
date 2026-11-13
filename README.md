@@ -1,6 +1,6 @@
 # Hooked-n-Reeled
 
-An open-world Roblox fishing adventure focused on exploration, skill-based fishing, rare discoveries, collection, progression, and multiplayer expeditions.
+An open-world Roblox fishing adventure with connected surface and underwater exploration, skill-based fishing, rare discoveries, collection, progression, boats, and multiplayer expeditions. Players can enjoy relaxed fishing at one spot or explore the living ocean above and below the surface.
 
 - [Game design](DESIGN.md)
 - [Development milestones](docs/MILESTONES.md)
