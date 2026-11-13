@@ -73,7 +73,7 @@ Default permissions should be conservative and easy to understand. A guest shoul
 
 When underwater exploration is introduced, boats may provide a natural place to begin and end a dive, regroup with friends, and store ordinary expedition supplies if the final design needs them. Do not assume a dedicated sonar, scanner, tracker, or research station is required. Shore-based entry should remain possible at suitable locations, and boat ownership must not become a gate to all underwater content.
 
-This is a future integration point, not a requirement for the current boat prototype. Define dive-entry interaction and any storage needs in the underwater feature contract before implementation.
+This is a future integration point, not a requirement for the current boat prototype. Follow [Underwater Exploration](UNDERWATER_EXPLORATION.md) and define dive-entry interaction and any storage needs before implementation.
 
 ## UX principles
 
