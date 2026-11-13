@@ -11,7 +11,7 @@ Hooked-n-Reeled should feel relaxing when players simply want to fish, but also 
 The long-term appeal combines:
 - Discovering new places and fish species.
 - Improving and specializing fishing equipment.
-- Chasing rare fish, unusual variants, mutations, and boss encounters.
+- Chasing rare fish, unusual mutations, and boss encounters.
 - Building a personal collection and displaying memorable catches.
 - Selling catches and using selected fish for special unlocks or activities.
 - Exploring and fishing together with friends.
@@ -27,7 +27,7 @@ The game should welcome players back after time away through discoveries and ong
 2. **Choose a fishing spot** — water type, depth, weather, time, and location can influence which fish may appear. Valid fish pools and natural RNG must make stationary fishing worthwhile.
 3. **Cast and hook** — cast within the equipped rod's range, wait for a bite, then react to hook the fish.
 4. **Reel** — play a skill-based minigame. Different fish species can use different minigame mechanics; rare and boss encounters can introduce special phases and mechanics.
-5. **Catch presentation** — show the fish, size/weight, rarity, and relevant variants. Presentation can use dynamic camera work, sound, effects, animations, and special cutscenes for meaningful catches.
+5. **Catch presentation** — show the fish, size/weight, rarity, and relevant mutations. Presentation can use dynamic camera work, sound, effects, animations, and special cutscenes for meaningful catches.
 6. **Use the catch** — sell it, add it to the collection, display it, or use it for special activities, unlocks, and other systems.
 7. **Improve and discover** — upgrade or change rods and bait, reach new fishing grounds if desired, notice natural clues, uncover secrets, and repeat with new possibilities.
 
@@ -84,7 +84,7 @@ The server owns species selection, mutation rolls, size/weight generation, value
 
 These roles should complement one another:
 - **Sell:** turn catches into currency for progression.
-- **Collect:** register discovered species, variants, and records.
+- **Collect:** register discovered species, mutations, and records.
 - **Display:** show off memorable catches in personal or shared spaces.
 - **Special uses:** selected fish can contribute to unlocks, activities, discoveries, or other systems.
 
@@ -111,7 +111,7 @@ The world should be large, connected, and ocean-centric, with both the surface a
 
 **Relaxed stationary fishing**
 - Players can choose a favourite spot, stay there, and fish for as long as they like.
-- Stationary fishing has a complete loop: ordinary catches, rare RNG opportunities, variants, mutations, records, collection progress, and useful progression rewards.
+- Stationary fishing has a complete loop: ordinary catches, rare RNG opportunities, mutations, records, collection progress, and useful progression rewards.
 - Fishing-area conditions, weather, time, depth, and bait can influence catches without requiring players to move.
 - No essential fish, progression gate, or core reward should require constant travel or participation in a temporary event.
 
@@ -224,7 +224,7 @@ Rules for ordinary shared catches, boat ownership, storage permissions, late joi
 
 The fishbook should be able to track:
 - Species discovered and caught, with clear undiscovered entries where appropriate.
-- Variants and mutations found for each species.
+- mutations found for each species.
 - Weight and size records, including personal bests and relevant world/server records if useful.
 - First discoveries, notable catches, and boss encounters.
 - Helpful clues about habitat, conditions, behaviour, and possible discovery routes, revealed progressively.
