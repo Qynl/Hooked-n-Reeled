@@ -53,12 +53,18 @@ The ocean should not become interesting only when the player moves. Local moment
 
 These moments can create atmosphere, small catch opportunities, or optional decisions. The player can stay and keep fishing; no local event should constantly pull them away or punish them for ignoring it.
 
-## Rare-fish clues and RNG
+## Rare-fish clues, species odds, and mutations
+
+Follow [Fish Rarity, Mutations, and Catch Outcomes](FISH_RARITY_AND_MUTATIONS.md) for the canonical rules.
+
+Every species has exactly one numerical species odds value. Conditions can determine which species are eligible and may provide explicitly configured contextual opportunities, but they must not rewrite the species' identity or create named rarity tiers. The fishing implementation must clearly distinguish a species' canonical baseline odds from any contextual chance shown to the player.
+
+Mutations are separate rolls applied after a species is selected. A Golden fish remains the same species with the same species odds; Golden is an individual mutation that can change appearance and server-calculated value. Mutation chance is not a second species rarity.
 
 Use a mix of natural RNG and learnable conditions:
 - Ordinary fishing always retains valid fish pools and meaningful RNG opportunities.
-- Some clues reveal where or when a species is more likely to appear.
-- Some conditions improve odds or expand the eligible fish pool.
+- Some clues reveal where or when a species is eligible or more likely to appear.
+- Some conditions expand the eligible fish pool or create optional encounter opportunities.
 - Some exact combinations can make a particular fish or encounter available.
 - Some discoveries can be experimental and community-shareable.
 
