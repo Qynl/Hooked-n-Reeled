@@ -4,7 +4,7 @@ Status: confirmed design direction; detailed balancing and implementation contra
 
 ## Product role
 
-Boats are a major progression and personalization pillar. They are the player's way to move through the ocean-first open world, travel with friends, carry fish storage, and express their own style. A boat should feel like a useful personal vessel, not just a speed stat with a seat.
+Boats are a major progression and personalization pillar. They are the player's way to move through the ocean-first open world, travel with friends, carry fish storage, and express their own style. In the planned underwater phase, boats can also serve as convenient expedition starting and regrouping points, without requiring special detection gadgets or making a boat mandatory for every dive. A boat should feel like a useful personal vessel, not just a speed stat with a seat.
 
 ## Acquisition and progression
 
@@ -68,6 +68,12 @@ The boat owner remains the owner of the vessel and its placed objects. Guests ma
 - Editing the overall layout.
 
 Default permissions should be conservative and easy to understand. A guest should never be able to take, sell, delete, or move another player's stored fish or objects without explicit permission.
+
+## Future underwater expedition support
+
+When underwater exploration is introduced, boats may provide a natural place to begin and end a dive, regroup with friends, and store ordinary expedition supplies if the final design needs them. Do not assume a dedicated sonar, scanner, tracker, or research station is required. Shore-based entry should remain possible at suitable locations, and boat ownership must not become a gate to all underwater content.
+
+This is a future integration point, not a requirement for the current boat prototype. Define dive-entry interaction and any storage needs in the underwater feature contract before implementation.
 
 ## UX principles
 
