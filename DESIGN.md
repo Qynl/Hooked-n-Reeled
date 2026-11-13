@@ -103,7 +103,7 @@ Balance principle: equipment should create meaningful choices rather than making
 
 ## Open world and the Living Ocean
 
-The world should be large, connected, and ocean-centric. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is not a core pillar for the initial design.
+The world should be large, connected, and ocean-centric. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is a secondary, optional activity planned for a later phase; it is not part of the initial core gameplay or first playable release.
 
 ### Two equally supported playstyles
 
@@ -143,6 +143,20 @@ Candidate activities to explore and prototype (not all are locked launch require
 - Meeting travelling characters, merchants, and other players at world locations.
 
 Avoid turning the ocean into a checklist of repetitive icons or a sequence of mandatory errands. Activities should emerge naturally from the world and remain optional alongside ordinary fishing.
+
+### Optional underwater exploration (later phase)
+
+Underwater exploration can expand the ocean adventure after the core surface experience is established. It is a secondary activity, not a replacement for fishing, sailing, or surface exploration.
+
+- Players may choose to dive into selected underwater areas such as reefs, rocky shelves, caves, and wreck sites.
+- Discoveries may include natural crystals and mineral formations, unusual coral, shells and pearls, hidden crevices, and objects or cargo around sunken wrecks.
+- The underwater world should have its own visual identity and memorable places, while remaining connected to the larger ocean.
+- Diving must be optional. No essential fish, ordinary progression, or core reward may require underwater exploration.
+- Players who prefer to fish from one spot or explore only the surface must still have a complete and rewarding game.
+- Discovery should rely on seeing and exploring the environment. Do not introduce sonar, scanners, tracking devices, or similar detection gadgets.
+- Do not assume that every discovery must be crafted, sold, or converted into equipment. The uses, collection rules, diving controls, and any equipment requirements remain open design decisions.
+
+This feature belongs after the fishing and boat experience is established. It is not a blocker for the initial release.
 
 ### Moving creatures and discoveries
 
@@ -283,6 +297,7 @@ For fishing balance, simulate rarity rolls at a scale appropriate to the odds an
 - Final map layout and fishing-area layout, boat handling, boat progression, and placement rules.
 - Cooler tiers, storage limits, guest permissions, and fish overflow behaviour.
 - Open-world activity catalogue and the balance between surface exploration and land points of interest; preserve the equal viability of stationary fishing and optional exploration.
+- Later-phase optional diving scope, underwater locations, discovery records, and any uses for crystals or other finds.
 - Fishbook page structure, record scopes, and collection milestone rewards.
 - World-event cadence, boss eligibility/reward rules, and later admin-event permission model.
 - Zone access and progression gates.
