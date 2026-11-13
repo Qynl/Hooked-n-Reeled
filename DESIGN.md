@@ -1,6 +1,6 @@
 # Hooked-n-Reeled — Game Design
 
-An open-world Roblox fishing adventure built around skill-based fishing, collection, progression, rare discoveries, optional ocean exploration, and shared multiplayer expeditions. Its signature identity is a living ocean that rewards both relaxed stationary fishing and curious exploration.
+An open-world Roblox fishing adventure built around skill-based fishing, collection, progression, rare discoveries, surface and underwater exploration, and shared multiplayer expeditions. Its signature identity is a living ocean with two connected layers: the surface and the world beneath it. Players can enjoy relaxed stationary fishing or set out on discoveries without either playstyle becoming mandatory.
 
 Status: design phase. No gameplay code has been written yet.
 
@@ -15,6 +15,7 @@ The long-term appeal combines:
 - Building a personal collection and displaying memorable catches.
 - Selling catches and using selected fish for special unlocks or activities.
 - Exploring and fishing together with friends.
+- Discovering the underwater world through optional diving, memorable locations, natural finds, and hidden places.
 
 The game should welcome players back after time away through discoveries and ongoing world activity, not punish them with aggressive daily chores or fear-of-missing-out systems.
 
@@ -103,7 +104,7 @@ Balance principle: equipment should create meaningful choices rather than making
 
 ## Open world and the Living Ocean
 
-The world should be large, connected, and ocean-centric. Most meaningful travel and exploration happen on the water. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus. Underwater exploration is a secondary, optional activity planned for a later phase; it is not part of the initial core gameplay or first playable release.
+The world should be large, connected, and ocean-centric, with both the surface and underwater spaces forming part of its long-term identity. Surface travel and fishing are the first development priority. Underwater exploration is a planned second layer of the same world, introduced after the surface fishing and boat foundations are enjoyable and reliable. Land exists as supporting geography (islands, ports, beaches, docks, landmarks, and occasional points of interest), but should not become the main gameplay focus.
 
 ### Two equally supported playstyles
 
@@ -144,19 +145,15 @@ Candidate activities to explore and prototype (not all are locked launch require
 
 Avoid turning the ocean into a checklist of repetitive icons or a sequence of mandatory errands. Activities should emerge naturally from the world and remain optional alongside ordinary fishing.
 
-### Optional underwater exploration (later phase)
+### Underwater exploration
 
-Underwater exploration can expand the ocean adventure after the core surface experience is established. It is a secondary activity, not a replacement for fishing, sailing, or surface exploration.
+Underwater exploration is a planned part of the full game, not a discarded side idea. It is the second connected layer of the ocean, introduced after the surface fishing and boat foundations are stable. Diving remains optional for each player, while the feature itself belongs in the full game roadmap.
 
-- Players may choose to dive into selected underwater areas such as reefs, rocky shelves, caves, and wreck sites.
-- Discoveries may include natural crystals and mineral formations, unusual coral, shells and pearls, hidden crevices, and objects or cargo around sunken wrecks.
-- The underwater world should have its own visual identity and memorable places, while remaining connected to the larger ocean.
-- Diving must be optional. No essential fish, ordinary progression, or core reward may require underwater exploration.
-- Players who prefer to fish from one spot or explore only the surface must still have a complete and rewarding game.
-- Discovery should rely on seeing and exploring the environment. Do not introduce sonar, scanners, tracking devices, or similar detection gadgets.
-- Do not assume that every discovery must be crafted, sold, or converted into equipment. The uses, collection rules, diving controls, and any equipment requirements remain open design decisions.
+Players can explore reef gardens, rocky shelves, ravines, caves, and sunken wrecks. Possible discoveries include natural crystals and minerals, shells, pearls, unusual coral, fossils, lost cargo, hidden chambers, and underwater creatures. The underwater world should have its own memorable locations and atmosphere, while remaining connected to surface landmarks and ocean routes.
 
-This feature belongs after the fishing and boat experience is established. It is not a blocker for the initial release.
+Discovery should come from direct observation and exploration, not sonar, scanners, tracking devices, or research gadgets. Do not assume a strict oxygen timer, pressure simulation, complex dive equipment, or mandatory crafting economy. Prototype comfortable movement and a small number of rewarding places first.
+
+Underwater exploration must not invalidate stationary fishing or make surface-only play incomplete. No essential fish, ordinary progression, or core surface reward should require diving. The detailed feature plan, discovery catalogue, progression options, technical requirements, and open decisions live in [Underwater Exploration](docs/UNDERWATER_EXPLORATION.md).
 
 ### Moving creatures and discoveries
 
@@ -274,6 +271,7 @@ This is a proposed organization. Adapt it to the actual Studio/repository integr
 See:
 - [Boat system](docs/BOAT_SYSTEM.md)
 - [World events and discovery](docs/WORLD_EVENTS_AND_DISCOVERY.md)
+- [Underwater exploration](docs/UNDERWATER_EXPLORATION.md)
 - [Fishbook and collection](docs/FISHBOOK_AND_COLLECTION.md)
 - [Milestones](docs/MILESTONES.md)
 - [Two-agent workflow](docs/TWO_AGENT_WORKFLOW.md)
@@ -297,7 +295,7 @@ For fishing balance, simulate rarity rolls at a scale appropriate to the odds an
 - Final map layout and fishing-area layout, boat handling, boat progression, and placement rules.
 - Cooler tiers, storage limits, guest permissions, and fish overflow behaviour.
 - Open-world activity catalogue and the balance between surface exploration and land points of interest; preserve the equal viability of stationary fishing and optional exploration.
-- Later-phase optional diving scope, underwater locations, discovery records, and any uses for crystals or other finds.
+- Underwater exploration implementation scope, dive controls, locations, discovery records, and any uses for crystals or other finds. The feature is part of the full game but is staged after the surface foundations.
 - Fishbook page structure, record scopes, and collection milestone rewards.
 - World-event cadence, boss eligibility/reward rules, and later admin-event permission model.
 - Zone access and progression gates.
