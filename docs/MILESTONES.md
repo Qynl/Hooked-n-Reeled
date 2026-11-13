@@ -8,7 +8,7 @@
 
 Hooked-n-Reeled is an ocean-first fishing adventure with two connected layers: the surface and the underwater world. The surface is the first development priority; underwater exploration is a planned part of the full game, introduced after the fishing and boat foundations are stable. Memorable islands, ports, fishing locations, dive sites, hidden places, and distant landmarks should make players curious to explore farther.
 
-The intended visual direction is polished, colourful, stylized 3D: clear silhouettes, deliberate geometry, bright tropical shallows, deep blue open water, lush greens, warm sand, coral accents, natural lighting, and readable spaces. Avoid generic flat greybox environments, noisy detail, excessive outlines, and effects that obscure gameplay.
+The intended visual direction is polished, colourful, stylized 3D: clear silhouettes, deliberate geometry, extraordinary layered ocean water, lush greens, warm sand, coral accents, natural lighting, and readable spaces. Water must be a hero rendering system, not a flat blue/turquoise plane. Follow [WATER_RENDERING.md](WATER_RENDERING.md). Avoid generic flat greybox environments, noisy detail, excessive outlines, and effects that obscure gameplay.
 
 The game should combine:
 - **Exploration:** a connected ocean with recognisable destinations and discoveries.
@@ -90,7 +90,9 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
 **Owns:** the map plan and the large-scale world geometry.
 
 1. Study `WorldOverview.png` and write a short visual breakdown of its composition before building.
-2. Create a top-down planning layout with:
+2. Read [WATER_RENDERING.md](WATER_RENDERING.md) and prototype the continuous ocean surface as a dedicated rendering system, not a coloured placeholder.
+3. Build a small water test area before committing to the full ocean: shallow beach, submerged rocks/reef, depth transition, open-water horizon, boat-height camera, and underwater camera. Prove the surface can support the required visual target.
+4. Create a top-down planning layout with:
    - A clear starting region and main harbour area.
    - Several distinct island groups rather than evenly spaced generic islands.
    - Wide navigable ocean channels and readable travel routes.
@@ -98,16 +100,16 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
    - Distinctive large landmarks that can be recognised from a boat.
    - Open space for future locations and expansion.
    - A rough seabed/depth plan that reserves a few future dive-site locations beneath or near recognisable surface landmarks.
-3. Establish a coordinate system, rough world scale, map bounds, and a simple naming scheme for regions and landmarks.
-4. Build the first Roblox Studio blockout:
+5. Establish a coordinate system, rough world scale, map bounds, and a simple naming scheme for regions and landmarks.
+6. Build the first Roblox Studio blockout:
    - Continuous ocean surface.
    - Main island masses and smaller island silhouettes.
    - Coastlines, beaches, cliffs, reefs, and large rock forms.
    - Clear channels between land masses.
    - Basic navigation clearance for the future boat sizes.
    - Simple planning markers for future underwater shelves, reef spaces, ravines, caves, and wreck sites. These are map-planning anchors only; do not build the full underwater experience in M0.
-5. Use temporary geometry where detailed assets are not ready. Prioritise composition and navigability over tiny decoration.
-6. Capture an elevated overview screenshot and a few boat/player-height screenshots.
+7. Use temporary geometry where detailed assets are not ready. Prioritise composition and navigability over tiny decoration.
+8. Capture an elevated overview screenshot and a few boat/player-height screenshots, plus the water test views required by WATER_RENDERING.md.
 
 **Deliverables:**
 - A top-down world layout saved in `docs/`.
@@ -117,9 +119,9 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
 
 ### Package B — First environment asset kit
 
-**Owns:** reusable environment pieces that help the blockout become a cohesive world.
+**Owns:** reusable environment pieces and water-surface material/shoreline presentation that help the blockout become a cohesive world.
 
-1. Study the visual language in `WorldOverview.png` and the relevant nature/terrain references.
+1. Study the visual language in `WorldOverview.png`, [WATER_RENDERING.md](WATER_RENDERING.md), and the relevant nature/terrain references.
 2. Create a deliberately small first kit:
    - Several palm/tree silhouettes.
    - A few tropical bushes and ground plants.
@@ -136,7 +138,8 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
    - Material and colour palette.
    - Performance expectations (part count, mesh reuse, and sensible detail).
 5. Deliver the kit in a form Package A can actually place into the map. Do not create an isolated art showcase that cannot be integrated.
-6. Keep placeholders simple where a final model would delay the map.
+6. Prototype the water material response, moving highlight/ripple detail, and irregular shoreline foam with shared assets/materials. Coordinate the interface with Package A; do not create a separate competing ocean surface.
+7. Keep placeholders simple where a final model would delay the map.
 
 **Deliverables:**
 - A usable first environment kit in the Roblox project.
@@ -150,6 +153,7 @@ Both agents must agree on:
 - Starting region and main harbour placement.
 - Region/landmark naming and ID format.
 - Visual palette and material language.
+- Water renderer/material boundary between Package A and Package B, shared surface grid and wave phase, foam placement convention, and mobile quality fallback.
 - Asset scale, pivots, and collision conventions.
 - The initial set of major silhouettes that must appear in the first blockout.
 - How Package B's assets will be handed to and used by Package A.
@@ -167,6 +171,7 @@ M0 is complete only when all of these are true:
 - [ ] The map plan accounts for underwater depth changes and reserves plausible future dive sites without expanding M0 into a diving build.
 - [ ] The environment kit is reusable and integrated into the map.
 - [ ] The palette and assets feel cohesive rather than assembled from unrelated packs.
+- [ ] The ocean passes the [WATER_RENDERING.md](WATER_RENDERING.md) acceptance checklist, including boat-height, shallow-water, horizon, underwater, and alternate-lighting views.
 - [ ] A representative performance check has been made in Studio.
 - [ ] Integrated screenshots and a short completion report are saved.
 
