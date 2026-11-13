@@ -4,7 +4,7 @@ Status: confirmed design direction; cadence and exact content remain open.
 
 ## World identity
 
-The world is seamless and ocean-first. Surface travel, fishing, and discovery are the core. Islands, ports, beaches, lighthouses, ruins, and other land features add landmarks and destinations, but land is not intended to become a second full-scale adventure game. Underwater exploration is not a core requirement for the initial design.
+The world is seamless and ocean-first. Surface travel, fishing, and discovery are the core. Islands, ports, beaches, lighthouses, ruins, and other land features add landmarks and destinations, but land is not intended to become a second full-scale adventure game. Underwater exploration is a secondary optional activity for a later phase, not a requirement for the initial design or first playable release.
 
 The ocean should feel alive through natural environmental signals and creature behaviour. Discovery is based on observation, fishing, experimentation, memory, and exploration. Do not build the discovery identity around sonar, tracking devices, scanning gadgets, research equipment, or similar tools.
 
@@ -90,6 +90,26 @@ Bosses can appear:
 Bosses should have a memorable introduction, distinct multi-phase fishing encounter mechanics, and a strong conclusion. Multiplayer boss encounters are shared: every eligible participant receives their own reward/catch, exactly once. The server owns eligibility and reward delivery.
 
 Late-join eligibility, distance rules, disconnect handling, and contribution rules need a clear contract before implementation. Participation should be understandable and not punish players for using a different rod or joining a little later.
+
+## Optional underwater discoveries: later phase
+
+Underwater exploration is a future extension to the surface-ocean experience. It should become available only after the core fishing and boat loops are established.
+
+Possible discovery spaces and finds:
+- Reef gardens, rocky shelves, underwater ravines, caves, and sheltered crevices.
+- Natural crystal and mineral formations.
+- Distinctive coral, shells, and pearls.
+- Sunken wreck sections, lost cargo, and other environmental discoveries.
+
+Design boundaries:
+- Diving is optional content, not a mandatory progression route.
+- Fishing from a stationary spot and surface-only exploration must remain fully rewarding.
+- Do not lock essential fish, core upgrades, or ordinary progression behind diving.
+- Discoveries should be found through direct observation and exploration, not sonar, scanners, tracking devices, or similar gadgets.
+- Underwater areas should feel like memorable places, not repetitive resource nodes or a checklist.
+- The exact diving mechanics, equipment needs, discovery catalogue, rewards, and uses for crystals remain undecided until this feature is planned.
+
+This is not part of the initial vertical slice. Treat it as a later content milestone after fishing and boats are fun and reliable.
 
 ## Admin-run events: later phase
 
