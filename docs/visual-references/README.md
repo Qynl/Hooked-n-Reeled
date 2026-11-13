@@ -4,12 +4,11 @@ All visual reference images for Hooked-n-Reeled belong under this directory in `
 
 ## Folders
 
-- `01-world/` — overview, world map, biome overview and ocean zones
+- `01-world/` — overview, world map and ocean zones
 - `02-environment-assets/` — nature, rocks, architecture, ocean props and underwater assets
 - `03-locations/` — starter island, main port, remote outpost and landmarks
 - `04-boats-and-equipment/` — boat family, customization, fishing equipment and fishing spots
 - `05-atmosphere-and-water/` — weather, lighting, water and shoreline
-- `06-biome-details/` — individual biome environment references
 
 ## Rules
 
