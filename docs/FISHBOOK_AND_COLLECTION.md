@@ -58,7 +58,7 @@ Avoid making every fish's best choice obvious from a single coin value. Some fis
 
 ## Milestones
 
-Collection rewards can include titles, cosmetics, boat decorations, fishbook upgrades, access clues, or other non-stat rewards. Avoid forcing completion of every rare mutation or extreme RNG tier for essential progression.
+Collection rewards can include titles, cosmetics, boat decorations, fishbook upgrades, access clues, or other non-stat rewards. Avoid forcing completion of every low-probability mutation or extremely unlikely catch for essential progression.
 
 ## Open decisions
 
