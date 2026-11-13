@@ -1,5 +1,9 @@
 # Project instructions
 
+## Branches: `QynlIdeas` is where the work happens
+
+`main` carries the same design corpus as [`QynlIdeas`](https://github.com/Qynl/Hooked-n-Reeled/tree/QynlIdeas) so the current design is never hidden behind a branch, but **`QynlIdeas` is the active development branch**. The milestone dashboard (`docs/agent-coordination/CURRENT.md`), package ownership, decision log and both agent message logs describe what is actually being built there. Read them on `QynlIdeas` before starting work, and treat that branch as authoritative if the two ever diverge.
+
 This repo is the Roblox game **Hooked-n-Reeled** (existing Roblox place ID `78065626942509`; the place's legacy display name may still be different). Game design lives in [DESIGN.md](DESIGN.md), with the canonical fish rarity and mutation rules in [docs/FISH_RARITY_AND_MUTATIONS.md](docs/FISH_RARITY_AND_MUTATIONS.md) and the detailed underwater feature plan in [docs/UNDERWATER_EXPLORATION.md](docs/UNDERWATER_EXPLORATION.md).
 
 ## Two-agent coordination is mandatory

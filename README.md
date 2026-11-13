@@ -1,5 +1,9 @@
 # Hooked-n-Reeled
 
+> **Active development happens on the [`QynlIdeas`](https://github.com/Qynl/Hooked-n-Reeled/tree/QynlIdeas) branch.**
+>
+> `main` mirrors the `QynlIdeas` design corpus so the current design is visible without switching branches, but the working branch is `QynlIdeas`: the milestone dashboard, package ownership, agent message logs and the live next action all live there. If the two branches ever disagree, `QynlIdeas` is authoritative.
+
 An open-world Roblox fishing adventure with connected surface and underwater exploration, skill-based fishing, rare discoveries, collection, progression, boats, and multiplayer expeditions. Players can enjoy relaxed fishing at one spot or explore the living ocean above and below the surface.
 
 - [Game design](DESIGN.md)
