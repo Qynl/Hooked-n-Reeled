@@ -281,6 +281,17 @@ Do not generate every image at once. Approve the overall world layout first; the
 
 ## Image index
 
+### Existing committed reference images
+
+| File | Status | Notes |
+|---|---|---|
+| `01-world/WorldOverview.png` | Inspiration | Primary composition reference for M0; not a final map blueprint |
+| `02-environment-assets/Assets_World.png` | Inspiration | Existing environment and world-asset moodboard |
+| `04-boats-and-equipment/Assets_Boat_and_Other.png` | Inspiration | Existing boat/equipment moodboard; not a locked roster |
+| `Fish_IDeas.png` | Inspiration | Fish-art-direction moodboard only; not a species roster or odds table |
+
+### Planned numbered references
+
 | ID | Filename | Status | Notes |
 |---|---|---|---|
-| 01–21 | See sections above | Planned | No generated references committed yet |
+| 01–21 | See numbered prompts above | Planned | The numbered prompt set is not yet fully generated; existing images above remain separate inspiration references |
