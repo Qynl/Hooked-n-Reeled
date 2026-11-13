@@ -17,8 +17,8 @@ Do not start both packages until file ownership and shared interfaces are agreed
 - Document fish lifecycle: caught, inventory, collection, display, sale, special use.
 
 ### Package B — World and progression contracts
-- Propose the first connected-world greybox layout and initial biome list.
-- Define fishing spot metadata: biome, water type, depth band, weather/time tags.
+- Propose the first connected-world greybox layout and initial fishing-area layout.
+- Define fishing spot metadata: fishing area, water type, depth band, weather/time tags.
 - Propose rod/bait data shape and progression dimensions.
 - Define multiplayer expedition and shared-boat requirements at a design level.
 - Agree on boat customization, free-placement constraints, cooler storage, and permissions.
@@ -144,8 +144,8 @@ Do not start both packages until file ownership and shared interfaces are agreed
 
 **Goal:** exploration meaningfully changes what players can discover.
 
-### Package A — Biomes and fishing conditions
-- Expand the seamless, ocean-first world with additional connected biomes and fishing locations; land remains supporting geography.
+### Package A — fishing areas and fishing conditions
+- Expand the seamless, ocean-first world with additional connected fishing areas and fishing locations; land remains supporting geography.
 - Implement weather/time/water-condition tags and their effect on eligible fish pools.
 - Add clear player-facing hints for discoverable conditions, including clue-based odds boosts and selected guaranteed encounters.
 - Prototype surface-focused open-world activities such as island visits, wreck discoveries, ports, drifting finds, and special routes.
