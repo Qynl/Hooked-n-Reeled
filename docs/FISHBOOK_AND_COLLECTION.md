@@ -19,6 +19,12 @@ The intended direction combines:
 
 A species page may include its known habitat, eligible water regions, time/weather clues, naturally observed behaviour, and known variants. Unknown information can remain obscured until discovered. Clues should come from fishing, observation, environmental details, NPC dialogue, and exploration, not from requiring sonar, tracking devices, scanning gadgets, or research equipment.
 
+## Fish rarity display
+
+Fish rarity is represented by its actual catch odds, not by named rarity tiers. Display probabilities in a readable form such as `1/200` or `1 in 200`. Do not introduce labels such as Common, Rare, Epic, Legendary, or Secret as rarity categories. The probability itself communicates how uncommon the fish is.
+
+This is a display/system rule only. This document does not define the number of species or assign odds to any fish.
+
 ## Records
 
 Potential record categories:
