@@ -58,6 +58,17 @@ These are art-direction anchors, not a rule that every object must use exact fla
 - Wood should show restrained stylized grain or plank separation.
 - Avoid heavy outlines, excessive bloom, chromatic aberration, lens dirt, and over-sharpening.
 
+## Underwater visual direction
+
+Underwater spaces are part of the same world and must share its stylized shape language, but they should have their own atmosphere:
+- Use readable depth layers: bright surface glow, mid-water colour, and darker distant silhouettes.
+- Let shafts of sunlight, soft caustic patterns, suspended particles, and natural crystal highlights create points of interest. Use effects sparingly so navigation and objects remain clear.
+- Use turquoise and seafoam in shallow reefs, deeper teal and blue in ravines, and restrained violet/coral accents for unusual finds.
+- Build memorable silhouettes from coral arches, rock shelves, cave openings, ravines, and wreck structures.
+- Keep crystals and pearls visually distinct without making every collectible glow like a neon marker.
+- Avoid heavy fog, opaque water, dense particle clouds, and excessive transparent layers that hide routes or harm mobile performance.
+- Underwater discovery should be readable through the environment itself, not through sonar screens, tracking gadgets, or scanner UI.
+
 ## Lighting and atmosphere
 
 - Default: bright tropical daytime with warm sun, soft but readable shadows, clear sky, and atmospheric distance.
