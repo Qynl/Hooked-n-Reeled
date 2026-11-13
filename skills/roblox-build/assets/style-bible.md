@@ -93,7 +93,7 @@ Generated images belong in [`assets/visual-references/`](./visual-references/). 
 - DO: match the supplied tropical reference's water colour, layered islands, lush foliage, chunky rocks, and atmospheric depth.
 - DO: create asset sheets with separate, clearly isolated objects on a consistent neutral background.
 - DO: keep a coherent scale and camera language across all reference images.
-- DO: give important locations memorable silhouettes, landmarks, and local visual details without requiring a formal biome system.
+- DO: give important locations memorable silhouettes, landmarks, and local visual details.
 - DON'T: drift into generic flat low-poly starter-pack visuals.
 - DON'T: make every island or fishing area visually identical; vary local scenery and atmosphere naturally.
 - DON'T: use neon rarity glows as a substitute for good fish design.
