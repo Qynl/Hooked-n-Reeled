@@ -42,6 +42,17 @@ Use environmental storytelling rather than dedicated discovery gadgets. Possible
 
 Some clues should be noticeable from a player's current fishing spot. Others can reward travelling to investigate. Clues should invite curiosity rather than provide constant exact waypoint instructions. Players should never need a gadget to see, interpret, or follow them.
 
+### Activity around a stationary spot
+
+The ocean should not become interesting only when the player moves. Local moments can happen around an occupied fishing spot:
+- A school passes through the area or circles the boat before moving on.
+- Birds gather, baitfish scatter, or a distant predator breaks the surface.
+- Bubbles, ripples, unusual splashes, or a temporary change in water colour appear nearby.
+- A floating object or small piece of drifting cargo passes within sight.
+- A short local feeding event changes which fish are more active for a while.
+
+These moments can create atmosphere, small catch opportunities, or optional decisions. The player can stay and keep fishing; no local event should constantly pull them away or punish them for ignoring it.
+
 ## Rare-fish clues and RNG
 
 Use a mix of natural RNG and learnable conditions:
