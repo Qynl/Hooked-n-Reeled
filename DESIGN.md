@@ -60,22 +60,23 @@ The exact probability points at which presentation changes are open for later tu
 
 Avoid excessive interruption. The excitement should come from contrast and rarity, not from making every catch slow.
 
-## Fish, rarity, and variants
+## Fish, rarity, and mutations
 
-Fish include ordinary species, rare variants, fantastical creatures, and boss creatures. The world should contain a large and varied species roster.
+The canonical rules live in [Fish Rarity, Mutations, and Catch Outcomes](docs/FISH_RARITY_AND_MUTATIONS.md). All fishing, Fishbook, economy, and implementation work must follow that specification.
 
-Fish can have:
-- Species identity.
-- An exact catch probability expressed as odds (for example, 1/2, 1/200, or 1/5,000).
-- Weight and size.
-- Variants and mutations.
-- Distinctive visual traits or effects, especially for unusual catches.
+**One species, one rarity value.** Every fish species has exactly one numerical species catch-odds value, such as `1/2`, `1/200`, or `1/8,500`. Do not use named rarity tiers. A mutation never changes, replaces, or adds another rarity value to the species.
 
-**Rarity is odds-based, not a named tier ladder.** Do not classify fish into labels such as Common, Uncommon, Rare, Epic, Legendary, Mythic, or Secret. The actual probability is the rarity definition: a fish with odds of 1/200 is rarer than one with odds of 1/2, and a fish with odds of 1/5,000 is rarer still. Show and communicate rarity through the probability itself (or a clearly equivalent “1 in X” display), not through conventional tier names.
+A mutation changes an individual fish while preserving its species identity. For example, a Golden Crystalfin is still a Crystalfin, has the same species odds as a normal Crystalfin, and carries the Golden mutation as an additional individual attribute. Golden may change the appearance and server-calculated sale value through a configured multiplier, but it does not create a new species or rarity.
 
-This establishes the system's format only. It does not decide the number of fish, assign odds to any species, or lock any balance values. Exact probabilities and the way luck or conditions affect them remain open design work.
+Keep these concepts separate:
+- **Species and its one odds value:** what fish it is and its defining rarity.
+- **Mutation:** an optional individual trait, such as Golden, with its own mutation roll configuration and compatible species.
+- **Size and weight:** individual random attributes and records.
+- **Conditions:** determine eligible fish and any explicitly approved contextual modifiers without rewriting the species' canonical rarity.
 
-RNG should remain part of the excitement, but not the only factor. Specific fishing area, water depth, weather, time, and other discoverable conditions can influence eligible fish pools or odds. These conditions should be understandable enough that players can make informed choices without turning fishing into an overcomplicated simulation. Every normal fishing area must retain a worthwhile catch pool and a chance at exciting RNG catches; rare fish must not be locked exclusively behind roaming, clues, or events. Environmental clues can improve a player's choices, but players who prefer to camp at one spot must still have a complete and rewarding loop.
+Mutation chance is not a second fish rarity. Mutation compatibility, value effects, and presentation are configured separately. The initial implementation should support zero or one mutation per fish instance; stacking is a future decision, not an assumption.
+
+The server owns species selection, mutation rolls, size/weight generation, value calculation, and fish-instance creation. Exact odds semantics, mutation rates, multipliers, and balance values remain open until explicitly configured and tested. Example numbers are not approved balance values.
 
 ## Fish use and collection
 
