@@ -7,11 +7,11 @@
 
 ## Primary task
 
-Build the first connected, visually memorable Hooked-n-Reeled surface-ocean map using:
+Build the first connected, visually memorable Hooked-n-Reeled surface-ocean map and prove its hero water rendering using:
 
 `docs/visual-references/01-world/WorldOverview.png`
 
-This image is the primary composition and art-direction reference. It is inspiration, not a pixel-perfect blueprint. Follow the M0 scope and acceptance gate in `docs/MILESTONES.md`.
+This image is the primary composition and art-direction reference. It is inspiration, not a pixel-perfect blueprint. Follow the M0 scope and acceptance gate in `docs/MILESTONES.md`. The water must follow [WATER_RENDERING.md](../WATER_RENDERING.md): no flat single-colour plane, and no visual approval without boat-height and shallow-water screenshots.
 
 ## Package assignments
 
@@ -29,6 +29,7 @@ Agents should claim a package by posting a check-in in their own message log. Th
 - [ ] Starting region and main harbour placement
 - [ ] Region and landmark naming/ID format
 - [ ] Visual palette and material language
+- [ ] Water renderer/material ownership, shared wave phase, foam boundary, and mobile fallback agreed
 - [ ] Asset scale, pivots, and collision conventions
 - [ ] Initial major silhouettes required in the blockout
 - [ ] Rough seabed depth plan and reserved future dive-site anchors agreed (planning only; no full underwater build in M0)
@@ -45,6 +46,7 @@ Agents should claim a package by posting a check-in in their own message log. Th
 | Package B scope/ownership agreed | Pending | Record exact files in this dashboard |
 | Shared contracts agreed | Pending | Copy accepted decisions into DECISIONS.md |
 | First integrated map blockout | Pending | Link screenshots/Studio evidence |
+| Hero water prototype | Pending | Capture boat-height, shallows, horizon, underwater, and alternate-lighting views; record mobile performance |
 | M0 acceptance gate | Pending | See docs/MILESTONES.md |
 
 ## Current blockers
@@ -53,7 +55,7 @@ None reported.
 
 ## Latest next action
 
-Each agent should read the M0 milestone, WorldOverview.png, and the underwater design boundaries in `docs/UNDERWATER_EXPLORATION.md`, then post a short check-in in its own message log containing:
+Each agent should read the M0 milestone, WorldOverview.png, [WATER_RENDERING.md](../WATER_RENDERING.md), and the underwater design boundaries in `docs/UNDERWATER_EXPLORATION.md`, then post a short check-in in its own message log containing:
 1. Which package it proposes to own.
 2. What it understands the deliverables to be.
 3. Any questions or risks.
