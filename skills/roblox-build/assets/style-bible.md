@@ -26,9 +26,9 @@ This is **not** flat low-poly art, primitive block builds, or realistic PBR. Use
 
 | Role | Colour | Hex | Use |
 |---|---|---|---|
-| Main shallow water | Clear turquoise | `#35C6C8` | Lagoons, reefs, near-shore water |
-| Main ocean | Deep tropical blue | `#176B87` | Offshore water |
-| Water highlight | Seafoam | `#A5E6D3` | Foam, shallow transitions, highlights |
+| Shallow-water base tint | Pale aqua, kept subtle | `#35C6C8` | A supporting tint beneath visible light, seabed, and surface detail |
+| Deep-water base tint | Deep teal-blue, not a flat fill | `#176B87` | A supporting depth tint for offshore water |
+| Water light response | Sunlit silver/seafoam glints | `#A5E6D3` | Moving highlights, foam accents, reflected light |
 | Vegetation | Island green | `#63B66B` | Grass, broad foliage |
 | Vegetation shadow | Palm green | `#287C59` | Dense foliage, canopy depth |
 | Sand | Warm sand | `#F1D49A` | Beaches, paths |
@@ -52,8 +52,10 @@ These are art-direction anchors, not a rule that every object must use exact fla
 ## Materials and rendering
 
 - Mostly matte or satin surfaces.
-- Water is the visual hero: layered turquoise-to-blue colour, readable shallow/deep transitions, controlled reflections, gentle wave detail, and shoreline foam.
-- Keep specular highlights controlled; avoid mirror-like water.
+- Water is the visual hero. Follow [`docs/WATER_RENDERING.md`](../../../docs/WATER_RENDERING.md) as the required technical and visual specification.
+- Never approve a flat single-colour water plane as the finished ocean. The look must come from layered moving swell, fine ripples, moving sun glints, environment reflections, visible shallow seabed, natural depth falloff, and irregular shoreline foam.
+- Colour is only a subtle base input. Do not attempt to create impressive water by changing Color3 values alone.
+- Keep reflections rich and dynamic but not mirror-like. The ocean must look compelling at boat height, not only from an elevated map view.
 - Rock should have subtle value variation, not noisy photorealistic textures.
 - Wood should show restrained stylized grain or plank separation.
 - Avoid heavy outlines, excessive bloom, chromatic aberration, lens dirt, and over-sharpening.
@@ -101,7 +103,9 @@ Generated images belong in [`assets/visual-references/`](./visual-references/). 
 
 ## Do / don't
 
-- DO: match the supplied tropical reference's water colour, layered islands, lush foliage, chunky rocks, and atmospheric depth.
+- DO: match the supplied tropical reference's water quality and light response, layered islands, lush foliage, chunky rocks, and atmospheric depth.
+- DO: prototype and visually inspect the water at boat height, at the shoreline, from underwater, and from an elevated overview.
+- DON'T: ship a flat Terrain water plane or a single-colour mesh as the final hero ocean.
 - DO: create asset sheets with separate, clearly isolated objects on a consistent neutral background.
 - DO: keep a coherent scale and camera language across all reference images.
 - DO: give important locations memorable silhouettes, landmarks, and local visual details.
