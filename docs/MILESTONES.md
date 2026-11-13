@@ -1,497 +1,557 @@
-# Hooked-n-Reeled — Development Milestones
+# Hooked-n-Reeled — Production Milestones
 
-## Development philosophy
+> **Current priority: M0, the master ocean map. Do not skip ahead to fishing systems.**
+>
+> This roadmap is an execution plan for the two development agents working in the Roblox project. It defines what to build, who owns which part, how the parts connect, and what must be demonstrated before a milestone is complete.
 
-**Build the world first.** Hooked-n-Reeled should make players want to sail out and discover what is beyond the horizon. The first production work is therefore the ocean map and its visual identity, not fishing menus or backend systems.
+## 1. Product direction
 
-Work in small, integrated slices. Each milestone has exactly two bounded packages. Package A and Package B are workstreams, **not permanent agent roles**: assign either agent to either package at the start of each milestone and feel free to swap assignments next time.
+Hooked-n-Reeled is an ocean-first fishing adventure. The ocean is the world that connects everything: memorable islands, ports, fishing locations, hidden places, and distant landmarks should make players curious to sail farther.
 
-A milestone should normally produce one visible, testable improvement rather than attempting to finish an entire large system. Do not start the next milestone just because files were written; integrate both packages and verify the result in Roblox Studio first.
+The intended visual direction is polished, colourful, stylized 3D: clear silhouettes, deliberate geometry, bright tropical shallows, deep blue open water, lush greens, warm sand, coral accents, natural lighting, and readable spaces. Avoid generic flat greybox environments, noisy detail, excessive outlines, and effects that obscure gameplay.
 
-## How to run each milestone
+The game should combine:
+- **Exploration:** a connected ocean with recognisable destinations and discoveries.
+- **Fishing:** satisfying, skill-based catches with meaningful variety.
+- **Collection:** distinct fish, discoveries, records, and a fishbook.
+- **Boats:** visible progression, personalisation, and useful onboard storage.
+- **Shared adventures:** multiplayer trips, special encounters, and world events.
 
-1. Read this file, [DESIGN.md](../DESIGN.md), the relevant system docs, and [TWO_AGENT_WORKFLOW.md](TWO_AGENT_WORKFLOW.md).
-2. Agree on the exact scope, file ownership, and any shared interfaces before either agent edits files.
-3. Assign one writer to each package. Never have both agents edit the same file at the same time.
-4. Build in small passes. Keep a working place after each pass.
-5. Integrate both packages, open the result in Studio, and test the acceptance checklist.
-6. Record what is complete, what is not, screenshots, changed files, and any decisions that need the user's approval.
+Confirmed design constraints:
+- Players must be able to enjoy fishing while staying at one good fishing spot. Exploration is rewarding, but never a requirement for every catch.
+- Do not add sonar, tracking devices, scanners, or similar detection gadgets.
+- The ocean and destinations should feel connected, not like separate minigame islands.
+- Server authority owns catches, currency, inventory, purchases, permissions, and rewards.
+- Support PC and mobile from the beginning of each relevant interaction.
+- Build a small polished playable slice before expanding content.
 
-**Visual references:** Every image in `docs/visual-references/` is concept inspiration only by default. Do not copy images one-to-one or treat them as final designs, asset lists, fish rosters, boat specifications, prices, or map decisions. Follow [the visual-reference rules](visual-references/README.md). Written confirmed decisions take priority.
+## 2. How to use this roadmap
+
+Every milestone has **exactly two packages**. Package A and Package B are parallel workstreams, not fixed agent identities. The agents may swap packages between milestones.
+
+For every milestone:
+
+1. Read this file, [DESIGN.md](../DESIGN.md), [TWO_AGENT_WORKFLOW.md](TWO_AGENT_WORKFLOW.md), and only the relevant system documents.
+2. Check the current Roblox project and branch before editing. Do not assume a previous agent's work exists or works.
+3. Agree on scope, file ownership, shared interfaces, and the Studio test before coding.
+4. Each package has one clear owner. Never let both agents edit the same file concurrently.
+5. Build the smallest working version first. Keep the place opening and playable throughout the milestone.
+6. Integrate both packages before adding polish. Test the integrated result in Roblox Studio.
+7. Record changed files, test evidence, known issues, and decisions requiring user approval.
+
+### Package rules
+
+- **Package A** and **Package B** should be similar in effort. Split by responsibility, not by giving one agent all the hard work.
+- Each package must have concrete outputs. “Research”, “make it better”, or “build the system” alone is not an acceptable task.
+- Shared contracts are agreed before implementation. Examples: IDs, data shapes, coordinate conventions, remote payloads, ownership rules, and visual scale.
+- Do not silently expand scope. Put extra ideas into a follow-up note.
+- Use placeholders only when they unblock integration, and label them clearly.
+- Do not mark a milestone complete because files exist. The acceptance checks must pass in the integrated Roblox place.
+- If a required tool, asset, or Roblox Studio access is unavailable, report the blocker honestly. Do not claim a Studio test was performed when it was not.
+
+### Visual-reference rule
+
+Images under `docs/visual-references/` are concept references by default, not final assets or locked content. They communicate art direction, possible silhouettes, colour, mood, and composition. They do not automatically decide exact geography, species, boat lists, prices, stats, or required props. Written confirmed decisions take priority. Follow [the visual-reference rules](visual-references/README.md).
 
 ---
 
-# Phase 1 — Build an amazing world
+# Phase 1 — Build the world first
 
-## M0 — The master ocean map
+## M0 — Create the master ocean map
 
-**Goal:** Establish the exciting, recognisable world of Hooked-n-Reeled. This is the first production milestone. Prioritise a beautiful, memorable map composition with a strong sense of scale and discovery.
+<badge-placeholder></badge-placeholder>
 
-### Package A — World geography and large forms
-- Translate the world concept into a readable top-down layout.
-- Establish the central starting region, main harbour location, island groups, broad ocean channels, remote outer areas, and distant landmarks.
-- Create the first in-Studio world layout: ocean surface, island silhouettes, coastlines, major cliffs, beaches, reefs, and large rock formations.
-- Make navigation routes between important areas clear and leave room for future expansions.
-- Keep the world ocean-first: islands are destinations and landmarks, not disconnected level islands.
+**Priority:** FIRST. This is the first production milestone.
 
-**Deliverables:** approved world layout document/image placement, first navigable map layout in Studio, named region/landmark list.
+**Goal:** Turn the world overview concept into a beautiful, coherent, navigable Roblox ocean map. The result should already feel like a real game world from an elevated view, even before every location is fully dressed.
 
-### Package B — Environment asset foundation
-- Create a small, cohesive first asset kit for the map: palm variations, tropical trees, bushes, grass, beach plants, rocks, boulders, cliff pieces, and a few signature formations.
-- Build reusable modular pieces rather than one-off models wherever practical.
-- Establish consistent scale, pivot/origin conventions, naming, collision approach, material palette, and asset organisation.
-- Use the visual references for style inspiration only; make original assets that suit the actual map.
-- Provide simple placeholder variants when a final asset would block Package A.
+### Required visual reference: WorldOverview.png
 
-**Deliverables:** reusable first environment kit in Studio/repository, asset naming and scale conventions, short usage notes.
+**The agents must open and study this exact image before planning or building the map:**
 
-**Shared agreement before work:** map scale and coordinate convention, region names/IDs, asset dimensions/pivots, terrain material palette, and which landmarks are required in the first map pass.
+![World overview concept reference](visual-references/01-world/WorldOverview.png)
 
-**Acceptance:**
-- The world can be explored by moving through connected ocean routes.
-- The map has a clear visual identity and memorable large-scale silhouettes, not a flat greybox.
-- Island groups and major landmarks are recognisable from a distance.
-- The first environment assets fit together visually and can be reused.
-- No major route is accidentally blocked; performance is checked with a representative view.
-- A Studio screenshot/video of the integrated map is captured and reviewed.
+File: `docs/visual-references/01-world/WorldOverview.png`
 
-## M1 — Make the first region beautiful and playable
+Use it as the **primary visual and composition reference** for the first world layout. Pay particular attention to:
+- The overall island-and-ocean composition and the sense of a large connected world.
+- The relationship between the central/main area, smaller island groups, distant destinations, and open-water routes.
+- The variety of island silhouettes, coastlines, cliffs, beaches, rock formations, and natural landmarks.
+- The colour balance between turquoise shallows, deeper blue ocean, green land, pale sand, and accent colours.
+- How the map creates curiosity: visible destinations, interesting gaps, and routes that make players want to sail onward.
 
-**Goal:** Turn the starting area into a polished first impression without trying to finish every island.
+**Do not trace or reproduce the image pixel-for-pixel.** Translate its strongest ideas into an original, practical Roblox map. The image is inspiration, not a final coordinate map or a binding list of every island. Keep the confirmed game design authoritative.
 
-### Package A — Starter region environment
-- Build the starter island and its immediate coastline using the M0 asset kit.
-- Add a small arrival dock, welcoming beach, first fishing location, clear paths, and a few memorable details.
-- Create the first visual pass of the main harbour area or a compact harbour slice.
-- Make the environment readable at player height as well as from an elevated overview.
+If the image cannot be opened, stop and report that specific blocker. Do not quietly substitute a different image or invent what it contains.
 
-**Deliverables:** one finished starter-area slice and one harbour slice, with screenshots from player and overview cameras.
+### Package A — World layout, geography, and blockout
 
-### Package B — World navigation and region structure
-- Implement stable region/area identifiers and world bounds.
+**Owns:** the map plan and the large-scale world geometry.
+
+1. Study `WorldOverview.png` and write a short visual breakdown of its composition before building.
+2. Create a top-down planning layout with:
+   - A clear starting region and main harbour area.
+   - Several distinct island groups rather than evenly spaced generic islands.
+   - Wide navigable ocean channels and readable travel routes.
+   - Near, mid-distance, and far-horizon destinations to create a sense of scale.
+   - Distinctive large landmarks that can be recognised from a boat.
+   - Open space for future locations and expansion.
+3. Establish a coordinate system, rough world scale, map bounds, and a simple naming scheme for regions and landmarks.
+4. Build the first Roblox Studio blockout:
+   - Continuous ocean surface.
+   - Main island masses and smaller island silhouettes.
+   - Coastlines, beaches, cliffs, reefs, and large rock forms.
+   - Clear channels between land masses.
+   - Basic navigation clearance for the future boat sizes.
+5. Use temporary geometry where detailed assets are not ready. Prioritise composition and navigability over tiny decoration.
+6. Capture an elevated overview screenshot and a few boat/player-height screenshots.
+
+**Deliverables:**
+- A top-down world layout saved in `docs/`.
+- A named list of regions, island groups, routes, and major landmarks.
+- A working Studio map blockout with continuous ocean routes.
+- Screenshots showing the overall composition and scale.
+
+### Package B — First environment asset kit
+
+**Owns:** reusable environment pieces that help the blockout become a cohesive world.
+
+1. Study the visual language in `WorldOverview.png` and the relevant nature/terrain references.
+2. Create a deliberately small first kit:
+   - Several palm/tree silhouettes.
+   - A few tropical bushes and ground plants.
+   - Beach grass and small coastal plants.
+   - Multiple rock and boulder shapes.
+   - Cliff/shoreline pieces where useful.
+   - A few recognisable signature formations.
+3. Make assets modular and reusable. Prefer a small number of strong variations over dozens of near-identical objects.
+4. Define and document:
+   - Naming convention and folder structure.
+   - Consistent world scale and approximate player/boat scale.
+   - Pivot/origin conventions.
+   - Collision approach.
+   - Material and colour palette.
+   - Performance expectations (part count, mesh reuse, and sensible detail).
+5. Deliver the kit in a form Package A can actually place into the map. Do not create an isolated art showcase that cannot be integrated.
+6. Keep placeholders simple where a final model would delay the map.
+
+**Deliverables:**
+- A usable first environment kit in the Roblox project.
+- A short asset guide covering scale, pivots, naming, materials, and collision.
+- A small in-map example showing the assets working together.
+
+### M0 shared agreement before work
+
+Both agents must agree on:
+- World coordinate system and rough map scale.
+- Starting region and main harbour placement.
+- Region/landmark naming and ID format.
+- Visual palette and material language.
+- Asset scale, pivots, and collision conventions.
+- The initial set of major silhouettes that must appear in the first blockout.
+- How Package B's assets will be handed to and used by Package A.
+
+### M0 integration and acceptance gate
+
+M0 is complete only when all of these are true:
+
+- [ ] The exact `WorldOverview.png` reference was reviewed and used as the primary composition guide.
+- [ ] The resulting map is an original interpretation, not a one-to-one copy.
+- [ ] The world reads as one connected ocean with navigable routes.
+- [ ] The starting region, harbour area, island groups, distant destinations, and major landmarks are identifiable.
+- [ ] The map has varied silhouettes and a strong sense of scale from an elevated view.
+- [ ] The map is navigable at player/boat height, with no accidental route blockages.
+- [ ] The environment kit is reusable and integrated into the map.
+- [ ] The palette and assets feel cohesive rather than assembled from unrelated packs.
+- [ ] A representative performance check has been made in Studio.
+- [ ] Integrated screenshots and a short completion report are saved.
+
+**Do not move to M1 until the user has had a chance to review the master map direction.** If the overall geography or composition needs changing, fix it here before dressing individual locations.
+
+## M1 — Turn the starting area into a playable first impression
+
+**Goal:** Make one compact part of the world feel intentional and welcoming. Do not attempt to finish every island.
+
+### Package A — Starter island and harbour environment
+- Build the starter island and immediate coastline using the M0 kit.
+- Create a readable arrival point, small dock, beach, paths, and first fishing area.
+- Build a first playable slice of the main harbour with room for future services.
+- Add a small number of distinctive environmental details.
+- Check the space from player height and from the water.
+
+**Deliverables:** polished starter-area slice, compact harbour slice, overview and player-height screenshots.
+
+### Package B — World structure and navigation foundation
+- Define stable region/area IDs and world bounds.
 - Set up player spawn and safe respawn locations.
-- Add basic navigation guidance through landmarks, coastline shapes, and routes; avoid cluttering the screen with permanent waypoint UI.
-- Establish a practical streaming/performance approach for the world size.
-- Add simple region entry/exit detection if needed, without implementing fishing rewards yet.
+- Add basic region entry/exit detection if needed.
+- Configure a practical streaming approach for the map.
+- Use landmarks and route shapes for natural navigation; avoid permanent waypoint clutter.
+- Keep the region structure extensible.
 
-**Deliverables:** region metadata, spawn setup, basic navigation/streaming configuration, test notes.
+**Shared contract:** region IDs, coordinate system, spawn ownership, streaming boundaries, and how map objects identify their region.
 
-**Shared agreement:** region ID format, spawn ownership, map coordinate system, streaming boundaries, and how environment objects identify their region.
+**Acceptance gate:**
+- New players spawn in the intended location.
+- The starter island and harbour are understandable without instructions.
+- Players can travel from the starter area to a nearby fishing area.
+- Streaming and region detection do not break travel.
+- Initial PC and mobile performance checks are recorded.
 
-**Acceptance:**
-- A new player spawns in the intended starting location.
-- The starter area is visually coherent and easy to understand.
-- Players can travel from the starter area to the first nearby fishing area.
-- Region detection and streaming do not break travel or hide nearby important geometry.
-- PC and mobile performance receive an initial check.
+## M2 — Give the ocean its visual identity
 
-## M2 — Make the ocean feel alive
-
-**Goal:** Give the map its colour, atmosphere, water identity, and environmental detail.
+**Goal:** Make the world feel alive through water, lighting, atmosphere, and environmental dressing.
 
 ### Package A — Water, lighting, and atmosphere
-- Establish the core lighting setup and colour palette.
-- Create readable shallow-to-deep water transitions and coastline foam/wave treatment.
-- Add a restrained sunny-day atmosphere and one contrasting weather/time-of-day test.
-- Keep reflections, transparency, particles, and post effects performant.
-
-**Deliverables:** approved base lighting/water setup and one alternate atmosphere preset.
+- Establish the base lighting and colour grade.
+- Create a readable shallow-to-deep water language.
+- Build shoreline transitions, restrained foam/wave details, and controlled reflections.
+- Add a polished sunny-day setup and one contrasting weather/time-of-day test.
+- Keep transparency, particles, and post-processing performant.
 
 ### Package B — Environmental dressing and landmarks
-- Dress the first region with vegetation, rocks, beach details, dock props, and a few visual discoveries.
-- Add a small number of signature landmarks that help players orient themselves.
-- Establish density rules so important gameplay areas remain readable.
-- Check object collisions and avoid decorative clutter around paths, docks, and fishing locations.
+- Dress the starter region and nearby routes with the M0 asset kit.
+- Add a few memorable landmarks visible from useful distances.
+- Define density rules for vegetation, rocks, and props.
+- Keep paths, docks, fishing spots, and sightlines readable.
+- Check collisions and remove decorative clutter that interferes with play.
 
-**Deliverables:** dressed starter region, landmark pass, simple set-dressing rules.
+**Shared contract:** lighting ownership, material palette, water-depth colours, environment density, and performance budget.
 
-**Shared agreement:** material palette, lighting ownership, water colour/depth language, environment density, and performance budget.
+**Acceptance gate:** shallow/deep water is distinguishable, the starter region looks cohesive, landmarks aid orientation, decoration does not obstruct play, and the integrated scene is checked in Studio.
 
-**Acceptance:**
-- The starter region looks like a deliberate, polished game environment.
-- Shallow and deep water are visually distinguishable.
-- Landmarks are readable at useful distances.
-- Decoration does not obstruct player movement or interactions.
-- The scene is checked in Studio under the agreed performance budget.
+## M3 — Establish the first fishing locations
 
-## M3 — First fishing locations
-
-**Goal:** Create a small set of genuinely different fishing places before implementing the full fishing system.
+**Goal:** Create a few different fishing places before building the full fishing system.
 
 ### Package A — Fishing spot environments
-- Build and dress three initial fishing spots, for example a calm lagoon, rocky coast, and reef edge.
-- Give each spot a distinct silhouette, water appearance, and environmental identity.
+- Build three initial locations, such as a calm lagoon, rocky coast, and reef edge.
+- Give each a distinct silhouette, water appearance, and environmental identity.
 - Include at least one satisfying stationary fishing location.
-- Keep the spots accessible from the ocean routes.
+- Ensure each is reachable through the ocean routes.
+- Do not force players to travel between spots to make fishing worthwhile.
 
-**Deliverables:** three in-world fishing spot environments.
+### Package B — Fishing-area data foundation
+- Define stable spot IDs and metadata: region, water type, depth band, and condition tags.
+- Add server-side helpers to determine whether a player is inside a valid fishing area.
+- Establish a small shared configuration contract.
+- Do not add fish selection, rarity rolls, or rewards yet.
 
-### Package B — Fishing area data and validation foundation
-- Define stable fishing spot IDs and metadata such as region, water type, depth band, and relevant condition tags.
-- Add server-side validation helpers for checking whether a player is in a valid fishing area.
-- Establish a small shared configuration contract for fishing areas.
-- Do not implement fish selection, rarity rolls, or rewards yet.
+**Shared contract:** spot IDs, water/depth vocabulary, region metadata, and player-to-spot detection.
 
-**Deliverables:** fishing spot data definitions and server validation contract.
-
-**Shared agreement:** spot IDs, water/depth vocabulary, player-to-spot detection, and region metadata.
-
-**Acceptance:**
-- The three spots are visually distinct and reachable.
-- The server can identify a valid spot for a player without trusting client claims.
-- A player can remain at a valid stationary spot without being forced to explore.
-- Spot metadata can be extended without rewriting the world layout.
+**Acceptance gate:** three distinct reachable spots exist; the server can validate a spot without trusting client claims; stationary fishing remains valid; metadata can expand without rebuilding the map.
 
 ---
 
-# Phase 2 — Make fishing fun
+# Phase 2 — Make fishing genuinely fun
 
-## M4 — Project and gameplay foundation
+## M4 — Establish the minimum gameplay foundation
 
-**Goal:** Add only the technical foundation needed for the first fishing slice.
+**Goal:** Add only the architecture needed for the first complete fishing slice. Avoid building a huge framework before it is needed.
 
 ### Package A — Server foundation
-- Establish the server service/bootstrap structure.
-- Add shared types/configuration and a clean service lifecycle.
-- Create safe player join/leave handling and a minimal player data wrapper.
-- Keep persistence minimal until the data model is known.
+- Create the server bootstrap and service lifecycle.
+- Define shared types/configuration conventions.
+- Add safe player join/leave handling.
+- Add a minimal player data wrapper suitable for the first gameplay loop.
+- Keep persistence minimal until the actual data model is clear.
 
 ### Package B — Client and communication foundation
-- Establish client bootstrap and UI mounting structure.
-- Define remote-event/function conventions and typed payloads.
-- Add server validation, rate limiting, and clear error handling for the first fishing interactions.
-- Add a small debug/test interface for development, not a player-facing feature.
+- Create the client bootstrap and UI mounting structure.
+- Define remote-event/function naming and payload conventions.
+- Add server validation, rate limiting, and clear error responses.
+- Add a small development-only debug/test interface.
+- Keep client visuals/input separate from authoritative game state.
 
-**Shared agreement:** module ownership, service names, remote names/payloads, data ownership, and error conventions.
+**Shared contract:** service names, module ownership, remote names/payloads, data ownership, and error conventions.
 
-**Acceptance:**
-- Client and server start without errors.
-- A test interaction can travel client → server → client.
-- Invalid payloads are rejected and rate-limited.
-- No client can authoritatively set currency, inventory, fish, or rewards.
+**Acceptance gate:** client and server start cleanly; a test request round-trips; malformed/repeated requests are rejected; clients cannot authoritatively set currency, inventory, fish, or rewards.
 
-## M5 — First complete fishing cycle
+## M5 — Deliver the first complete fishing loop
 
-**Goal:** One rod, one spot, a small starter fish pool, and a complete cast-to-catch experience.
+**Goal:** One rod, one spot, a tiny temporary fish pool, and a complete cast-to-catch experience.
 
 ### Package A — Server fishing encounter
-- Implement cast validation, bite timing, hook window, encounter state, and server-side catch resolution.
-- Validate player state, position, valid fishing spot, equipped rod, and request timing.
-- Use a tiny temporary fish pool for this first playable test.
-- Ensure cancellation, timeout, disconnect, and duplicate-request handling are safe.
+- Implement cast validation, bite timing, hook window, encounter state, and catch resolution.
+- Validate player state, position, fishing spot, equipped rod, and request timing.
+- Keep the temporary fish pool deliberately small.
+- Handle cancellation, timeout, disconnect, and duplicate requests.
+- Let the server determine catch outcomes and rewards.
 
 ### Package B — Fishing controls and first minigame
 - Implement cast input and clear bobber/bite feedback.
-- Build one simple but satisfying reeling minigame.
-- Support keyboard/mouse and touch controls.
-- Show a compact catch result panel.
+- Build one satisfying reeling minigame.
+- Support keyboard/mouse and touch.
+- Add clear success, failure, cancel, and catch-result feedback.
+- Keep common catches quick and readable.
 
-**Shared agreement:** encounter state machine, remote payloads, minigame input contract, cancellation rules, and catch-result shape.
+**Shared contract:** encounter state machine, remote payloads, minigame input contract, cancellation rules, and catch-result shape.
 
-**Acceptance:**
-- A player can cast, receive a bite, hook, reel, and receive a catch.
-- The server decides the catch and reward; the client only sends input.
-- Invalid or repeated requests cannot create extra catches.
-- The interaction works on PC and mobile.
-- The first fishing spot remains enjoyable for repeated stationary fishing.
+**Acceptance gate:** a player can cast, hook, reel, and catch; repeated/invalid requests cannot duplicate rewards; PC and mobile controls work; the first stationary spot supports enjoyable repeat fishing.
 
-## M6 — Real fish identities and fishbook
+## M6 — Add real fish identities and the fishbook
 
-**Goal:** Replace temporary fish with a small set of distinct species and make discoveries meaningful.
+**Goal:** Replace temporary fish with a small original roster and make discoveries meaningful.
 
 ### Package A — Starter fish catalogue
-- Define a deliberately small first roster of original fish species.
-- Give each species a stable ID, habitat eligibility, size/weight range, visual description, and initial rarity configuration.
-- Ensure fish have distinct silhouettes and identities; do not derive the roster by copying `Fish_IDeas.png`.
-- Add data validation for missing or duplicate species IDs.
+- Design a small reviewed roster of original fish.
+- Give each species a stable ID, habitat eligibility, size/weight range, silhouette notes, and initial rarity configuration.
+- Make species recognisably different in shape and personality.
+- Treat `Fish_IDeas.png` only as inspiration, never as the final roster or a list to copy.
+- Validate missing and duplicate species IDs.
 
 ### Package B — Fishbook discovery
-- Implement species discovery tracking and basic fishbook pages.
+- Implement species discovery and basic fishbook pages.
 - Record first catch and personal size/weight records.
-- Show unknown/known information clearly.
+- Distinguish unknown and discovered species clearly.
 - Keep species discovery separate from ownership of an individual fish.
+- Provide a clean path for adding more fish later.
 
-**Shared agreement:** species schema, fish IDs, rarity representation, weight units, discovery record format.
+**Shared contract:** species schema, IDs, rarity representation, weight units, and discovery record format.
 
-**Acceptance:**
-- The starter fish pool contains a small, reviewed set of distinct species.
-- Catching a species registers it once in the fishbook.
-- Selling or losing an individual fish does not erase species discovery.
-- Fishbook records cannot be duplicated by repeated client requests.
+**Acceptance gate:** the starter roster is reviewed; catching a species records it once; selling/losing an individual fish does not erase discovery; repeated client requests cannot duplicate records.
 
-## M7 — Fish inventory and selling
+## M7 — Add fish inventory and selling
 
 **Goal:** Give each catch a reliable identity and a meaningful destination.
 
-### Package A — Fish instance inventory
-- Create unique server-generated IDs for individual caught fish.
-- Store catches in player inventory with clear capacity/overflow behaviour.
-- Implement safe transfers between inventory and a designated storage location.
+### Package A — Fish-instance inventory
+- Create unique server-generated IDs for individual fish.
+- Store catches with clear capacity and overflow behaviour.
+- Implement safe transfers to approved storage.
 - Prevent duplicate instances and invalid ownership transfers.
+- Define what happens when storage is full.
 
 ### Package B — Selling and first economy UI
-- Implement a simple sell interaction and readable fish value display.
+- Implement a simple sell interaction and readable value display.
 - Calculate sale value on the server from approved species/size/rarity data.
 - Add a basic currency display and sale confirmation.
-- Protect notable catches from accidental irreversible sale with clear feedback.
+- Protect notable catches from accidental irreversible sale.
+- Keep economy values configurable rather than hard-coded across UI scripts.
 
-**Shared agreement:** fish instance schema, ownership/transfer states, sale valuation, currency update contract.
+**Shared contract:** fish instance schema, ownership/transfer states, sale valuation, and currency update contract.
 
-**Acceptance:**
-- Each catch exists in exactly one location/state.
-- Selling grants currency exactly once.
-- Selling an individual fish does not erase fishbook discovery.
-- Client payloads cannot choose sale prices or grant currency.
+**Acceptance gate:** each fish exists in exactly one location/state; selling pays exactly once; fishbook discovery persists; clients cannot choose sale prices or grant currency.
 
-## M8 — Rods, bait, and first progression
+## M8 — Add rods, bait, and first progression
 
-**Goal:** Give players a few meaningful fishing choices, not a huge equipment catalogue.
+**Goal:** Give players a few meaningful choices without creating a giant equipment catalogue.
 
 ### Package A — Rod definitions and equipment
 - Define a small starter set of rods with distinct intended roles.
-- Implement rod ownership, equipping, and server-side effect validation.
-- Keep stat differences understandable and avoid one universally dominant rod.
+- Implement ownership, equipping, and server-side effect validation.
+- Keep stat differences understandable and balanced.
+- Make the system data-driven for future rods.
 
 ### Package B — Bait, shop, and progression
 - Define a small starter set of bait types and their eligible pool/condition effects.
-- Implement a simple shop flow with server-owned purchases.
-- Add clear UI for owned/equipped rods and bait.
-- Use non-stat cosmetics or small unlocks as early rewards where appropriate.
+- Implement a simple server-owned shop flow.
+- Add readable UI for owned/equipped rods and bait.
+- Add a modest early progression reward or unlock.
+- Prevent duplicate purchases and insufficient-funds purchases.
 
-**Shared agreement:** rod/bait data shape, effect vocabulary, purchase request/result, and balance rules.
+**Shared contract:** rod/bait data shape, effect vocabulary, purchase request/result, and balance rules.
 
-**Acceptance:**
-- Players can buy, equip, and switch the initial rods and bait.
-- Server validates ownership, prices, and effects.
-- Bait changes eligible fishing opportunities in a readable way.
-- No purchase can be duplicated or made with insufficient currency.
+**Acceptance gate:** players can buy/equip/switch initial rods and bait; the server validates ownership, prices, and effects; bait changes eligible opportunities in a readable way.
 
-## M9 — More reeling variety and special catches
+## M9 — Add reeling variety and special catch presentation
 
-**Goal:** Make different fish feel different to catch and give truly special catches a memorable reveal.
+**Goal:** Make different catches feel different without making every catch slow.
 
 ### Package A — Reeling mechanics
-- Add a second and third reeling archetype as separate reusable modules.
+- Add a second and third reusable reeling archetype.
 - Assign mechanics to selected species through configuration.
-- Tune difficulty for keyboard/mouse and touch.
+- Tune each mechanic for keyboard/mouse and touch.
 - Keep the first mechanic available for suitable species.
+- Add clear difficulty and accessibility rules.
 
 ### Package B — Catch presentation
 - Add rarity-aware sound, animation, camera, and effect hooks.
 - Build one notable/rare catch reveal and one boss-style presentation prototype.
 - Keep common catches quick and non-disruptive.
-- Ensure all effects cancel and clean up safely.
+- Ensure effects cancel and clean up safely.
+- Trigger special reveals only from server-confirmed results.
 
-**Shared agreement:** minigame interface, species-to-minigame mapping, presentation event schema, and cancellation/cleanup behaviour.
+**Shared contract:** minigame interface, species-to-minigame mapping, presentation event schema, and cancellation/cleanup behaviour.
 
-**Acceptance:**
-- At least three reeling mechanics are playable.
-- Selected species use the intended mechanics.
-- Special reveals trigger from server-confirmed results only.
-- Effects do not trap the player or block normal play after cancellation.
+**Acceptance gate:** at least three mechanics are playable; selected species use the intended mechanics; special reveals are reliable; no effect traps the player or blocks normal play.
 
 ---
 
 # Phase 3 — Boats, multiplayer, and world depth
 
-## M10 — First boats and ocean travel
+## M10 — Introduce the first boats and ocean travel
 
 **Goal:** Let players own a boat and travel the connected ocean reliably.
 
-### Package A — Boat models and progression starter set
-- Create a small initial family of boat hulls with clearly different silhouettes and scale.
-- Make progression visually satisfying: higher-cost boats should generally feel larger, more impressive, and offer more capability, while hull roles can still have trade-offs.
+### Package A — Starter boat family
+- Create a small family of boat hulls with clearly different silhouettes and sizes.
+- Make progression visually satisfying: more expensive boats should generally feel larger, cooler, and more capable.
+- Keep room for different boat roles and trade-offs.
 - Add seats, helm, boarding points, and clear interaction locations.
-- Treat boat concept sheets as inspiration, not a locked boat list or price table.
+- Use boat concept sheets as inspiration, not a locked roster or price table.
 
-### Package B — Boat ownership and travel system
-- Implement boat purchase/ownership and spawn/despawn flow.
-- Add basic server-validated movement and safe boarding/disembarking.
+### Package B — Boat ownership and travel
+- Implement purchase/ownership and spawn/despawn flow.
+- Add server-validated movement and safe boarding/disembarking.
 - Add a simple boat selection/spawn interface.
-- Test network ownership and multiplayer movement behaviour.
+- Test network ownership and multiplayer movement.
+- Ensure boats use the map's actual navigable routes.
 
-**Shared agreement:** boat IDs, hull dimensions, ownership state, movement authority, spawn points, and upgrade vocabulary.
+**Shared contract:** boat IDs, hull dimensions, ownership state, movement authority, spawn points, and upgrade vocabulary.
 
-**Acceptance:**
-- A player can acquire, spawn, board, pilot, and despawn an owned boat.
-- Other players can safely board as guests.
-- Boat movement does not allow arbitrary client teleporting or invalid ownership.
-- Boats fit through the intended ocean routes.
+**Acceptance gate:** players can acquire, spawn, board, pilot, and despawn an owned boat; guests can board safely; invalid teleporting/ownership is rejected; boats fit through intended routes.
 
-## M11 — Boat upgrades and customization
+## M11 — Add boat upgrades and personalisation
 
-**Goal:** Make boats personal and create a satisfying upgrade path.
+**Goal:** Make boats feel personal and create a satisfying upgrade path.
 
-### Package A — Upgrades and visual customization
+### Package A — Upgrades and visual customisation
 - Add a small first set of upgrades for speed, handling, stability, and storage support.
-- Add paint/colour and a few cosmetic customization options.
-- Keep functional stats and cosmetic appearance separate.
-- Make boat progression visible and understandable.
+- Add paint/colour and a few cosmetic options.
+- Separate functional stats from cosmetic appearance.
+- Make progression visible and understandable.
 
 ### Package B — Onboard placement
-- Prototype contextual free placement of a small set of owned objects.
+- Prototype contextual free placement for a small set of owned objects.
 - Support move, rotate, confirm, cancel, and pickup.
-- Validate build bounds, collisions, object limits, and access clearance on the server.
-- Start with a few decorative and functional objects; do not build a giant furniture catalogue.
+- Validate boat bounds, collisions, object limits, and access clearance on the server.
+- Start with a few decorative and functional objects, not a huge furniture catalogue.
 
-**Shared agreement:** boat save identity, upgrade data, placeable item schema, transform limits, and permission rules.
+**Shared contract:** boat save identity, upgrade data, placeable item schema, transform limits, and permission rules.
 
-**Acceptance:**
-- Upgrades persist and apply on the server.
-- Players can place and reposition approved objects within valid boat bounds.
-- Required controls and boarding/helm access cannot be blocked.
-- Placement works with mouse and touch.
+**Acceptance gate:** upgrades persist and apply server-side; approved objects can be placed/repositioned; helm and boarding access remain clear; mouse and touch placement work.
 
-## M12 — Coolers and fish storage on boats
+## M12 — Add coolers and onboard fish storage
 
-**Goal:** Make the boat useful for longer fishing trips without risking fish loss or duplication.
+**Goal:** Make longer fishing trips useful without risking fish loss or duplication.
 
 ### Package A — Cooler objects and capacity
 - Add a small set of cooler sizes/tiers.
-- Allow coolers to be placed on eligible boats.
-- Display cooler capacity and contents through a compact contextual UI.
-- Define a clear full-capacity response.
+- Allow coolers on eligible boats.
+- Show capacity and contents through a compact contextual UI.
+- Define clear full-capacity behaviour.
 
-### Package B — Safe fish transfers and permissions
+### Package B — Safe transfers and permissions
 - Implement atomic transfers between player inventory and boat coolers.
 - Add owner/guest permissions for viewing and depositing fish.
-- Prevent guests from taking, selling, or moving another player's fish without explicit permission.
+- Prevent guests taking, selling, or moving another player's fish without explicit permission.
 - Handle boat despawn, disconnect, and server transfer safely.
 
-**Shared agreement:** cooler IDs, capacity schema, fish ownership, transfer state, and guest permission levels.
+**Shared contract:** cooler IDs, capacity schema, fish ownership, transfer state, and guest permission levels.
 
-**Acceptance:**
-- A fish cannot exist in inventory and a cooler simultaneously.
-- Full storage never silently deletes a catch.
-- Permissions are checked by the server.
-- Stored fish remain safe through normal boat despawn/rejoin flows.
+**Acceptance gate:** a fish cannot exist in inventory and a cooler simultaneously; full storage never silently deletes a catch; server checks permissions; stored fish survive normal despawn/rejoin flows.
 
-## M13 — Group expeditions and cooperative encounters
+## M13 — Add group expeditions and cooperative encounters
 
-**Goal:** Make fishing trips with friends work as a coordinated activity.
+**Goal:** Make going out on the ocean with other players feel worthwhile.
 
 ### Package A — Group expedition flow
-- Add simple party/expedition membership and leave/join handling.
-- Show useful shared activity/location context without clutter.
-- Support group travel on shared boats.
-- Define safe behaviour when the owner leaves or disconnects.
+- Add a lightweight way to form/join an expedition or travel group.
+- Show group members and basic shared trip status.
+- Define owner/leader permissions and clean leave/disconnect behaviour.
+- Avoid building a complex guild/clan system.
 
-### Package B — Cooperative fishing/boss prototype
-- Build one bounded cooperative encounter.
-- Define participant eligibility and late-join rules.
-- Grant each eligible participant their own reward exactly once.
-- Keep reward delivery server-authoritative and idempotent.
+### Package B — Cooperative fishing encounter
+- Prototype one cooperative encounter or boss fish.
+- Define participation eligibility and encounter phases.
+- Ensure each eligible participant receives their own reward exactly once.
+- Make contribution/reward rules clear and server-authoritative.
+- Keep solo fishing fully viable.
 
-**Shared agreement:** party membership, boat guest permissions, encounter participant state, eligibility, and unique reward grant IDs.
+**Shared contract:** group identity, leader permissions, encounter participation, eligibility, and reward rules.
 
-**Acceptance:**
-- Two or more players can travel and complete the cooperative test.
-- Each eligible participant receives their own reward once.
-- Disconnects and duplicate completion requests do not duplicate or erase rewards.
+**Acceptance gate:** players can form and leave a group safely; eligible participants receive one personal reward; late joins/exploits cannot duplicate rewards; solo play remains supported.
 
-## M14 — More world discoveries and fishing conditions
+## M14 — Add world discoveries and fishing conditions
 
-**Goal:** Add optional reasons to explore while keeping stationary fishing rewarding.
+**Goal:** Give the ocean secrets and changing opportunities while preserving simple, rewarding fishing.
 
-### Package A — Fishing conditions and natural clues
-- Add a small number of weather/time/water-condition effects on eligible fish pools.
-- Add natural clues such as birds, splashes, unusual ripples, jumping fish, and visible schools.
-- Show clues that can be noticed from a stationary fishing spot as well as clues that reward travelling.
-- Do not introduce sonar, tracking devices, scanning gadgets, or research equipment.
+### Package A — Natural fishing conditions
+- Add a small set of conditions such as weather windows, time-of-day effects, currents, migrations, or visible schools.
+- Communicate conditions through the world itself wherever possible.
+- Keep stationary fishing spots rewarding even when no special condition is active.
+- Do not add sonar, scanners, tracking devices, or research gadgets.
 
 ### Package B — Secrets and special locations
-- Add one hidden cove or secret fishing location.
-- Add one discoverable wreck/drifting find or similar surface discovery.
-- Record discoveries in the fishbook or a simple journal.
-- Keep all secrets optional and avoid making them mandatory for ordinary progression.
+- Add a few discoverable locations, environmental clues, and optional secrets.
+- Use landmarks, silhouettes, unusual water/terrain, and exploration rather than detection equipment.
+- Ensure discoveries are understandable without external guides.
+- Add simple discovery records or rewards where useful.
 
-**Shared agreement:** condition tags, clue vocabulary, discovery IDs, reward payloads, and stationary-fishing guarantees.
+**Shared contract:** condition vocabulary, world-state timing, discovery IDs, reward ownership, and persistence rules.
 
-**Acceptance:**
-- Players can understand at least one natural clue and discover its meaning.
-- Exploration provides extra opportunities without invalidating ordinary fishing spots.
-- A player who stays in a suitable spot still has worthwhile fish pools and rare RNG chances.
-- No discovery gadget is required.
+**Acceptance gate:** conditions create variety without making ordinary fishing obsolete; secrets are discoverable through the world; no prohibited detection gadget is introduced; rewards are server-validated.
 
-## M15 — World events and expanded content slice
+## M15 — Add world events and expand the content slice
 
-**Goal:** Add a small, controlled event system and prepare the world for more content.
+**Goal:** Add one or two memorable events and make the existing slice feel cohesive.
 
-### Package A — One or two world event prototypes
-- Prototype a fish migration, unusual school, or temporary weather window.
-- Make event timing, eligible areas, start/end state, and fish-pool effects data-driven.
-- Ensure the event is optional and normal fishing remains active.
+### Package A — World event prototypes
+- Build one or two event types, such as a migration, unusual weather window, rare school, wreck discovery, or ocean phenomenon.
+- Give each event a clear start/end state and readable in-world cues.
+- Keep events optional and avoid requiring constant attendance.
+- Make event rewards server-authoritative.
 
 ### Package B — Content and reliability pass
-- Expand the initial fish/spot/boat content only where the existing systems support it.
-- Add missing fishbook clues and records for the new content.
-- Test event cleanup, player joining/leaving, and reward integrity.
-- Document admin-run events as a later live-operations feature, not a launch dependency.
+- Improve the starter regions, fish variety, boat progression, and UI consistency.
+- Fix the highest-impact bugs found during playtests.
+- Add basic onboarding and clearer feedback for confusing interactions.
+- Review economy and progression pacing.
+- Record performance and reliability issues for the final milestone.
 
-**Shared agreement:** event definition, eligible zones, event lifecycle, fish-pool modifier contract, and cleanup rules.
+**Shared contract:** event state, scheduling ownership, participation rules, reward schema, and content acceptance.
 
-**Acceptance:**
-- At least one event can start, run, and end cleanly.
-- Normal fishing continues outside event conditions.
-- Event rewards and catches cannot be duplicated.
-- Content can be added through data/configuration without rewriting core systems.
-
----
-
-# Phase 4 — Stabilise and prepare the first release
+**Acceptance gate:** at least one event works end-to-end; players understand how to participate; ordinary gameplay remains viable; major playtest blockers are documented and addressed.
 
 ## M16 — Persistence, performance, and release candidate
 
-**Goal:** Make the first complete slice reliable enough for wider playtesting.
+**Goal:** Make the current game slice reliable enough for a controlled release candidate.
 
-### Package A — Data safety and security
-- Add schema versioning and migrations for player data.
-- Test save/load failures, retries, session ownership, and rejoin behaviour.
-- Audit every reward, purchase, sale, inventory transfer, boat edit, and remote.
-- Add logs for important server-side failures without exposing sensitive player data.
+### Package A — Data safety and persistence
+- Audit all saved player data and ownership flows.
+- Implement robust save/load, retry, and session ownership handling.
+- Handle disconnects, server shutdown, and failed saves safely.
+- Validate all persisted values and reject malformed client data.
+- Test inventory, fishbook, currency, rods, boats, upgrades, and cooler contents.
 
 ### Package B — UX, accessibility, and performance
-- Polish onboarding, fishing feedback, fishbook, inventory, shop, and boat interfaces.
-- Verify keyboard/mouse and mobile controls.
-- Profile representative map areas, boats, effects, and multiplayer encounters.
-- Fix the highest-impact visual, usability, and performance issues.
+- Profile representative world areas and multiplayer situations.
+- Optimise expensive geometry, scripts, effects, and streaming.
+- Test on lower-end mobile as well as PC.
+- Improve UI readability, input feedback, and accessibility.
+- Run a structured regression pass over all core loops.
 
-**Shared agreement:** release data schema, performance budgets, supported-device targets, and final test checklist.
+**Shared contract:** save schema/versioning, migration rules, performance targets, supported devices, and release-blocker severity.
 
-**Acceptance:**
-- No known data-loss, item-duplication, or reward-duplication issue remains in the tested flows.
-- Core play works on supported input devices.
-- Rejoin and save/load scenarios pass.
-- Performance is measured and documented in representative locations.
-- The first release candidate is reviewed in Roblox Studio with screenshots/video and a clear list of remaining issues.
+**Acceptance gate:** no known critical data-loss or duplication issue; core gameplay survives normal disconnect/rejoin; PC/mobile checks pass; performance issues are documented; regression checklist is complete.
 
 ---
 
-## Milestone rules
+# 4. Milestone handoff template
 
-- Exactly two packages per milestone.
-- Package A/B are task labels, not permanent agent specialties.
-- Every package has a bounded scope and a clear deliverable.
-- One writer per file at a time.
-- Agree on shared interfaces before parallel implementation.
-- Do not silently expand a package; pause and coordinate if its scope must change.
-- Integrate and test both packages before marking a milestone complete.
-- A successful commit or static check does not prove the Roblox experience works.
-- Capture and review the actual Studio result for visual milestones.
-- Never treat concept images as final specifications.
-- Do not skip ahead to large systems before their smaller dependencies are proven.
+At the end of **every** milestone, append a short report to the relevant project progress document or milestone log:
 
-## Milestone handoff checklist
+- **Milestone:** ID and name.
+- **Package A owner / result:** files changed and visible outcome.
+- **Package B owner / result:** files changed and visible outcome.
+- **Integration:** what was combined and how.
+- **Studio evidence:** screenshots/video and the exact test performed.
+- **Acceptance:** each checklist item marked pass, fail, or blocked.
+- **Known issues:** concrete reproduction steps where possible.
+- **Decisions needed:** only questions that genuinely require user direction.
+- **Next milestone readiness:** ready / not ready, with reason.
 
-For every milestone, record:
+Never mark an acceptance item as passed based only on code inspection if it requires a Studio or multiplayer test.
 
-- [ ] Package A owner and exact scope confirmed
-- [ ] Package B owner and exact scope confirmed
-- [ ] File ownership and shared interfaces agreed
-- [ ] Package A deliverable reviewed
-- [ ] Package B deliverable reviewed
-- [ ] Both packages integrated
-- [ ] Roblox Studio test completed
-- [ ] Screenshots/video captured for visual work
-- [ ] Known issues and next milestone dependencies documented
+# 5. Global definition of done
 
+A milestone is complete only when:
+- Both packages are integrated in the same working project.
+- The agreed shared interfaces match and there are no duplicate/conflicting implementations.
+- The acceptance gate passes, or any unpassed item is explicitly marked blocked and approved by the user.
+- The result is opened and tested in Roblox Studio when Studio validation is required.
+- There are no new critical errors or obvious regressions.
+- The progress report and evidence are recorded.
+
+**The next action is M0 Package A + Package B. Start by reviewing `WorldOverview.png`, agree on the map scale and layout, then build the master ocean map blockout and its first reusable environment kit.**
