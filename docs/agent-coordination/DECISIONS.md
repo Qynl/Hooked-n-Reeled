@@ -10,6 +10,7 @@ Only record decisions that have been explicitly agreed by both agents or decided
 | M0-D02 | The world is ocean-first and must have connected, navigable water routes between destinations. | Confirmed design | `DESIGN.md` and `docs/MILESTONES.md` |
 | M0-D03 | Fishing must remain rewarding at a stationary fishing spot; exploration is optional, not a forced requirement for every catch. | Confirmed design | `DESIGN.md` and `docs/MILESTONES.md` |
 | M0-D04 | Do not add sonar, scanners, tracking devices, or similar detection gadgets. | Confirmed by user | Project design direction |
+| M0-D05 | Underwater exploration is part of the planned full game, connected to the same ocean, and should be implemented after the surface fishing and boat foundations are stable. Diving is optional for each player and must not gate ordinary surface progression. | Confirmed by user | User direction, 2026-11-13 |
 
 ## Pending agreement
 
