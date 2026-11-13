@@ -14,7 +14,7 @@ The ocean should feel alive through natural environmental signals and creature b
 
 Players must be able to choose a fishing spot and remain there for a long session without feeling that they are missing the real game.
 
-- Stationary fishing has a complete and rewarding loop, including ordinary fish, rare RNG catches, variants, mutations, records, collection progress, and useful progression.
+- Stationary fishing has a complete and rewarding loop, including ordinary fish, rare RNG catches, mutations, records, collection progress, and useful progression.
 - The local fish pool and conditions can make different spots feel distinct.
 - Players can notice environmental activity while staying in one place.
 - No essential species, progression gate, or core reward should require constant movement, exploration chains, or temporary events.
