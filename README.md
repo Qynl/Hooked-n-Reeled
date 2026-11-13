@@ -4,6 +4,8 @@ An open-world Roblox fishing adventure focused on exploration, skill-based fishi
 
 - [Game design](DESIGN.md)
 - [Development milestones](docs/MILESTONES.md)
+- [Agent coordination hub](docs/agent-coordination/README.md)
+- [Current agent dashboard](docs/agent-coordination/CURRENT.md)
 - [Two-agent workflow](docs/TWO_AGENT_WORKFLOW.md)
 - [Boat system](docs/BOAT_SYSTEM.md)
 - [World events and discovery](docs/WORLD_EVENTS_AND_DISCOVERY.md)
