@@ -19,6 +19,7 @@ Do not start both packages until file ownership and shared interfaces are agreed
 ### Package B — World and progression contracts
 - Propose the first connected-world greybox layout and initial fishing-area layout.
 - Define fishing spot metadata: fishing area, water type, depth band, weather/time tags.
+- Specify a satisfying stationary-fishing baseline alongside optional exploration opportunities; neither playstyle may be a progression prerequisite for the other.
 - Propose rod/bait data shape and progression dimensions.
 - Define multiplayer expedition and shared-boat requirements at a design level.
 - Agree on boat customization, free-placement constraints, cooler storage, and permissions.
@@ -147,8 +148,10 @@ Do not start both packages until file ownership and shared interfaces are agreed
 ### Package A — fishing areas and fishing conditions
 - Expand the seamless, ocean-first world with additional connected fishing areas and fishing locations; land remains supporting geography.
 - Implement weather/time/water-condition tags and their effect on eligible fish pools.
-- Add clear player-facing hints for discoverable conditions, including clue-based odds boosts and selected guaranteed encounters.
-- Prototype surface-focused open-world activities such as island visits, wreck discoveries, ports, drifting finds, and special routes.
+- Add clear player-facing hints for discoverable conditions, including natural environmental clues, clue-based odds boosts, and selected guaranteed encounters.
+- Ensure valid stationary fishing spots retain worthwhile fish pools, rare RNG opportunities, and collection/progression value.
+- Prototype optional surface-focused open-world activities such as island visits, wreck discoveries, ports, drifting finds, moving schools, natural sightings, and special routes.
+- Do not introduce sonar, tracking devices, scanning gadgets, or research equipment as discovery requirements.
 
 ### Package B — Secrets and special encounters
 - Prototype hidden fishing spots and one secret area discovery.
@@ -158,7 +161,7 @@ Do not start both packages until file ownership and shared interfaces are agreed
 
 **Shared contract:** zone/spot metadata, condition evaluation API, transition rules, and discovery reward payload.
 
-**Acceptance:** players can discover at least one meaningful secret and observe understandable differences between fishing conditions.
+**Acceptance:** players can discover at least one meaningful secret and observe understandable differences between fishing conditions. A stationary player can still complete a rewarding fishing session with rare RNG opportunities, while an exploring player can find additional optional discoveries. No discovery gadget is required.
 
 ## M8 — Persistence, polish, and release candidate
 
@@ -197,7 +200,8 @@ Before implementation crosses the prototype stage, document and agree on:
 - **Boat build state:** boat owner, unlocked hull, upgrades, placed-object IDs/transforms, build-area bounds, object footprints, and guest permissions.
 - **Cooler storage:** cooler identity/tier/capacity, stored fish instance IDs, transfer rules, full-capacity behaviour, and anti-duplication guarantees.
 - **Fishbook:** species discovery, individual catch instances, variants/mutations, record scopes, clue progression, and collection rewards.
-- **Clue system:** distinguish odds modifiers from guaranteed availability/encounters. A guarantee must state its exact scope and conditions.
+- **Clue system:** use natural environmental signals and fishbook knowledge; distinguish odds modifiers from guaranteed availability/encounters. A guarantee must state its exact scope and conditions. No sonar, tracking devices, scanning gadgets, or research equipment.
+- **Playstyle balance:** stationary fishing and optional exploration must both remain satisfying; exploration cannot be a mandatory gate for ordinary progression or all rare RNG catches.
 - **Boss rewards:** participant eligibility, late-join rules, individual reward grant IDs, and exactly-once server-side delivery.
 - **World events:** event definition, start/end state, eligible zones, fish-pool modifiers, boss triggers, UI announcement policy, and cleanup.
 - **Admin events (later):** permission model, server-only execution, audit log, cooldowns, safe templates, and explicit separation from normal progression.
