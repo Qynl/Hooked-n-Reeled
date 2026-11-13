@@ -528,6 +528,33 @@ M0 is complete only when all of these are true:
 
 ---
 
+# Future content milestone — Optional underwater exploration
+
+**Timing:** after the initial release candidate and after the core fishing, surface exploration, and boat experience are stable. This is future content, not part of M0–M16 or a blocker for the first release.
+
+**Goal:** add a memorable optional underwater layer without weakening the surface fishing game.
+
+### Package A — Underwater locations and environment
+- Design and build a small, polished selection of underwater locations such as reef gardens, rocky shelves, caves, and wreck areas.
+- Establish underwater readability, lighting, visibility, traversal boundaries, and performance budgets.
+- Create original modular environment assets for coral, sea plants, rocks, crystals, and wreck details.
+- Keep locations connected to the existing ocean world and avoid building a separate oversized world.
+
+### Package B — Diving discoveries and collection
+- Prototype a simple optional diving/exploration loop.
+- Add a small initial selection of discoveries, potentially including crystals/minerals, shells, pearls, coral details, and sunken cargo.
+- Decide how discoveries are recorded and whether any have uses only after the prototype is evaluated.
+- Validate server ownership and reward delivery for collectible discoveries.
+- Do not add sonar, scanners, tracking devices, or similar detection gadgets.
+
+**Shared contract:** underwater location IDs, discovery IDs, interaction boundaries, collection ownership, persistence fields, and performance limits.
+
+**Acceptance gate:** diving is optional and understandable; surface fishing and stationary play remain fully rewarding; no essential progression is locked behind diving; discoveries are server-validated; underwater areas meet the agreed PC/mobile performance budget.
+
+**Open by design:** exact diving controls, equipment requirements, crystal uses, reward values, discovery quantities, and whether any underwater encounters exist. Do not invent these details before a separate design review.
+
+---
+
 # 4. Milestone handoff template
 
 At the end of **every** milestone, append a short report to the relevant project progress document or milestone log:
