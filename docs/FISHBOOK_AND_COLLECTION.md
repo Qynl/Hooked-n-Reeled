@@ -53,7 +53,7 @@ Fish have multiple meaningful destinations:
 - Sell for currency.
 - Keep for collection milestones or personal records.
 - Display in personal or shared exhibits.
-- Use selected species for quests, unlocks, research, or special activities.
+- Use selected species for quests, unlocks, discoveries, or special activities.
 
 Avoid making every fish's best choice obvious from a single coin value. Some fish can be valuable as discoveries, records, or unlock requirements. Clearly communicate irreversible choices before a player sells or consumes a particularly notable catch.
 
