@@ -6,7 +6,7 @@
 
 ## 1. Product direction
 
-Hooked-n-Reeled is an ocean-first fishing adventure. The ocean is the world that connects everything: memorable islands, ports, fishing locations, hidden places, and distant landmarks should make players curious to sail farther.
+Hooked-n-Reeled is an ocean-first fishing adventure with two connected layers: the surface and the underwater world. The surface is the first development priority; underwater exploration is a planned part of the full game, introduced after the fishing and boat foundations are stable. Memorable islands, ports, fishing locations, dive sites, hidden places, and distant landmarks should make players curious to explore farther.
 
 The intended visual direction is polished, colourful, stylized 3D: clear silhouettes, deliberate geometry, bright tropical shallows, deep blue open water, lush greens, warm sand, coral accents, natural lighting, and readable spaces. Avoid generic flat greybox environments, noisy detail, excessive outlines, and effects that obscure gameplay.
 
@@ -19,6 +19,7 @@ The game should combine:
 
 Confirmed design constraints:
 - Players must be able to enjoy fishing while staying at one good fishing spot. Exploration is rewarding, but never a requirement for every catch.
+- Underwater exploration is part of the full game roadmap, not a discarded idea or a separate disconnected mode. Diving is optional for each player and must not gate ordinary fishing progression.
 - Do not add sonar, tracking devices, scanners, or similar detection gadgets.
 - The ocean and destinations should feel connected, not like separate minigame islands.
 - Server authority owns catches, currency, inventory, purchases, permissions, and rewards.
@@ -96,6 +97,7 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
    - Near, mid-distance, and far-horizon destinations to create a sense of scale.
    - Distinctive large landmarks that can be recognised from a boat.
    - Open space for future locations and expansion.
+   - A rough seabed/depth plan that reserves a few future dive-site locations beneath or near recognisable surface landmarks.
 3. Establish a coordinate system, rough world scale, map bounds, and a simple naming scheme for regions and landmarks.
 4. Build the first Roblox Studio blockout:
    - Continuous ocean surface.
@@ -103,6 +105,7 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
    - Coastlines, beaches, cliffs, reefs, and large rock forms.
    - Clear channels between land masses.
    - Basic navigation clearance for the future boat sizes.
+   - Simple planning markers for future underwater shelves, reef spaces, ravines, caves, and wreck sites. These are map-planning anchors only; do not build the full underwater experience in M0.
 5. Use temporary geometry where detailed assets are not ready. Prioritise composition and navigability over tiny decoration.
 6. Capture an elevated overview screenshot and a few boat/player-height screenshots.
 
@@ -161,6 +164,7 @@ M0 is complete only when all of these are true:
 - [ ] The starting region, harbour area, island groups, distant destinations, and major landmarks are identifiable.
 - [ ] The map has varied silhouettes and a strong sense of scale from an elevated view.
 - [ ] The map is navigable at player/boat height, with no accidental route blockages.
+- [ ] The map plan accounts for underwater depth changes and reserves plausible future dive sites without expanding M0 into a diving build.
 - [ ] The environment kit is reusable and integrated into the map.
 - [ ] The palette and assets feel cohesive rather than assembled from unrelated packs.
 - [ ] A representative performance check has been made in Studio.
@@ -504,9 +508,9 @@ M0 is complete only when all of these are true:
 
 **Acceptance gate:** at least one event works end-to-end; players understand how to participate; ordinary gameplay remains viable; major playtest blockers are documented and addressed.
 
-## M16 — Persistence, performance, and release candidate
+## M16 — Surface-systems hardening and underwater readiness
 
-**Goal:** Make the current game slice reliable enough for a controlled release candidate.
+**Goal:** Make the surface game stable and performant, and prepare its world/data foundations for the planned underwater feature. This is a readiness gate, not the final full-game release candidate.
 
 ### Package A — Data safety and persistence
 - Audit all saved player data and ownership flows.
@@ -524,34 +528,73 @@ M0 is complete only when all of these are true:
 
 **Shared contract:** save schema/versioning, migration rules, performance targets, supported devices, and release-blocker severity.
 
-**Acceptance gate:** no known critical data-loss or duplication issue; core gameplay survives normal disconnect/rejoin; PC/mobile checks pass; performance issues are documented; regression checklist is complete.
+**Acceptance gate:** no known critical data-loss or duplication issue in the surface systems; core gameplay survives normal disconnect/rejoin; PC/mobile checks pass; performance issues are documented; the world and data architecture can support a later underwater layer without a rewrite.
 
 ---
 
-# Future content milestone — Optional underwater exploration
+# Phase 4 — Explore below the surface
 
-**Timing:** after the initial release candidate and after the core fishing, surface exploration, and boat experience are stable. This is future content, not part of M0–M16 or a blocker for the first release.
+## M17 — Introduce underwater exploration
 
-**Goal:** add a memorable optional underwater layer without weakening the surface fishing game.
+**Status:** planned full-game feature. It is optional for each player, but it is part of the intended Hooked-n-Reeled experience. Start only after M16 confirms that surface fishing, boats, and the connected world are stable.
+
+**Goal:** deliver a small, memorable underwater exploration loop that feels connected to the same ocean and adds a new reason to explore.
 
 ### Package A — Underwater locations and environment
-- Design and build a small, polished selection of underwater locations such as reef gardens, rocky shelves, caves, and wreck areas.
-- Establish underwater readability, lighting, visibility, traversal boundaries, and performance budgets.
-- Create original modular environment assets for coral, sea plants, rocks, crystals, and wreck details.
-- Keep locations connected to the existing ocean world and avoid building a separate oversized world.
+- Build a small, polished first set of dive locations connected to the surface map: for example a reef garden, a rocky shelf/cave, and a sunken wreck.
+- Use the underwater location plan and reserved M0 map anchors; do not create a separate oversized underwater world.
+- Establish readable underwater lighting, visibility, depth transitions, traversal boundaries, and clear routes back to the surface.
+- Create original modular assets for coral, sea plants, rocks, crystals, shells, and wreck details.
+- Keep geometry and effects performant on mobile; avoid excessive transparent layers and particles.
 
-### Package B — Diving discoveries and collection
-- Prototype a simple optional diving/exploration loop.
-- Add a small initial selection of discoveries, potentially including crystals/minerals, shells, pearls, coral details, and sunken cargo.
-- Decide how discoveries are recorded and whether any have uses only after the prototype is evaluated.
-- Validate server ownership and reward delivery for collectible discoveries.
-- Do not add sonar, scanners, tracking devices, or similar detection gadgets.
+### Package B — Diving movement and discoveries
+- Prototype comfortable swimming/diving movement and a clear way to enter and return to the surface.
+- Add a small discovery set such as natural crystals/minerals, shells, pearls, unusual coral, fossils, or sunken cargo.
+- Add simple interactions and a separate discovery-record/collection path; do not treat every find as a fish or automatically force a crafting economy.
+- Prototype one memorable underwater secret or encounter.
+- Do not add sonar, scanners, tracking devices, or research gadgets.
+- Do not assume strict oxygen timers, pressure simulation, or complex equipment requirements before playtesting proves they improve the experience.
 
-**Shared contract:** underwater location IDs, discovery IDs, interaction boundaries, collection ownership, persistence fields, and performance limits.
+**Shared contract:** underwater location IDs, discovery IDs, interaction boundaries, movement state, collection ownership, persistence fields, and performance limits.
 
-**Acceptance gate:** diving is optional and understandable; surface fishing and stationary play remain fully rewarding; no essential progression is locked behind diving; discoveries are server-validated; underwater areas meet the agreed PC/mobile performance budget.
+**Acceptance gate:**
+- Diving is understandable and comfortable on PC and mobile.
+- At least two distinct underwater locations feel memorable and are connected to the surface world.
+- Players can enter, explore, discover, and return safely.
+- Discoveries are server-validated and cannot be duplicated.
+- Surface fishing and stationary play remain fully rewarding.
+- No essential fish, ordinary progression, or core surface reward is locked behind diving.
+- No detection gadget is required.
+- The integrated underwater slice is playtested in Studio, including multiplayer and performance checks.
 
-**Open by design:** exact diving controls, equipment requirements, crystal uses, reward values, discovery quantities, and whether any underwater encounters exist. Do not invent these details before a separate design review.
+**Open by design:** exact controls, whether basic dive equipment is needed, air/time constraints, crystal uses, discovery values, respawn rules, underwater species interactions, and the size of the full dive-site catalogue. Prototype first; do not invent a large economy or survival simulation prematurely.
+
+---
+
+# Phase 5 — Full-game integration and release
+
+## M18 — Final integration, persistence, performance, and release candidate
+
+**Goal:** verify the complete intended game, including surface fishing, boats, multiplayer, world events, and the first underwater slice, as one reliable experience.
+
+### Package A — Data safety and progression integration
+- Audit all saved data and ownership flows, including fish, fishbook records, underwater discoveries, inventory, currency, rods, boats, upgrades, and cooler contents.
+- Implement robust save/load, retry, session ownership, schema versioning, and migration handling.
+- Handle disconnects, server shutdown, failed saves, and malformed persisted values safely.
+- Verify exactly-once rewards and atomic transfers for fish and underwater discoveries.
+- Check that surface and underwater progression do not create duplicated or contradictory collection records.
+
+### Package B — UX, accessibility, performance, and release QA
+- Profile representative surface, boat, multiplayer, and underwater locations.
+- Optimise expensive geometry, scripts, effects, streaming, and UI.
+- Test on lower-end mobile as well as PC.
+- Improve onboarding, readability, input feedback, accessibility, and return-to-surface clarity.
+- Run a structured regression pass across stationary fishing, exploration, fishing minigames, inventory, boats, coolers, co-op encounters, world events, and diving.
+- Prepare release notes and a documented list of known non-blocking issues.
+
+**Shared contract:** final save schema/versioning, migration rules, performance targets, supported devices, release-blocker severity, and complete acceptance checklist.
+
+**Acceptance gate:** the full intended game loop works on supported devices; no known critical data-loss, duplication, or reward exploit remains; PC/mobile and multiplayer checks pass; performance is acceptable in representative surface and underwater areas; the release checklist and evidence are complete.
 
 ---
 
