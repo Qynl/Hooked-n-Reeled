@@ -9,6 +9,7 @@ An open-world Roblox fishing adventure focused on exploration, skill-based fishi
 - [Two-agent workflow](docs/TWO_AGENT_WORKFLOW.md)
 - [Boat system](docs/BOAT_SYSTEM.md)
 - [World events and discovery](docs/WORLD_EVENTS_AND_DISCOVERY.md)
+- [Underwater exploration](docs/UNDERWATER_EXPLORATION.md)
 - [Fishbook and collection](docs/FISHBOOK_AND_COLLECTION.md)
 - [Roblox build skill](skills/roblox-build/SKILL.md)
 - [Roblox game-dev skill](skills/roblox-game-dev/SKILL.md)
