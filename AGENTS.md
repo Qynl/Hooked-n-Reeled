@@ -52,6 +52,8 @@ Reusable material that ships with them:
 - `skills/roblox-build/assets/style-bible.md` — fill-in template for palette/materials/scale.
 - `skills/roblox-game-dev/assets/project/` — Rojo-ready vertical slice (typed remotes,
   session-locked DataService, round service, client HUD).
+
+The bundled Rojo project is a **generic teaching example** with a sample round loop, coin pickup, and shop. It is not the Hooked-n-Reeled game implementation. Do not copy it wholesale or leave round-based gameplay in the fishing game; reuse only the architecture patterns that fit the approved fishing design.
 - `references/` in each skill — deeper craft, performance, testing and shipping detail.
 
 A task usually needs both: build for the scene, game-dev for the systems behind it.
