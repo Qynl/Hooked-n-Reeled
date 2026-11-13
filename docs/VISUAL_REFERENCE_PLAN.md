@@ -12,7 +12,7 @@ This is a **reference-generation plan**, not a claim that any images or game ass
 - Keep all images in the same visual style: polished stylized 3D, deliberate low-poly geometry, rich but controlled colours, bright natural lighting, atmospheric depth.
 - No text, labels, UI, watermarks, logos, borders, or typography unless a later UI reference explicitly requests them.
 - Asset sheets: one image containing many **separate, fully visible, non-overlapping** objects, evenly spaced on a plain neutral background. Use a consistent three-quarter view and consistent scale within each category.
-- World/biome images: environment concept art, wide 16:9 landscape framing unless otherwise stated.
+- World images: environment concept art, wide 16:9 landscape framing unless otherwise stated.
 - Map images: clean top-down orthographic planning view, no perspective distortion. Keep geography readable.
 - Keep a stable visual style across all prompts. Do not let each prompt invent a different rendering style.
 - Save originals without cropping or editing. If variants are generated, append a version suffix.
@@ -44,16 +44,7 @@ Append this style phrase to environment and asset prompts:
 
 **Prompt:**
 
-> Create a clean top-down orthographic world-planning map for a large ocean fishing adventure. Show a connected archipelago with clearly separated island clusters and broad navigable ocean routes. Include a central starter region and main port, several surrounding biome regions, remote outer islands, hidden coves, reefs, open-water fishing grounds, and a few distant endgame landmarks. Use simple readable terrain silhouettes and distinct biome colour zones. No labels, no icons, no UI, no compass, no text. Geography must be clear enough to translate into a Roblox world layout. [MASTER STYLE PHRASE]
-
-## 03 — Biome overview sheet
-
-**Filename:** `03_biome_overview.png`  
-**Format:** one landscape concept sheet with 6 distinct environment panels.
-
-**Prompt:**
-
-> Create one cohesive concept-art sheet divided into six clean, equally sized environment panels, each showing a different biome of the same stylized ocean world: (1) sunny tropical starter islands with turquoise lagoons and palms, (2) dramatic rocky highlands with cliffs and sea arches, (3) lush jungle islands with dense vegetation and hidden rivers, (4) pale coral atolls and shallow reef waters, (5) misty northern islands with cool blue water and conifer-like coastal vegetation, (6) mysterious outer-ocean islands with unusual floating rock formations and deep blue water. Each panel must show a distinct environment, not objects on a blank background. Keep the same rendering style and quality across all six panels. No text or labels. [MASTER STYLE PHRASE]
+> Create a clean top-down orthographic world-planning map for a large ocean fishing adventure. Show a connected archipelago with clearly separated island clusters and broad navigable ocean routes. Include a central starter region and main port, several distinct fishing grounds, remote outer islands, hidden coves, reefs, open-water fishing grounds, and a few distant endgame landmarks. Use simple readable terrain silhouettes and clear water-depth and location distinctions. No labels, no icons, no UI, no compass, no text. Geography must be clear enough to translate into a Roblox world layout. [MASTER STYLE PHRASE]
 
 ## 04 — Ocean zones and water transitions
 
@@ -215,28 +206,12 @@ Append this style phrase to environment and asset prompts:
 
 > Create a close, beautiful stylized 3D study of a tropical shoreline showing transparent pale-aqua shallows over sand, turquoise water around rocks, gentle layered waves, soft white foam at the beach, underwater stones visible through clear water, and a transition into deeper blue. Focus on how water meets sand and rock. Bright natural sunlight, controlled reflections, no people, no text. [MASTER STYLE PHRASE]
 
-## 20 — Biome detail sheets
-
-**Filename:** `20_biome_detail_sheets/`  
-**Format:** one separate image per biome, created after the biome overview is approved.
-
-Create one image each for:
-- Tropical starter islands
-- Rocky highlands and sea arches
-- Jungle islands
-- Coral atolls and reef shallows
-- Misty northern islands
-- Mysterious outer-ocean region
-
-Each image should show a representative coastline, terrain, vegetation, signature rocks, water colour, and one memorable landmark. Use the approved biome overview as a visual reference when generating these, so designs stay consistent.
-
 ---
 
 ## Suggested generation order
 
 1. `01_world_overview.png`
 2. `02_world_map_layout.png`
-3. `03_biome_overview.png`
 4. `05_nature_asset_sheet.png`
 5. `06_rock_terrain_asset_sheet.png`
 6. `07_coastal_architecture_sheet.png`
@@ -244,13 +219,12 @@ Each image should show a representative coastline, terrain, vegetation, signatur
 8. `11_main_fishing_port.png`
 9. Generate the remaining sheets and location concepts.
 
-Do not generate every image at once. Approve the world layout and biome identities first; then generate assets that actually belong to those environments.
+Do not generate every image at once. Approve the overall world layout first; then generate assets for the locations and fishing areas that are actually needed.
 
 ## Approval checklist
 
 - [ ] Master world overview approved
 - [ ] World geography and island distribution approved
-- [ ] Biome list and visual identities approved
 - [ ] Nature asset language approved
 - [ ] Rock and terrain language approved
 - [ ] Architecture language approved
