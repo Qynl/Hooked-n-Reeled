@@ -26,7 +26,7 @@ Append this style phrase to environment and asset prompts:
 
 ---
 
-# Stage 1 — World layout and biome definition
+# Stage 1 — World layout and fishing-area planning
 
 ## 01 — Master world overview
 
