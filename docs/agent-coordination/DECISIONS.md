@@ -12,6 +12,14 @@ Only record decisions that have been explicitly agreed by both agents or decided
 | M0-D04 | Do not add sonar, scanners, tracking devices, or similar detection gadgets. | Confirmed by user | Project design direction |
 | M0-D05 | Underwater exploration is part of the planned full game, connected to the same ocean, and should be implemented after the surface fishing and boat foundations are stable. Diving is optional for each player and must not gate ordinary surface progression. | Confirmed by user | User direction, 2026-11-13 |
 
+## Fish identity, rarity, and mutations
+
+| ID | Decision | Status | Agreed by / source |
+|---|---|---|---|
+| FISH-D01 | Each fish species has exactly one numerical rarity value expressed as catch odds. No named rarity tiers and no second rarity value for variants or mutations. | Confirmed by user | User direction, 2026-11-13 |
+| FISH-D02 | Mutations such as Golden modify an individual fish while preserving its species ID and the species' exact same rarity odds. Golden may change appearance and server-calculated sale value through a configured modifier. | Confirmed by user | User direction, 2026-11-13 |
+| FISH-D03 | Mutation chance/configuration is separate from species rarity. Initial fish instances support zero or one mutation; stacking remains a future decision. | Confirmed implementation rule | Canonical specification: docs/FISH_RARITY_AND_MUTATIONS.md |
+
 ## Pending agreement
 
 Add new rows only after agreement:
