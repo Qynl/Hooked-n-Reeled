@@ -139,6 +139,8 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
    - Performance expectations (part count, mesh reuse, and sensible detail).
 5. Deliver the kit in a form Package A can actually place into the map. Do not create an isolated art showcase that cannot be integrated.
 6. Prototype the water material response, moving highlight/ripple detail, and irregular shoreline foam with shared assets/materials. Coordinate the interface with Package A; do not create a separate competing ocean surface.
+7. Match the refined surface reference: prominent irregular white foam networks woven between turquoise wave masses, with denser breaking foam near selected shores. Prove the foam animates with the wave system rather than behaving like static paint.
+8. Ensure the shared prototype includes an underwater camera test with finite visibility: crisp nearby reef detail, softened mid-distance, distant silhouettes fading into blue haze, and stronger attenuation at greater depth.
 7. Keep placeholders simple where a final model would delay the map.
 
 **Deliverables:**
@@ -172,6 +174,8 @@ M0 is complete only when all of these are true:
 - [ ] The environment kit is reusable and integrated into the map.
 - [ ] The palette and assets feel cohesive rather than assembled from unrelated packs.
 - [ ] The ocean passes the [WATER_RENDERING.md](WATER_RENDERING.md) acceptance checklist, including boat-height, shallow-water, horizon, underwater, and alternate-lighting views.
+- [ ] White foam forms prominent, irregular animated networks across turquoise wave forms, with stronger breaking foam near selected shorelines.
+- [ ] Underwater visibility is finite and depth-sensitive: foreground readable, midground softened, and distant scenery fading naturally into blue haze without a hard cutoff.
 - [ ] A representative performance check has been made in Studio.
 - [ ] Integrated screenshots and a short completion report are saved.
 
