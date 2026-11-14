@@ -141,7 +141,7 @@ If the image cannot be opened, stop and report that specific blocker. Do not qui
 6. Prototype the water material response, moving highlight/ripple detail, and irregular shoreline foam with shared assets/materials. Coordinate the interface with Package A; do not create a separate competing ocean surface.
 7. Match the refined surface reference: prominent irregular white foam networks woven between turquoise wave masses, with denser breaking foam near selected shores. Prove the foam animates with the wave system rather than behaving like static paint.
 8. Ensure the shared prototype includes an underwater camera test with finite visibility: crisp nearby reef detail, softened mid-distance, distant silhouettes fading into blue haze, and stronger attenuation at greater depth.
-7. Keep placeholders simple where a final model would delay the map.
+9. Keep placeholders simple where a final model would delay the map.
 
 **Deliverables:**
 - A usable first environment kit in the Roblox project.
