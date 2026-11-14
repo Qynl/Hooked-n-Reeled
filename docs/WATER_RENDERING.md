@@ -21,6 +21,41 @@ The water in the visual reference is an art-direction target, not a demand to re
 7. **Scale variation:** broad swell reads at distance; fine ripples and small glints read near the player. The ocean must not look like a tiled repeating texture.
 8. **Underwater continuity:** from below, the surface should remain a bright, moving ceiling with readable sun shafts and a believable falloff into depth.
 
+
+
+## New visual reference direction: foamy stylized ocean
+
+The user's supplied surface reference sharpens the target beyond generic reflective water. The intended look is a stylized, sculpted ocean with broad irregular turquoise/teal wave masses and a substantial network of bright white sea foam between and across them. It is not a sparse scattering of tiny whitecaps and not a flat blue surface with a white shoreline outline.
+
+### Surface appearance
+
+- Use irregular, branching, interconnected foam patterns in the troughs and convergence lines between wave masses, with broken edges, holes, thin tendrils, and varied thickness.
+- Put brighter white foam on selected wave crests and where waves fold or collide. Keep some soft seafoam/cyan transition around the pure white so it integrates with the water.
+- Keep deep teal/blue pockets inside and between the raised wave forms; use luminous turquoise and cyan on lit faces. The white should be a strong part of the composition, balanced by visible water colour rather than covering the whole ocean.
+- Build large, flowing, low-poly-inspired wave forms with deliberately shaped surfaces. The reference is painterly and organic, so do not turn it into a rigid triangular wireframe or noisy faceted checkerboard.
+- Foam patterns must move with the wave system. Use coordinated animated masks, authored textures, mesh layers, or other Roblox-supported techniques. Avoid static decals, obvious scrolling stripes, or hundreds of tiny Parts.
+- Open ocean can have broad foam networks and occasional crest breakup; coastlines should add larger, more energetic breaking waves and foam accumulation. Do not make every shoreline a continuous thick white ring.
+
+### Underwater visibility and atmosphere
+
+The supplied underwater reference establishes a readable visibility limit. The underwater world must not remain equally sharp or visible to infinity.
+
+- Use three readable distance layers: crisp nearby rocks/plants/fish, softened mid-distance forms, and distant silhouettes that progressively lose contrast and disappear into blue/cyan water haze.
+- Visibility should also respond to depth: deeper water becomes darker, cooler, and more attenuated. A shallow reef can remain bright and colourful nearby, while deeper ravines have a much shorter readable range.
+- Keep the surface above bright and visibly moving, with soft sun shafts and restrained caustic patterns. Light shafts should fade with depth rather than remain equally strong all the way down.
+- Use underwater fog/atmospheric colour and distance-based fade on underwater objects where supported. Avoid a hard circular fog wall, obvious clipping cutoff, or a uniform opaque blue filter.
+- Nearby gameplay objects must remain readable. Do not hide nearby fish, routes, interactables, or hazards behind excessive fog or particles.
+- The target is atmospheric finite visibility, not murky water. The player should be able to explore a space, but distant scenery should naturally dissolve into haze.
+
+### Prototype checks added
+
+Capture and review:
+- A surface close-up that shows the white foam network moving across turquoise wave forms.
+- A boat-height view showing both open-ocean wave patterns and larger breaking shoreline waves.
+- An underwater view with clear foreground detail, softened midground, and distant forms fading into blue haze.
+- A deeper underwater view with stronger attenuation and reduced light penetration.
+- Desktop and mobile performance for foam and underwater transparency/fog effects.
+
 ## Roblox implementation strategy
 
 Roblox does not expose arbitrary custom real-time water shaders to ordinary Luau scripts. Do not promise physically correct refraction, screen-space reflection, or a fully custom shader unless the engine actually provides it in the target environment. Build the best layered solution supported by Roblox and verify it in Studio.
@@ -91,6 +126,8 @@ Capture screenshots or video of the same scene in bright daylight and one altern
 - [ ] No obvious repeating texture, chunk seams, or transparent-layer sorting artefacts.
 - [ ] It looks impressive from boat/player height and coherent from the overview.
 - [ ] It remains readable in overcast/storm lighting and from underwater.
+- [ ] Stylized white foam forms irregular, animated networks between turquoise wave masses, with stronger breaking foam near selected shores.
+- [ ] Underwater foreground remains readable while midground softens and distant scenery fades naturally into blue haze; visibility does not extend infinitely.
 - [ ] Desktop and mobile performance are measured and recorded.
 
 If any of these checks fail, the water is not visually approved. Do not mark the M0 ocean complete just because the map has a water surface.
@@ -103,6 +140,8 @@ If any of these checks fail, the water is not visually approved. Do not mark the
 - Repeating bright wave stripes or obvious tiling.
 - A mirror-polished surface.
 - Opaque water that hides every shallow feature.
+- A flat white foam outline around every island or static white foam decals that do not move with waves.
+- Underwater scenes with infinite visibility, equally sharp distant objects, or an abrupt circular fog cutoff.
 - A thick white foam border around every island.
 - Hundreds or thousands of small Parts used as fake waves.
 - Claims of true refraction or custom shader effects that have not been demonstrated in Roblox Studio.
