@@ -71,6 +71,16 @@ Underwater spaces are part of the same world and must share its stylized shape l
 - Avoid heavy fog, opaque water, dense particle clouds, and excessive transparent layers that hide routes or harm mobile performance.
 - Underwater discovery should be readable through the environment itself, not through sonar screens, tracking gadgets, or scanner UI.
 
+
+
+### Refined ocean and underwater reference
+
+The latest user-supplied references define two additional non-negotiable visual cues:
+- **Surface:** rich turquoise/teal sculpted wave shapes with extensive irregular white foam networks. White foam branches through the troughs and wave-convergence lines, breaks into small patches and tendrils, and gathers more strongly on breaking crests and near shore. It must animate with the water rather than sit as static white paint.
+- **Underwater:** a colourful stylized reef viewed through finite water visibility. Nearby geometry is crisp, mid-distance detail softens, and distant rocks/fish become blue-hazed silhouettes and eventually disappear. Deeper water reduces contrast, colour and light reach further.
+
+Do not interpret the surface reference as a rigid triangular mesh aesthetic: keep the low-poly influence in broad sculpted forms, while foam remains fluid, organic and irregular. Do not interpret underwater haze as opaque murk; nearby gameplay remains readable.
+
 ## Lighting and atmosphere
 
 - Default: bright tropical daytime with warm sun, soft but readable shadows, clear sky, and atmospheric distance.
