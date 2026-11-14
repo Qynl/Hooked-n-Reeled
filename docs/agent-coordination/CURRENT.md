@@ -13,6 +13,16 @@ Build the first connected, visually memorable Hooked-n-Reeled surface-ocean map 
 
 This image is the primary composition and art-direction reference. It is inspiration, not a pixel-perfect blueprint. Follow the M0 scope and acceptance gate in `docs/MILESTONES.md`. The water must follow [WATER_RENDERING.md](../WATER_RENDERING.md): no flat single-colour plane, and no visual approval without boat-height and shallow-water screenshots.
 
+
+
+## Latest visual-reference clarification (2026-11-14)
+
+The user supplied two additional images. Their direction is now captured in [WATER_RENDERING.md](../WATER_RENDERING.md):
+- Surface: turquoise/teal sculpted wave masses with prominent, irregular, animated white foam networks; larger breaking waves and stronger foam at selected shores.
+- Underwater: stylized reef scene with finite visibility; nearby details stay crisp, mid-distance softens, and distant scenery fades into blue haze. Deeper water attenuates light and visibility further.
+
+Package A and Package B must include these qualities in the shared water prototype contract. The prototype must prove the foam motion and underwater distance falloff, not merely document colour values.
+
 ## Package assignments
 
 | Workstream | Owner | Status | Main responsibility |
